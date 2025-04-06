@@ -10,6 +10,10 @@
     if (isset($_POST['update'])) {
         $product_id = $_POST['product_id'];
         $product_id = filter_var($product_id, FILTER_SANITIZE_SPECIAL_CHARS);
+        
+        // Lấy và sanitize tất cả giá trị từ form TRƯỚC KHI sử dụng
+        $category = $_POST['category'];
+        $category = filter_var($category, FILTER_SANITIZE_SPECIAL_CHARS);
 
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -22,11 +26,12 @@
         
         $stock = $_POST['stock'];
         $stock = filter_var($stock, FILTER_SANITIZE_SPECIAL_CHARS);
+        
         $status = $_POST['status'];
         $status = filter_var($status, FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, product_detail = ?, stock = ?, status = ? WHERE id = ?");
-        $update_product->execute([$name, $price, $description, $stock, $status, $product_id]);
+        $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, product_detail = ?, stock = ?, status = ?, category = ? WHERE id = ?");
+        $update_product->execute([$name, $price, $description, $stock, $status, $category, $product_id]);
         $success_msg[] = 'Product updated successfully';
 
         $old_image = $_POST['old_image'];
@@ -131,9 +136,20 @@
                         <div class="input-field">
                             <p>Product status <span>*</span></p>
                             <select name="status" class="box">
-                                <option value="<?= $fetch_product['status']; ?>" selected><?= $fetch_product['status']; ?></option>
-                                <option value="active">active</option>
-                                <option value="deactive">deactive</option>
+                                <option value="active" <?= ($fetch_product['status'] == 'active') ? 'selected' : ''; ?>>active</option>
+                                <option value="deactive" <?= ($fetch_product['status'] == 'deactive') ? 'selected' : ''; ?>>deactive</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <p>Product Category <span>*</span></p>
+                            <select name="category" class="box" required>
+                                <option value="<?= $fetch_product['category']; ?>" selected><?= $fetch_product['category']; ?></option>
+                                <option value="ring">Nhẫn</option>
+                                <option value="bracelet">Vòng tay</option>
+                                <option value="necklace">Vòng cổ</option>
+                                <option value="chain">Dây chuyền</option>
+                                <option value="earring">Khuyên tai</option>
+                                <option value="watch">Đồng hồ</option>
                             </select>
                         </div>
                         <div class="input-field">

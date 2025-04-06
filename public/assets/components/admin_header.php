@@ -1,6 +1,6 @@
 <header>
     <nav>
-        <img src="../images/logoicon.png" alt="Brand logo" class="logo" style = "width: 50px; height: 50px;">
+        <img src="/jewelry-shop/public/assets/images/logoicon.png" alt="Brand logo" class="logo" style = "width: 50px; height: 50px;">
         <button id="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
 
         <div class="icons">
@@ -20,7 +20,7 @@
         
         <div class="sidebar" id="sidebar">
             <div class="logo">
-                <img src="../images/logoicon.png" class="logo-img">
+                <img src="/jewelry-shop/public/assets/images/logoicon.png" class="logo-img">
             </div>
             <h2>Jewelry - Shop</h2>
             <div class="close" id="close-btn">

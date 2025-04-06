@@ -13,6 +13,9 @@
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS);
 
+        $category = $_POST['category'];
+        $category = filter_var($category, FILTER_SANITIZE_SPECIAL_CHARS);
+
         $price = $_POST['price'];
         $price = filter_var($price, FILTER_SANITIZE_SPECIAL_CHARS);
         
@@ -46,8 +49,8 @@
         if ($select_image->rowCount() > 0 AND $image != '') {
             $warning_msg[] = 'Please rename your image';
         } else {
-            $insert_product = $conn->prepare("INSERT INTO `products` (id, vendor_id, name, price, image, stock, product_detail, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $insert_product->execute([$id,$vendor_id, $name, $price, $image, $stock, $description, $status]);
+            $insert_product = $conn->prepare("INSERT INTO `products` (id, vendor_id, name, price, image, stock, product_detail, status, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $insert_product->execute([$id, $vendor_id, $name, $price, $image, $stock, $description, $status, $category]);
             $success_msg[] = 'Product added successfully';
         }
     }
@@ -130,6 +133,18 @@
                         <input type="text" name="name" maxlength="100" placeholder="Add product name" required class="box">
                     </div>
                     <div class="input-feild">
+                        <p>Product Category <span>*</span></p>
+                        <select name="category" class="box" required>
+                            <option value="" disabled selected>-- Chọn loại sản phẩm --</option>
+                            <option value="ring">Nhẫn</option>
+                            <option value="bracelet">Vòng tay</option>
+                            <option value="necklace">Vòng cổ</option>
+                            <option value="chain">Dây chuyền</option>
+                            <option value="earring">Khuyên tai</option>
+                            <option value="watch">Đồng hồ</option>
+                        </select>
+                    </div>
+                    <div class="input-feild">
                         <p>Product price <span>*</span></p>
                         <input type="number" name="price" placeholder="Add product price" required class="box">
                     </div>
@@ -141,6 +156,7 @@
                         <p>Product stock <span>*</span></p>
                         <input type="number" name="stock" maxlength="10" max="999999999" placeholder="Add product stock" required class="box">
                     </div>
+                    
                     <div class="input-feild">
                         <p>Product image <span>*</span></p>
                         <input type="file" name="image" accept="image/*" required class="box">

@@ -34,66 +34,66 @@
         </div>
     <div class="container">
         <div class="header">
-            <h1>Pearl Silver Jewelry in Hanoi</h1>
+            <h1>Trang sức bạc ngọc trai tại Hà Nội</h1>
         </div>
         
         <div class="categories">
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Necklaces">
-                <h3>Necklaces</h3>
+                <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Vòng cổ">
+                <h3>Vòng cổ</h3>
             </div>
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-pendant2.jpg" alt="Pendants">
-                <h3>Pendants</h3>
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj-pendant2.jpg" alt="Mặt dây chuyền">
+                <h3>Mặt dây chuyền</h3>
             </div>
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-earring.jpg" alt="Earrings">
-                <h3>Earrings</h3>
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj-earring.jpg" alt="Hoa tai">
+                <h3>Hoa tai</h3>
             </div>
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-ring2.jpg" alt="Rings">
-                <h3>Rings</h3>
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj-ring2.jpg" alt="Nhẫn">
+                <h3>Nhẫn</h3>
             </div>
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-bracelet.jpg" alt="Bracelets">
-                <h3>Bracelets</h3>
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj-bracelet.jpg" alt="Vòng tay">
+                <h3>Vòng tay</h3>
             </div>
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-gold-jewelry.jpg" alt="Gold Jewellery">
-                <h3>Gold Jewellery</h3>
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj-gold-jewelry.jpg" alt="Trang sức vàng">
+                <h3>Trang sức vàng</h3>
             </div>
         </div>
         
         <!-- First featured section -->
         <div class="featured">
             <div class="featured-image">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_02.jpg" alt="Tahitian Pearl Ring">
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_02.jpg" alt="Nhẫn ngọc trai Tahiti">
             </div>
             <div class="featured-content">
-                <h2>The Nature's Greatest Miracles</h2>
-                <p>A sought-after beauty of Tahitian Pearl in Exquisite Floral Jewelry</p>
-                <button class="btn">DISCOVER</button>
+                <h2>Kỳ diệu của thiên nhiên</h2>
+                <p>Vẻ đẹp được săn đón của ngọc trai Tahiti trong trang sức hoa tinh xảo</p>
+                <button class="btn">KHÁM PHÁ</button>
             </div>
         </div>
         
         <!-- Second featured section (reversed) -->
         <div class="featured featured-reversed">
             <div class="featured-image">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_03.jpg" alt="South Sea Pearl Pendant">
+                <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_03.jpg" alt="Mặt dây chuyền ngọc trai Biển Nam">
             </div>
             <div class="featured-content">
-                <h2>Refined Classic South Sea Pearl</h2>
-                <p>Exceptional Handcrafted Design to Enhance the Magnificent Glow</p>
-                <button class="btn">DISCOVER</button>
+                <h2>Sự tinh tế của ngọc trai Biển Nam Cổ điển</h2>
+                <p>Thiết kế thủ công độc đáo tôn lên vẻ rạng rỡ tuyệt vời</p>
+                <button class="btn">KHÁM PHÁ</button>
             </div>
         </div>
         
         <!-- New Arrivals Section -->
-        <h2>New Arrivals</h2>
+        <h2>Hàng Mới Về</h2>
         <div class="products">
             <div class="product">
                 <div class="product-image">
-                    <img src="../jewelry-shop//public//assets//images//gallery//2023-10-06-13-54-33-281x281.jpg" alt="Tourmaline Sterling Silver Grape Pendant">
+                    <img src="../jewelry-shop//public//assets//images//gallery//2023-10-06-13-54-33-281x281.jpg" alt="Mặt dây chuyền nho bạc sterling Tourmaline">
                     <div class="product-actions">
                         <button type="submit" name="add_to_cart" class="action-btn">
                             <i class="fas fa-shopping-cart"></i>
@@ -105,25 +105,25 @@
                         </button>
                     </div>
                 </div>
-                <h3>Tourmaline Sterling Silver Grape Pendant</h3>
+                <h3>Mặt dây chuyền nho bạc sterling Tourmaline</h3>
                 <div class="price">$60.00</div>
             </div>
         </div>
         
         <!-- Customer Care Section -->
-        <h2>Customer Care</h2>
+        <h2>Chăm sóc khách hàng</h2>
         <div class="care-items">
             <div class="care-item">
-                <img src="../jewelry-shop//public//assets//images//footer//tiffany-anthony-09bKHOZ29us-unsplash.jpg" alt="Pearl Knowledge">
-                <h3>Knowledge</h3>
+                <img src="../jewelry-shop//public//assets//images//footer//tiffany-anthony-09bKHOZ29us-unsplash.jpg" alt="Kiến thức về ngọc trai">
+                <h3>Kiến thức</h3>
             </div>
             <div class="care-item">
-                <img src="../jewelry-shop//public//assets//images//footer//cornelia-ng-2zHQhfEpisc-unsplash.jpg" alt="Frequently Asked Questions">
-                <h3>FAQ</h3>
+                <img src="../jewelry-shop//public//assets//images//footer//cornelia-ng-2zHQhfEpisc-unsplash.jpg" alt="Câu hỏi thường gặp">
+                <h3>Câu hỏi thường gặp</h3>
             </div>
             <div class="care-item">
-                <img src="../jewelry-shop//public//assets//images//footer//6fb530c3-ccea-4578-ae3e-2ec9175a9c32.jpg" alt="Product Care">
-                <h3>Product Care</h3>
+                <img src="../jewelry-shop//public//assets//images//footer//6fb530c3-ccea-4578-ae3e-2ec9175a9c32.jpg" alt="Chăm sóc sản phẩm">
+                <h3>Chăm sóc sản phẩm</h3>
             </div>
         </div>
     </div>
