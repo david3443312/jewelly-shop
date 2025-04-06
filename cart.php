@@ -2,8 +2,21 @@
     include 'public/assets/components/connect.php';
     $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : null;
 
+    // Xử lý xóa sản phẩm khỏi giỏ hàng
+    if(isset($_GET['remove']) && !empty($_GET['remove'])) {
+        $product_id = $_GET['remove'];
+        $product_id = filter_var($product_id, FILTER_SANITIZE_NUMBER_INT);
+        
+        if($user_id && $product_id) {
+            $delete_item = $conn->prepare("DELETE FROM `cart` WHERE user_id = ? AND product_id = ?");
+            $delete_item->execute([$user_id, $product_id]);
+            
+            // Chuyển hướng về trang giỏ hàng sau khi xóa để làm mới trang
+            header('Location: cart.php');
+            exit();
+        }
+    }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -56,9 +69,8 @@
                                 while ($item = $cart_query->fetch(PDO::FETCH_ASSOC)) {
                                     $sub_total = $item['price'] * $item['quantity'];
                                     $grand_total += $sub_total;
-                                }
                             ?>
-                            <tr data-product-id = "<?= $item['product_id']; ?>">
+                            <tr data-product-id="<?= $item['product_id']; ?>">
                                 <td>
                                     <a href="cart.php?remove=<?= $item['product_id']; ?>" class="remove-item" onclick="return confirm('Xóa sản phẩm này?');">×</a>
                                 </td>
@@ -75,8 +87,7 @@
                                 <td class="product-subtotal"><?= number_format($sub_total); ?>đ</td>
                             </tr>
                             <?php
-                                }
-                                if ($cart_query->rowCount() > 0) {
+                                } // Đóng vòng lặp while ở đây
                             ?>
                             <tr class="cart-total-row">
                                 <td colspan="4" style="text-align: right; font-weight: bold;">Tổng cộng:</td>

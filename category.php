@@ -59,7 +59,7 @@
                                 alert('Loại trang sức không hợp lệ.');
                                 return;
                         }
-                        window.location.href = '/jewelry-shop/products/' + path + '.php';
+                        window.location.href = '/jewelry-shop/products.php?category=' + path;
                     } else {
                         alert('Vui lòng chọn loại trang sức');
                     }
