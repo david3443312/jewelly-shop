@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f4;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cart-header {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 48px;
+    color: #333;
+    font-weight: bolder;
+    margin-top: 100px;
+}
+
+.cart-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.cart-summary {
+    flex: 1;
+    min-width: 60%;
+    margin-right: 30px;
+}
+
+.cart-totals {
+    flex: 1;
+    min-width: 30%;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Cart table styling */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+}
+
+.cart-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.cart-table .product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.cart-table .product-name {
+    font-size: 16px;
+    color: #666;
+}
+
+.cart-table .product-price,
+.cart-table .product-subtotal {
+    font-size: 16px;
+}
+
+.cart-table .product-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-input {
+    width: 50px;
+    height: 36px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+.quantity-button {
+    width: 30px;
+    height: 36px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.remove-item {
+    color: #d9534f;
+    cursor: pointer;
+    font-size: 25px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Totals styling */
+.totals-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.totals-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.totals-table .label {
+    text-align: left;
+}
+
+.totals-table .value {
+    text-align: right;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.shipping-info {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #8a7a72;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+    background-color: #6a5a52;
+}
+
+.coupon-section {
+    display: flex;
+    margin: 20px 0;
+}
+
+.coupon-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.coupon-button {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.coupon-button:hover {
+    background-color: #ddd;
+}
+
+.update-cart {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.shipping-calculate {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.shipping-calculate:hover {
+    background-color: #ddd;
+}
+
+.shipping-info {
+
+}
+
+.shipping-form {
+}
+
+.form-group>input {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    margin-left: 30px;
+    padding: 15px;
+    text-align: left;
+    background-color: #f9f9f4;
+}
+
+.form-group>input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #ddd;
+}
+.form-group>label {
+    vertical-align: bottom;
+    font-size: 18px;
+}

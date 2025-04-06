@@ -1,0 +1,200 @@
+body {
+    font-family: "Cormorant Upright", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F6F4EC;
+}
+
+header {
+    background-color: #F3EDE5;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.menu li {
+    display: flex;
+    justify-content: left;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+.icons a {
+    color: #8B7355;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.icons a:hover {
+    transform: scale(1.2);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+
+.search input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.search button{
+    background-color: #b0a9a9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* CSS for the hover dropdown */
+.account-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #F6F4EC;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 15px;
+}
+  
+.dropdown-menu a {
+    color: #7D6E5D;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: none;
+    margin: none;
+}
+  
+.dropdown-menu a:hover {
+    background-color: #d5acac;
+    border-radius: 15px;
+    font-size: 20px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.account-container:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-category .submenu {
+    visibility: hidden; /* Ẩn menu mặc định */
+    opacity: 0; /* Đặt độ mờ ban đầu */
+    display: flex; /* Để giữ cấu trúc */
+    flex-direction: row;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-left: 50px;
+    background-color: #F6F4EC;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    z-index: 1000;
+    white-space: nowrap;
+    transition: visibility 0.3s ease, opacity 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+
+.dropdown-category .submenu div {
+    margin-right: 50px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.dropdown-category .submenu h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #7D6E5D;
+}
+
+.dropdown-category .submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-category .submenu ul li {
+    margin-bottom: 5px;
+}
+
+.dropdown-category .submenu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.dropdown-category .submenu ul li a:hover {
+    color: #8B7355;
+}
+
+.dropdown-category:hover .submenu {
+    visibility: visible; /* Hiển thị menu */
+    opacity: 1; /* Đặt độ mờ đầy đủ */
+}

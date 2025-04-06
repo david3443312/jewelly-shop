@@ -11,7 +11,7 @@
                 <div class="dropdown-menu">
                     <div class="box-menu">
                         <a href="profile.php">Hồ sơ</a>
-                        <a href="../components/admin_logout.php">Đăng xuất</a>
+                        <a href="admin_logout.php">Đăng xuất</a>
                     </div>
                     
                 </div>

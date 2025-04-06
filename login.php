@@ -31,8 +31,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Đăng nhập - Jewelry Shop</title>
-        <link rel="stylesheet" href="../jewelry-shop//public//assets//css//stylessignup.css">
-        <link rel="stylesheet" href="../jewelry-shop//public//assets//css//admin_style.css">
+        <link rel="stylesheet" href="public/assets/css/user_header.css">
+        <link rel="stylesheet" href="public/assets/css/stylessignup.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,9 +43,6 @@
 <body>
     <?php include '../jewelry-shop//public//assets//components//user_header.php'; ?>
     <main>
-        <!-- <div class="breadcrumb" styles="margin-top: 2000px;">
-            <a href="#"><i class="fas fa-home"></i> / Đăng ký tài khoản</a>
-        </div> -->
         <div class="meetings">
             <h1>Chào mừng trở lại:</h1>
             <h2>Vui lòng đăng nhập tài khoản của bạn ở đây:</h2>
@@ -69,7 +66,7 @@
                 <button type="submit" name="submit" class="signup-btn1">Đăng nhập</button>
             </div>
         </form>
-        <div class="fd-ps">
+        <div class="fd-ps" style="text-align: right; margin-right: 950px;">
             <a class="privacy-link" href="#">Quên mật khẩu?</a>
         </div>
         <div class="signup-link">
@@ -77,7 +74,6 @@
             <a href="signup.php">Đăng ký</a>
         </div>
         
-        <!-- <img src="images/signup/signup1.jpg" alt="Đăng ký tài khoản" class="signup-image"> -->
     </main>
     <img src="../jewelry-shop//public//assets/images/signup/signup1.jpg" alt="Đăng ký tài khoản" class="signup-image">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

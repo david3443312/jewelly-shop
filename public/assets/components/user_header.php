@@ -1,6 +1,6 @@
 <header class="header-area">
     <nav>
-        <img src="../jewelry-shop//public/assets/images/logoicon.png" alt="Brand logo" class="logo" style = "width: 50px; height: 50px;">
+        <img src="public/assets/images/logoicon.png" alt="Brand logo" class="logo" style = "width: 50px; height: 50px;">
         <ul class="menu">
             <li><a href="home.php">Trang chủ</a></li>
             <li><a href="shop.php">Trang sức</a></li>
@@ -10,7 +10,7 @@
             <li><a href="#">Liên hệ</a></li>
         </ul>
         <div class="icons">
-            <a href="#"><span class="iconify" data-icon="fluent:cart-20-regular" style="height: 150%; width: 150%;"></span></a>
+            <a href="/jewelry-shop/cart.php"><span class="iconify" data-icon="fluent:cart-20-regular" style="height: 150%; width: 150%;"></span></a>
             <div class="search">
                 <input type="text" placeholder="Tìm kiếm...">
                 <button><span class="iconify" data-icon="ph:magnifying-glass"></span></button>

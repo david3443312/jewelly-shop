@@ -1,18 +1,20 @@
 <?php
-    include '../jewelry-shop/public/assets/components/connect.php';
+    include "public/assets/components/connect.php";
 
     $user_id = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : null;
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="vi">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Trang chủ - Jewelry Shop</title>
-        <link rel="stylesheet" href="../jewelry-shop//public/assets/css//styleshomepage.css">
-        <link rel="stylesheet" href="../jewelry-shop//public/assets/css//shop.css">
-        <link rel="stylesheet" href="../jewelry-shop//public/assets/css//stylessignup.css">
+        <link rel="stylesheet" href="public/assets/css/user_header.css">
+        <link rel="stylesheet" href="public/assets/css/styleshomepage.css">
+        <link rel="stylesheet" href="public/assets/css/shop.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,7 +24,7 @@
         <link rel="icon" href="../jewelry-shop/public/assets/images/logoicon.png" type="image/x-icon">
     </head>
 <body>
-    <?php include '../jewelry-shop/public/assets/components/user_header.php'; ?>
+    <?php include "public/assets/components/user_header.php"; ?>
     <div class="container">
         <h1 class="page-title">Necklaces</h1>
         <div class="breadcrumb">
@@ -45,10 +47,10 @@
             
             <div class="sort-container">
                 <select class="sort-dropdown">
-                    <option>Sort by latest</option>
-                    <option>Sort by price: low to high</option>
-                    <option>Sort by price: high to low</option>
-                    <option>Sort by popularity</option>
+                    <option>Sắp xếp theo mới nhất</option>
+                    <option>Sắp xếp theo giá: từ thấp đến cao</option>
+                    <option>Sắp xếp theo giá: từ cao đến thấp</option>
+                    <option>Sắp xếp theo độ phổ biến</option>
                 </select>
                 <div class="view-options">
                     <button class="grid-view active">
@@ -80,7 +82,11 @@
                 while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
                     
             ?>
-            <form action="" method="post" class="product-item <?php if($fetch_products['stock'] == 0){echo "disable";} ?>">
+            <form action="public/assets/components/add_to_cart.php" method="post" class="product-item <?php if($fetch_products['stock'] == 0){echo "disable";} ?>">
+                <!-- Thêm input ẩn để lưu product_id -->
+                <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+                <input type="hidden" name="quantity" value="1">
+                
                 <div class="product-image">
                     <img src="../jewelry-shop//public//assets//uploaded_files/<?= $fetch_products['image']; ?>" alt="No image found">
                     <div class="product-actions">
@@ -120,6 +126,6 @@
         </div>
     </div>
     
-    <?php include '../jewelry-shop/public/assets/components/user_footer.php'; ?>
+    <?php include "public/assets/components/user_footer.php"; ?>
 </body>
 </html>

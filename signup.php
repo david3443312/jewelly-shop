@@ -50,8 +50,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Đăng ký tài khoản - Jewelry Shop</title>
-        <link rel="stylesheet" href="../jewelry-shop//public//assets/css/stylessignup.css">
-        <link rel="stylesheet" href="../jewelry-shop//public//assets/css/admin_style.css">
+        <link rel="stylesheet" href="public/assets/css/user_header.css">
+        <link rel="stylesheet" href="public/assets/css/stylessignup.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
