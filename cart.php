@@ -72,7 +72,7 @@
                             ?>
                             <tr data-product-id="<?= $item['product_id']; ?>">
                                 <td>
-                                    <a href="cart.php?remove=<?= $item['product_id']; ?>" class="remove-item" onclick="return confirm('Xóa sản phẩm này?');">×</a>
+                                    <a href="cart.php?remove=<?= $item['product_id']; ?>" class="remove-item">×</a>
                                 </td>
                                 <td>
                                     <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" class="product-image">
@@ -112,7 +112,7 @@
                     <table class="totals-table">
                         <tr>
                             <td class="label">Tổng tiền sản phẩm</td>
-                            <td class="value">123456đ</td>
+                            <td class="value">0đ</td>
                         </tr>
                         <tr>
                             <td class="label"><b>Vận chuyển</b><br>Vui lòng điền thông tin vận chuyển của bạn:</td>
@@ -162,33 +162,32 @@
     </main>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Lắng nghe sự kiện cho các nút tăng và giảm số lượng
+        // Hành động cho các nút tăng và giảm số lượng
         document.querySelectorAll('.btn-increment, .btn-decrement').forEach(button => {
             button.addEventListener('click', function() {
-                // Lấy thẻ <tr> chứa nút này
                 const tr = this.closest('tr');
                 const productId = tr.dataset.productId;
                 const quantityInput = tr.querySelector('.quantity-input');
                 let currentQty = parseInt(quantityInput.value);
-
-                // Nếu nút tăng
-                if(this.classList.contains('btn-increment')) {
+    
+                if (this.classList.contains('btn-increment')) {
                     currentQty++;
-                }
-                // Nếu nút giảm
-                else if (this.classList.contains('btn-decrement') && currentQty > 1) {
+                } else if (this.classList.contains('btn-decrement') && currentQty > 1) {
                     currentQty--;
                 }
-
-                // Cập nhật số lượng trên giao diện
+    
                 quantityInput.value = currentQty;
-
-                // Gọi AJAX để cập nhật số lượng trong CSDL
+    
+                const priceEl = tr.querySelector('.product-price');
+                let priceText = priceEl.dataset.price || priceEl.textContent;
+                priceText = priceText.replace(/[^0-9.]/g, '');
+                const price = parseFloat(priceText);
+                const newSubTotal = price * currentQty;
+                tr.querySelector('.product-subtotal').textContent = newSubTotal.toLocaleString() + "đ";
+    
                 fetch('public/assets/components/update_cart_quantity.php', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: 'product_id=' + encodeURIComponent(productId) + '&new_quantity=' + encodeURIComponent(currentQty)
                 })
                 .then(response => response.json())
@@ -196,9 +195,8 @@
                     if(data.error) {
                         alert(data.error);
                     } else {
-                        // Nếu cần, cập nhật lại tổng tiền của sản phẩm trong hàng
-                        // hoặc gọi một hàm updateTotals();
                         console.log('Số lượng đã được cập nhật.');
+                        updateGrandTotal();
                     }
                 })
                 .catch(err => {
@@ -207,6 +205,29 @@
                 });
             });
         });
+    
+        // Hàm cập nhật tổng tiền toàn giỏ hàng và cập nhật vào bảng "Tổng tiền sản phẩm"
+        function updateGrandTotal(){
+            let grandTotal = 0;
+            document.querySelectorAll('tr[data-product-id]').forEach(row => {
+                const priceEl = row.querySelector('.product-price');
+                let priceText = priceEl.dataset.price || priceEl.textContent;
+                priceText = priceText.replace(/[^0-9.]/g, '');
+                const price = parseFloat(priceText);
+                const quantity = parseInt(row.querySelector('.quantity-input').value);
+                grandTotal += price * quantity;
+            });
+            // Cập nhật ô Tổng cộng ở bảng giỏ hàng bên trái
+            const grandTotalCell = document.querySelector('.cart-total-row .product-subtotal');
+            if(grandTotalCell){
+                grandTotalCell.textContent = grandTotal.toLocaleString() + "đ";
+            }
+            // Cập nhật ô "Tổng tiền sản phẩm" ở bảng bên cột trái trong phần cart-totals
+            const productTotalEl = document.querySelector('.cart-totals .totals-table tr:first-child .value');
+            if(productTotalEl) {
+                productTotalEl.textContent = grandTotal.toLocaleString() + "đ";
+            }
+        }
     });
     </script>
 </body>

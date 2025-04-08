@@ -1,12 +1,13 @@
 a {
     text-decoration: none;
+    font-family: 'Cormorant Upright', serif;
 }
 
 .btn {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #4CAF50; /* Màu nền xanh lá */
-    color: white;
+    color: rgb(236, 227, 227);
     border: none;
     border-radius: 5px;
     cursor: pointer;

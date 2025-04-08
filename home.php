@@ -32,51 +32,55 @@
             <a class = "prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class = "next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-    <div class="container">
-        <div class="header">
-            <h1>Trang sức bạc ngọc trai tại Hà Nội</h1>
-        </div>
+        <div class="container">
+            <div class = "quote">
+                <h1 style="font-family: Great Vibes, cursive; font-size: 50px"> <b>“Wearing jewelry is the way to express who you are... without saying a word."</b></h1>
+                <p>Đeo trang sức là cách thể hiện bạn mà không cần một lời nói nào.</p>
+            </div>  
+            <div class="header">
+                <h1><b>Chúng tôi có những loại trang sức nào?</b></h1>
+            </div>
+            
+            <div class="categories">
+                <div class="category">
+                    <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Vòng cổ">
+                    <h3>Vòng cổ</h3>
+                </div>
+                <div class="category">
+                    <img src="../jewelry-shop//public//assets//images//gallery//hsj-pendant2.jpg" alt="Mặt dây chuyền">
+                    <h3>Mặt dây chuyền</h3>
+                </div>
+                <div class="category">
+                    <img src="../jewelry-shop//public//assets//images//gallery//hsj-earring.jpg" alt="Hoa tai">
+                    <h3>Hoa tai</h3>
+                </div>
+                <div class="category">
+                    <img src="../jewelry-shop//public//assets//images//gallery//hsj-ring2.jpg" alt="Nhẫn">
+                    <h3>Nhẫn</h3>
+                </div>
+                <div class="category">
+                    <img src="../jewelry-shop//public//assets//images//gallery//hsj-bracelet.jpg" alt="Vòng tay">
+                    <h3>Vòng tay</h3>
+                </div>
+                <div class="category">
+                    <img src="../jewelry-shop//public//assets//images//gallery//hsj-gold-jewelry.jpg" alt="Trang sức vàng">
+                    <h3>Trang sức vàng</h3>
+                </div>
+            </div>
         
-        <div class="categories">
-            <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Vòng cổ">
-                <h3>Vòng cổ</h3>
+            <!-- First featured section -->
+            <div class="featured">
+                <div class="featured-image">
+                    <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_02.jpg" alt="Nhẫn ngọc trai Tahiti">
+                </div>
+                <div class="featured-content">
+                    <h2>Kỳ diệu của thiên nhiên</h2>
+                    <p>Vẻ đẹp được săn đón của ngọc trai Tahiti trong trang sức hoa tinh xảo</p>
+                    <button class="btn">KHÁM PHÁ</button>
+                </div>
             </div>
-            <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-pendant2.jpg" alt="Mặt dây chuyền">
-                <h3>Mặt dây chuyền</h3>
-            </div>
-            <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-earring.jpg" alt="Hoa tai">
-                <h3>Hoa tai</h3>
-            </div>
-            <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-ring2.jpg" alt="Nhẫn">
-                <h3>Nhẫn</h3>
-            </div>
-            <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-bracelet.jpg" alt="Vòng tay">
-                <h3>Vòng tay</h3>
-            </div>
-            <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj-gold-jewelry.jpg" alt="Trang sức vàng">
-                <h3>Trang sức vàng</h3>
-            </div>
-        </div>
         
-        <!-- First featured section -->
-        <div class="featured">
-            <div class="featured-image">
-                <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_02.jpg" alt="Nhẫn ngọc trai Tahiti">
-            </div>
-            <div class="featured-content">
-                <h2>Kỳ diệu của thiên nhiên</h2>
-                <p>Vẻ đẹp được săn đón của ngọc trai Tahiti trong trang sức hoa tinh xảo</p>
-                <button class="btn">KHÁM PHÁ</button>
-            </div>
-        </div>
-        
-        <!-- Second featured section (reversed) -->
+       ` <!-- Second featured section (reversed) -->
         <div class="featured featured-reversed">
             <div class="featured-image">
                 <img src="../jewelry-shop//public//assets//images//gallery//hsj_featured_03.jpg" alt="Mặt dây chuyền ngọc trai Biển Nam">

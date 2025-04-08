@@ -85,13 +85,13 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
             </div>
             <div class="account-container">
                 <div class="account-icon">
-                    <a href="signup.html"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
+                    <a href="/jewelry-shop/signup.php"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
                 </div>
                 <div class="dropdown-menu">
                     <?php
                     if ($user_id) { // Người dùng đã đăng nhập
                     ?>
-                        <li><a href="profile.php"><i class="fi fi-rs-sign-in mr-10"></i>Hồ sơ</a></li>
+                        <li><a href="/jewelry-shop/user_profile.php"><i class="fi fi-rs-sign-in mr-10"></i>Hồ sơ</a></li>
                         <li><a href="/jewelry-shop/user_logout.php" onclick="return confirm('Chúng tôi sẽ rất nhớ bạn!');"><i class="fi fi-rs-sign-out mr-10"></i>Đăng xuất</a></li>
                     <?php
                     } else { // Người dùng chưa đăng nhập
