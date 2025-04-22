@@ -76,13 +76,14 @@ body {
 }
 
 .cart-table .product-name {
-    font-size: 16px;
+    font-size: 20px;
     color: #666;
 }
 
 .cart-table .product-price,
 .cart-table .product-subtotal {
-    font-size: 16px;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 .cart-table .product-quantity {
@@ -137,7 +138,7 @@ body {
 
 .shipping-info {
     margin: 20px 0;
-    font-size: 14px;
+    font-size: 25px;
     color: #666;
 }
 
@@ -149,10 +150,11 @@ body {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s;
+    border-radius: 10px;
 }
 
 .checkout-button:hover {
@@ -169,7 +171,7 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 10px;
 }
 
@@ -236,4 +238,22 @@ body {
 .form-group>label {
     vertical-align: bottom;
     font-size: 18px;
+}
+/* Select dropdown styling */
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 8px;
+    background-color: #fff;
+    color: #333;
+    appearance: auto; /* Shows the dropdown arrow */
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #81795d;
+    box-shadow: 0 0 5px rgba(129, 121, 93, 0.3);
 }

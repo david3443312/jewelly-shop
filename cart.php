@@ -118,40 +118,67 @@
                             <td class="label"><b>Vận chuyển</b><br>Vui lòng điền thông tin vận chuyển của bạn:</td>
                         </tr>
                     </table>
-                    <div class="shipping-info">
-                        <form class="shipping-form">
+                    <form action="public/assets/components/process_order.php" method="post" id="checkout-form">
+                        <input type="hidden" name="shipping_cost" id="shipping-cost-input" value="0">
+                        <input type="hidden" name="payment_method" value="COD">
+
+                        <div class="shipping-info">
                             <div class="form-group">
                                 <label for="full-name">Họ tên:</label>
-                                <input type="text" id="full-name" name="full-name" placeholder="Nhập họ tên của bạn" required>
+                                <input type="text" id="full-name" name="full_name" placeholder="Nhập họ tên của bạn" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone-number">Số điện thoại:</label>
-                                <input type="tel" id="phone-number" name="phone-number" placeholder="Nhập số điện thoại của bạn" required>
+                                <input type="tel" id="phone-number" name="phone_number" placeholder="Nhập số điện thoại của bạn" required>
                             </div>
                             <div class="form-group">
-                                <label for="city">Thành phố, tỉnh:</label>
-                                <input type="text" id="city" name="city" placeholder="Nhập thành phố hoặc tỉnh" required>
+                                <label for="city">Tỉnh/Thành phố:</label>
+                                <select class="form-select" id="city" name="city" required>
+                                    <option value="" selected>Chọn tỉnh thành</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="district">Quận, huyện:</label>
-                                <input type="text" id="district" name="district" placeholder="Nhập quận hoặc huyện" required>
+                                <label for="district">Quận/Huyện:</label>
+                                <select class="form-select" id="district" name="district" required>
+                                    <option value="" selected>Chọn quận huyện</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="ward">Xã, phường:</label>
-                                <input type="text" id="ward" name="ward" placeholder="Nhập xã hoặc phường" required>
+                                <label for="ward">Xã/Phường:</label>
+                                <select class="form-select" id="ward" name="ward" required>
+                                    <option value="" selected>Chọn phường xã</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="specific-address">Địa chỉ cụ thể (số nhà, toà nhà...):</label>
-                                <input type="text" id="specific-address" name="specific-address" placeholder="Nhập địa chỉ cụ thể" required>
+                                <input type="text" id="specific-address" name="specific_address" placeholder="Nhập địa chỉ cụ thể" required>
                             </div>
-                            <div><button href="#" class="shipping-calculate">Tính phí vận chuyển</button></div>
-                        </form>
-                    </div>
+                            <div><button type="button" class="shipping-calculate">Tính phí vận chuyển</button></div>
+                        </div>
+
+                        <table class="totals-table">
+                            <tr>
+                                <td class="label">Phí vận chuyển</td>
+                                <td class="value shipping-cost">0đ</td>
+                            </tr>
+                            <tr class="grand-total-row">
+                                <td class="label"><b>Tổng cộng</b></td>
+                                <td class="value grand-total"><?= number_format($grand_total); ?>đ</td>
+                            </tr>
+                        </table>
+
+                        <button type="submit" class="checkout-button">Đặt hàng</button>
+                    </form>
+                    
     
                     <table class="totals-table">
                         <tr>
-                            <td class="label">Tổng cộng</td>
-                            <td class="value">123456đ</td>
+                            <td class="label">Phí vận chuyển</td>
+                            <td class="value shipping-cost">0đ</td>
+                        </tr>
+                        <tr class = "grand-total-row">
+                            <td class="label"><b>Tổng cộng</b></td>
+                            <td class="value grand-total"><?= number_format($grand_total); ?>đ</td>
                         </tr>
                     </table>
     
@@ -207,6 +234,7 @@
         });
     
         // Hàm cập nhật tổng tiền toàn giỏ hàng và cập nhật vào bảng "Tổng tiền sản phẩm"
+                // Hàm cập nhật tổng tiền toàn giỏ hàng và cập nhật vào bảng "Tổng tiền sản phẩm"
         function updateGrandTotal(){
             let grandTotal = 0;
             document.querySelectorAll('tr[data-product-id]').forEach(row => {
@@ -217,18 +245,40 @@
                 const quantity = parseInt(row.querySelector('.quantity-input').value);
                 grandTotal += price * quantity;
             });
+            
             // Cập nhật ô Tổng cộng ở bảng giỏ hàng bên trái
             const grandTotalCell = document.querySelector('.cart-total-row .product-subtotal');
             if(grandTotalCell){
                 grandTotalCell.textContent = grandTotal.toLocaleString() + "đ";
             }
+            
             // Cập nhật ô "Tổng tiền sản phẩm" ở bảng bên cột trái trong phần cart-totals
             const productTotalEl = document.querySelector('.cart-totals .totals-table tr:first-child .value');
             if(productTotalEl) {
                 productTotalEl.textContent = grandTotal.toLocaleString() + "đ";
             }
+            
+            // Lấy giá trị phí vận chuyển hiện tại
+            const shippingCostEl = document.querySelector('.shipping-cost');
+            if(shippingCostEl) {
+                const shippingText = shippingCostEl.textContent;
+                const shippingCost = parseInt(shippingText.replace(/[^0-9]/g, '')) || 0;
+                
+                // Tính tổng cộng mới (sản phẩm + vận chuyển)
+                const finalTotal = grandTotal + shippingCost;
+                
+                // Cập nhật tổng cộng
+                const finalTotalEl = document.querySelector('.grand-total');
+                if(finalTotalEl) {
+                    finalTotalEl.textContent = finalTotal.toLocaleString() + "đ";
+                }
+            }
         }
     });
     </script>
+    <script src="public/assets/js/shipping_cal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="public/assets/js/vn_address_chooser.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU6ZeC_LFIYbYc9YGtZOkgOc0TlEODdWw"></script>
 </body>
 </html>

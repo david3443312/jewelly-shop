@@ -79,79 +79,80 @@
                     </select>
                 </div>
             </div>
-    
-            <div class="category-grid">
-                <a href="/jewelry-shop/products.php?category=ring">
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="public/assets/images/categories/ring.jpg" alt="Nhẫn">
-                        </div>
-                        <div class="category-info">
-                            <h2 class="category-title">Nhẫn</h2>
-                            <p class="category-description">Khám phá bộ sưu tập nhẫn tinh tế và sang trọng.</p>
-                        </div>
+        </div>
+        <div class="category-grid">
+            <a href="/jewelry-shop/products.php?category=ring">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="public/assets/images/categories/ring.jpg" alt="Nhẫn">
                     </div>
-                </a>
+                    <div class="category-info">
+                        <h2 class="category-title">Nhẫn</h2>
+                        <p class="category-description">Khám phá bộ sưu tập nhẫn tinh tế và sang trọng.</p>
+                    </div>
+                </div>
+            </a>
             
-                <a href="/jewelry-shop/products.php?category=bracelet">
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="public/assets/images/categories/bracelet.jpg" alt="Vòng tay">
-                        </div>
-                        <div class="category-info">
-                            <h2 class="category-title">Vòng tay</h2>
-                            <p class="category-description">Tìm cho mình chiếc vòng tay phong cách, cá tính.</p>
-                        </div>
+            <a href="/jewelry-shop/products.php?category=bracelet">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="public/assets/images/categories/bracelet.jpg" alt="Vòng tay">
                     </div>
-                </a>
+                    <div class="category-info">
+                        <h2 class="category-title">Vòng tay</h2>
+                        <p class="category-description">Tìm cho mình chiếc vòng tay phong cách, cá tính.</p>
+                    </div>
+                </div>
+            </a>
             
-                <a href="/jewelry-shop/products.php?category=necklace">
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="public/assets/images/categories/necklace.jpg" alt="Vòng cổ">
-                        </div>
-                        <div class="category-info">
-                            <h2 class="category-title">Vòng cổ</h2>
-                            <p class="category-description">Bộ sưu tập vòng cổ đẹp mắt, hoàn hảo cho mọi phong cách.</p>
-                        </div>
+            <a href="/jewelry-shop/products.php?category=necklace">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="public/assets/images/categories/necklace.jpg" alt="Vòng cổ">
                     </div>
-                </a>
+                    <div class="category-info">
+                        <h2 class="category-title">Vòng cổ</h2>
+                        <p class="category-description">Bộ sưu tập vòng cổ đẹp mắt, hoàn hảo cho mọi phong cách.</p>
+                    </div>
+                </div>
+            </a>
             
-                <a href="/jewelry-shop/products.php?category=chain">
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="public/assets/images/categories/chain.jpg" alt="Dây chuyền">
-                        </div>
-                        <div class="category-info">
-                            <h2 class="category-title">Dây chuyền</h2>
-                            <p class="category-description">Dây chuyền độc đáo mang đậm nét hiện đại và truyền thống.</p>
-                        </div>
+            <a href="/jewelry-shop/products.php?category=chain">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="public/assets/images/categories/chain.jpg" alt="Dây chuyền">
                     </div>
-                </a>
+                    <div class="category-info">
+                        <h2 class="category-title">Dây chuyền</h2>
+                        <p class="category-description">Dây chuyền độc đáo mang đậm nét hiện đại và truyền thống.</p>
+                    </div>
+                </div>
+            </a>
             
-                <a href="/jewelry-shop/products.php?category=earring">
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="public/assets/images/categories/earring.jpg" alt="Khuyên tai">
-                        </div>
-                        <div class="category-info">
-                            <h2 class="category-title">Khuyên tai</h2>
-                            <p class="category-description">Khuyên tai sang trọng, tinh tế cho mọi phong cách.</p>
-                        </div>
+            <a href="/jewelry-shop/products.php?category=earring">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="public/assets/images/categories/earring.jpg" alt="Khuyên tai">
                     </div>
-                </a>
+                    <div class="category-info">
+                        <h2 class="category-title">Khuyên tai</h2>
+                        <p class="category-description">Khuyên tai sang trọng, tinh tế cho mọi phong cách.</p>
+                    </div>
+                </div>
+            </a>
             
-                <a href="/jewelry-shop/products.php?category=watch">
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="public/assets/images/categories/watch.jpg" alt="Đồng hồ">
-                        </div>
-                        <div class="category-info">
-                            <h2 class="category-title">Đồng hồ</h2>
-                            <p class="category-description">Đồng hồ thời trang và đẳng cấp dành cho bạn.</p>
-                        </div>
+            <a href="/jewelry-shop/products.php?category=watch">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="public/assets/images/categories/watch.jpg" alt="Đồng hồ">
                     </div>
-                </a>
-            </div>
+                    <div class="category-info">
+                        <h2 class="category-title">Đồng hồ</h2>
+                        <p class="category-description">Đồng hồ thời trang và đẳng cấp dành cho bạn.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
     </main>
 </body>
+</html>
