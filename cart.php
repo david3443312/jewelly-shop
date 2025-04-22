@@ -169,20 +169,6 @@
 
                         <button type="submit" class="checkout-button">Đặt hàng</button>
                     </form>
-                    
-    
-                    <table class="totals-table">
-                        <tr>
-                            <td class="label">Phí vận chuyển</td>
-                            <td class="value shipping-cost">0đ</td>
-                        </tr>
-                        <tr class = "grand-total-row">
-                            <td class="label"><b>Tổng cộng</b></td>
-                            <td class="value grand-total"><?= number_format($grand_total); ?>đ</td>
-                        </tr>
-                    </table>
-    
-                    <button class="checkout-button">Kiểm tra đơn hàng</button>
                 </div>
             </div>
         </div>

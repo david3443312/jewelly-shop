@@ -54,14 +54,12 @@ body {
 
 .notification-list,
 .address-list,
-.order-list {
     list-style: none;
     padding: 0;
 }
 
 .notification-list li,
 .address-list li,
-.order-list li {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -81,4 +79,118 @@ body {
 
 .edit-address-btn:hover {
     background-color: #b8860b;
+}
+
+/* Order list styling */
+.order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-item {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.order-header {
+    background-color: #f9f9f4;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.order-header p {
+    margin: 5px 15px 5px 0;
+}
+
+.order-status {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.order-status.pending {
+    background-color: #ffeeba;
+    color: #856404;
+}
+
+.order-status.processing {
+    background-color: #b8daff;
+    color: #004085;
+}
+
+.order-status.shipped {
+    background-color: #c3e6cb;
+    color: #155724;
+}
+
+.order-status.delivered {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.order-status.cancelled {
+    background-color: #f5c6cb;
+    color: #721c24;
+}
+
+.toggle-details {
+    padding: 5px 10px;
+    background-color: #81795d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.toggle-details:hover {
+    background-color: #655b3c;
+}
+
+.order-details {
+    display: none;
+    padding: 15px;
+    background-color: white;
+}
+
+.order-details h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #4a4a4a;
+}
+
+.order-products {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.order-products th, 
+.order-products td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-products th {
+    background-color: #f9f9f4;
+}
+
+.product-thumbnail {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 20px;
+    color: #666;
 }

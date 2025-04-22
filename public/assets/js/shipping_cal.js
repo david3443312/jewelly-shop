@@ -107,7 +107,7 @@ document.querySelector('.shipping-calculate').addEventListener('click', function
                 }
                 
                 shippingCostEl.textContent = shippingCost.toLocaleString() + 'đ';
-                alert("Không thể tính khoảng cách chính xác. Đã áp dụng phí vận chuyển cơ bản.");
+                document.getElementById('shipping-cost-input').value = shippingCost;
             }
         });
     } else {
