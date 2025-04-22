@@ -1,0 +1,113 @@
+/* main page setup */
+
+.meetings {
+    color: #3d3421;
+    font-weight: bolder;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin-left: 50px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group label {
+    color: #7d7158;
+    font-size: 18px;
+    margin-bottom: 10px;
+}   
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    flex: 2;
+}
+
+.signup-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Unifying button styles */
+.signup-btn, .signup-btn1 {
+    padding: 10px 20px; 
+    background-color: #c2a581; 
+    color: white; 
+    border: none; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    font-weight: bold;
+    font-family: "Cormorant Upright", serif;
+}
+
+.signup-btn {
+    margin-top: 141px;
+}
+
+.signup-btn:hover, .signup-btn1:hover {
+    opacity: 0.8;
+}
+
+/* Login/Signup link styling */
+.login-link, .signup-link {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.login-link h2, .signup-link h2 {
+    font-size: 20px;
+    color: #3d3421;
+    margin-bottom: 10px;
+}
+
+.login-link a, .signup-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c2a581;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-link a:hover, .signup-link a:hover {
+    opacity: 0.8;
+}
+
+/* Forgot password styling */
+.fd-ps a {
+    color: #7d7158;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fd-ps a:hover {
+    text-decoration: underline;
+}
