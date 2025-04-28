@@ -40,8 +40,10 @@
         
         <div class="categories">
             <div class="category">
-                <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Necklaces">
-                <h3>Necklaces</h3>
+                <a href="product.php">
+                    <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Necklaces">
+                    <h3>Necklaces</h3>
+                </a>
             </div>
             <div class="category">
                 <img src="../jewelry-shop//public//assets//images//gallery//hsj-pendant2.jpg" alt="Pendants">
