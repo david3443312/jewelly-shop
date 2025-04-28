@@ -157,10 +157,10 @@
                         </div>
 
                         <table class="totals-table">
-                            <tr>
+                            <!-- <tr>
                                 <td class="label">Khoảng cách vận chuyển</td>
                                 <td class="value shipping-distance">Chưa tính</td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td class="label">Phí vận chuyển</td>
                                 <td class="value shipping-cost">0đ</td>

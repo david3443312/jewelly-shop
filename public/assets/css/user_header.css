@@ -198,3 +198,26 @@ nav {
     visibility: visible; /* Hiển thị menu */
     opacity: 1; /* Đặt độ mờ đầy đủ */
 }
+.wishlist-link {
+    position: relative;
+    margin-right: 15px;
+}
+
+.wishlist-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #d4af37;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist-link:hover .iconify {
+    color: #d4af37;
+}

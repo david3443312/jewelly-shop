@@ -34,6 +34,13 @@
 </head>
 <body>
     <?php include "public/assets/components/user_header.php"; ?>
+    <!-- Display messages -->
+    <?php
+    if(isset($_SESSION['message'])) {
+        echo '<div class="message" style="margin-top: 100px; text-align: center; padding: 10px; background-color: #f8f9fa; color: #333;">'.$_SESSION['message'].'</div>';
+        unset($_SESSION['message']);
+    }
+    ?>
     <div class="container">
         <h1 class="page-title"><?= $title ?></h1>
         <div class="breadcrumb">
@@ -54,26 +61,32 @@
                 if ($select_products->rowCount() > 0) {
                     while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <form action="public/assets/components/add_to_cart.php" method="post" class="product-item">
-                <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
-                <input type="hidden" name="quantity" value="1">
-                
+            <div class="product-item">
+                <input type="hidden" id="product-id-<?= $fetch_products['id']; ?>" value="<?= $fetch_products['id']; ?>">
+        
                 <div class="product-image">
                     <img src="public/assets/uploaded_files/<?= $fetch_products['image']; ?>" alt="<?= $fetch_products['name']; ?>">
                     <div class="product-actions">
-                        <button type="submit" name="add_to_cart" class="action-btn cart-btn">
-                            <i class="fas fa-shopping-cart"></i>
-                            Thêm vào giỏ hàng
-                        </button>
-                        <button type="submit" name="add_to_wishlist" class="action-btn wishlist-btn">
-                            <i class="fas fa-heart"></i>
-                            Yêu thích
-                        </button>
+                        <form action="public/assets/components/add_to_cart.php" method="post" class="action-form">
+                            <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" name="add_to_cart" class="action-btn cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Thêm vào giỏ hàng
+                            </button>
+                        </form>
+                        <form action="public/assets/components/add_to_wishlist.php" method="post" class="action-form">
+                            <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+                            <button type="submit" name="add_to_wishlist" class="action-btn wishlist-btn">
+                                <i class="fas fa-heart"></i>
+                                Yêu thích
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <h3 class="product-title"><?= $fetch_products['name']; ?></h3>
-                <div class="product-price"><?= number_format($fetch_products['price']); ?>đ</div>
-            </form>
+                <div class="product-price" style="font-size: 25px;"><?= number_format($fetch_products['price']); ?>đ</div>
+            </div>
             <?php
                     }
                 } else {
@@ -84,7 +97,6 @@
             ?>
         </div>
     </div>
-    
     <?php include "public/assets/components/user_footer.php"; ?>
 </body>
 </html>
