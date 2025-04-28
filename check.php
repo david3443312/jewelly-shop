@@ -1,4 +1,3 @@
-<!-- Replace the static order list in user_profile.php -->
 <div id="orders" class="section hidden">
     <h2>Đơn mua</h2>
     <?php
