@@ -14,15 +14,14 @@ if (isset($_COOKIE['user_id']) && !empty($_COOKIE['user_id'])) {
 
 // Nới lỏng việc kiểm tra để đảm bảo $user_id hoạt động đúng
 $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
-
-// Bạn có thể gỡ lỗi bằng cách mở comment dòng dưới
-// echo "Debug: user_id = " . ($user_id ? $user_id : "không có");
 ?>
 
 <!-- Rest of the header remains the same -->
 <header class="header-area">
     <nav>
-        <img src="public/assets/images/logoicon.png" alt="Brand logo" class="logo" style="width: 50px; height: 50px;">
+        <a href="/jewelry-shop/home.php">
+            <img src="public/assets/images/logoicon.png" alt="Brand logo" class="logo" style="width: 50px; height: 50px;">
+        </a>
         <ul class="menu">
             <li><a href="/jewelry-shop/home.php">Trang chủ</a></li>
             <li class="dropdown-category">
@@ -78,6 +77,9 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
             <li><a href="#">Liên hệ</a></li>
         </ul>
         <div class="icons">
+            <a href="/jewelry-shop/wishlist.php" class="wishlist-link">
+                <span class="iconify" data-icon="ph:heart" style="height: 150%; width: 150%; color: #7D6E5D;"></span>
+            </a>
             <a href="/jewelry-shop/cart.php"><span class="iconify" data-icon="fluent:cart-20-regular" style="height: 150%; width: 150%;"></span></a>
             <div class="search">
                 <input type="text" placeholder="Tìm kiếm...">

@@ -42,26 +42,26 @@
             </div>
             
             <div class="categories">
-                <div class="category">
+                <a href="/jewelry-shop/products.php?category=necklace" class="category">
                     <img src="../jewelry-shop//public//assets//images//gallery//vc.jpg" alt="Vòng cổ">
                     <h3>Vòng cổ</h3>
-                </div>
-                <div class="category">
+                </a>
+                <a href="/jewelry-shop/products.php?category=chain" class="category">
                     <img src="../jewelry-shop//public//assets//images//gallery//hsj-pendant2.jpg" alt="Mặt dây chuyền">
                     <h3>Mặt dây chuyền</h3>
-                </div>
-                <div class="category">
+                </a>
+                <a href="/jewelry-shop/products.php?category=earring" class="category">
                     <img src="../jewelry-shop//public//assets//images//gallery//hsj-earring.jpg" alt="Hoa tai">
                     <h3>Hoa tai</h3>
-                </div>
-                <div class="category">
+                </a>
+                <a href="/jewelry-shop/products.php?category=ring" class="category">
                     <img src="../jewelry-shop//public//assets//images//gallery//hsj-ring2.jpg" alt="Nhẫn">
                     <h3>Nhẫn</h3>
-                </div>
-                <div class="category">
+                </a>
+                <a href="/jewelry-shop/products.php?category=bracelet" class="category">
                     <img src="../jewelry-shop//public//assets//images//gallery//hsj-bracelet.jpg" alt="Vòng tay">
                     <h3>Vòng tay</h3>
-                </div>
+                </a>
                 <div class="category">
                     <img src="../jewelry-shop//public//assets//images//gallery//hsj-gold-jewelry.jpg" alt="Trang sức vàng">
                     <h3>Trang sức vàng</h3>

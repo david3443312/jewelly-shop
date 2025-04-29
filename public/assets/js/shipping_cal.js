@@ -63,6 +63,12 @@ document.querySelector('.shipping-calculate').addEventListener('click', function
                 // Get distance value in meters and convert to km
                 const distanceValue = response.rows[0].elements[0].distance.value / 1000;
                 console.log("Khoảng cách tính được: " + distanceValue + " km");
+
+                // Display the distance in the UI
+                const distanceEl = document.querySelector('.shipping-distance');
+                if (distanceEl) {
+                    distanceEl.textContent = distanceValue.toFixed(1) + " km";
+                }
                 
                 // Calculate shipping cost based on distance and product total
                 if (distanceValue <= INITIAL_DISTANCE) {
@@ -113,16 +119,26 @@ document.querySelector('.shipping-calculate').addEventListener('click', function
     } else {
         // Google Maps API not loaded - use fallback method
         let shippingCost = 0;
+        let estimatedDistance = 0;
         if (cityText.includes("Hà Nội")) {
             if (districtText.includes("Hà Đông")) {
+                estimatedDistance = 5; 
                 shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? 0 : BASE_SHIPPING_COST;
             } else {
+                estimatedDistance = 15;
                 shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? COST_PER_10KM : BASE_SHIPPING_COST + COST_PER_10KM;
             }
         } else {
+            estimatedDistance = 50; 
             shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? COST_PER_10KM * 3 : BASE_SHIPPING_COST + (COST_PER_10KM * 3);
         }
         
+        // Display the estimated distance
+        const distanceEl = document.querySelector('.shipping-distance');
+        if (distanceEl) {
+            distanceEl.textContent = `~${estimatedDistance} km (ước tính)`;
+        }
+
         shippingCostEl.textContent = shippingCost.toLocaleString() + 'đ';
         
         // Update grand total
