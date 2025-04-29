@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <h3><?= $item['name']; ?></h3>
-                    <div class="price"><?= number_format($item['price']); ?>đ</div>
+                    <div class="price" style="font-size:25px;"><?= number_format($item['price']); ?>đ</div>
                 </div>
                 <?php
                         }

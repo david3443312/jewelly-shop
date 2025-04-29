@@ -19,7 +19,9 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
 <!-- Rest of the header remains the same -->
 <header class="header-area">
     <nav>
-        <img src="public/assets/images/logoicon.png" alt="Brand logo" class="logo" style="width: 50px; height: 50px;">
+        <a href="/jewelry-shop/home.php">
+            <img src="public/assets/images/logoicon.png" alt="Brand logo" class="logo" style="width: 50px; height: 50px;">
+        </a>
         <ul class="menu">
             <li><a href="/jewelry-shop/home.php">Trang chủ</a></li>
             <li class="dropdown-category">
