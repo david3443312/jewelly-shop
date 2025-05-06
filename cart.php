@@ -122,6 +122,10 @@
                         <input type="hidden" name="shipping_cost" id="shipping-cost-input" value="0">
                         <input type="hidden" name="payment_method" value="COD">
 
+                        <input type="hidden" id="city_text" name="city_text" value="">
+                        <input type="hidden" id="district_text" name="district_text" value="">
+                        <input type="hidden" id="ward_text" name="ward_text" value="">
+
                         <div class="shipping-info">
                             <div class="form-group">
                                 <label for="full-name">Họ tên:</label>

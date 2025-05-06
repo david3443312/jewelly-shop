@@ -221,3 +221,26 @@ nav {
 .wishlist-link:hover .iconify {
     color: #d4af37;
 }
+
+/* Định dạng cho icon giỏ hàng */
+.cart-link {
+    position: relative;
+    display: inline-block;
+}
+
+/* Định dạng số đếm sản phẩm */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #d4af37; /* Màu vàng gold phù hợp với trang sức */
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}

@@ -4,6 +4,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Make sure we have database connection
+if (!isset($conn) || $conn === null) {
+    include_once __DIR__ . '/../components/connect.php';
+}
+
 // Kiểm tra đăng nhập bằng cả cookie và session để đảm bảo chính xác
 $user_id = null;
 if (isset($_COOKIE['user_id']) && !empty($_COOKIE['user_id'])) {
@@ -80,7 +85,26 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
             <a href="/jewelry-shop/wishlist.php" class="wishlist-link">
                 <span class="iconify" data-icon="ph:heart" style="height: 150%; width: 150%; color: #7D6E5D;"></span>
             </a>
-            <a href="/jewelry-shop/cart.php"><span class="iconify" data-icon="fluent:cart-20-regular" style="height: 150%; width: 150%;"></span></a>
+            <a href="/jewelry-shop/cart.php" class="cart-link">
+                <span class="iconify" data-icon="fluent:cart-20-regular" style="height: 150%; width: 150%;"></span>
+                <?php
+                // Đếm số sản phẩm trong giỏ hàng
+                if ($user_id) {
+                    try {
+                        $cart_count_query = $conn->prepare("SELECT SUM(quantity) as cart_count FROM `cart` WHERE user_id = ?");
+                        $cart_count_query->execute([$user_id]);
+                        $cart_count = $cart_count_query->fetch(PDO::FETCH_ASSOC)['cart_count'] ?? 0;
+                        
+                        // Hiển thị số sản phẩm nếu có ít nhất 1 sản phẩm trong giỏ
+                        if ($cart_count > 0) {
+                            echo '<span class="cart-count">' . $cart_count . '</span>';
+                        }
+                    } catch(Exception $e) {
+                        // Xử lý lỗi nếu cần
+                    }
+                }
+                ?>
+            </a>
             <div class="search">
                 <input type="text" placeholder="Tìm kiếm...">
                 <button><span class="iconify" data-icon="ph:magnifying-glass"></span></button>
