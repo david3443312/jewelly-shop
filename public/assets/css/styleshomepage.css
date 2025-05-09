@@ -40,9 +40,6 @@
     border-radius: 15px 0 0 15px;
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(137, 133, 133, 0.8);
-}
 
 .quote {
     margin: 50px 0;
