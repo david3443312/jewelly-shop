@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const productId = this.getAttribute('data-product-id');
             const row = this.closest('tr[data-product-id]');
             
+            // Lấy số lượng sản phẩm cần xóa để cập nhật counter
+            const removedQuantity = parseInt(row.querySelector('.quantity-input').value) || 1;
+            
             if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?')) {
                 // Send AJAX request to delete item
                 fetch('public/assets/components/remove_from_cart.php', {
@@ -22,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         // Update totals
                         updateGrandTotal();
+                        
+                        // Update cart count in header
+                        updateCartCountBadge(removedQuantity);
                         
                         // Check if cart is empty
                         const remainingItems = document.querySelectorAll('tr[data-product-id]');
@@ -43,5 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Your existing JavaScript code...
+    // Function to update cart count badge in header
+    function updateCartCountBadge(removedQuantity) {
+        const cartCountBadge = document.querySelector('.cart-count');
+        
+        if (cartCountBadge) {
+            // Get current count
+            const currentCount = parseInt(cartCountBadge.textContent);
+            
+            // Calculate new count
+            const newCount = currentCount - removedQuantity;
+            
+            // Update or remove badge
+            if (newCount <= 0) {
+                // If no items left, remove badge
+                cartCountBadge.remove();
+            } else {
+                // Update badge count
+                cartCountBadge.textContent = newCount;
+            }
+        }
+    }
 });
