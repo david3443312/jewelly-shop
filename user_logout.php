@@ -19,6 +19,14 @@
         );
     }
     
+    // Xóa user_id cookie
+    setcookie('user_id', '', time() - 3600, '/');
+    
+    // Xóa tất cả các cookie liên quan đến người dùng
+    if (isset($_COOKIE['user_id'])) {
+        unset($_COOKIE['user_id']);
+    }
+    
     // Hủy session
     session_destroy();
     

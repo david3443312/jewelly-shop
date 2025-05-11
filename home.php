@@ -12,6 +12,7 @@
         <title>Trang chủ - Jewelry Shop</title>
         <link rel="stylesheet" href="public/assets/css/user_header.css">
         <link rel="stylesheet" href="public/assets/css/styleshomepage.css">
+        <link rel="stylesheet" href="public/assets/css/slider.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,18 +24,58 @@
 <body>
     <?php include "public/assets/components/user_header.php"; ?>
     <main>
-        <div class = "banner">
-            <div class = "slides">
-                <img src="../jewelry-shop/public/assets/images/homepage1.jpg" alt="banner">
-                <img src="../jewelry-shop/public/assets/images/homepage2.jpg" alt="banner">
-                <img src="../jewelry-shop/public/assets/images/homepage3.jpg" alt="banner">
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <div class="slide-image" style="background-image: url('../jewelry-shop/public/assets/images/homepage1.jpg');"></div>
+                <div class="overlay"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Innovative & Timeless Jewellery</h2>
+                    <p class="slide-subtitle">Since 1990</p>
+                </div>
             </div>
-            <a class = "prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class = "next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('../jewelry-shop/public/assets/images/2.webp');"></div>
+                <div class="overlay"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Exquisite Pearl Collections</h2>
+                    <p class="slide-subtitle">Elegance in Every Detail</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('../jewelry-shop/public/assets/images/3.webp');"></div>
+                <div class="overlay"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Handcrafted Diamond Pieces</h2>
+                    <p class="slide-subtitle">For Moments That Last Forever</p>
+                </div>
+            </div>
         </div>
+
+        <div class="slider-controls">
+            <div class="slider-dot active" data-index="0"></div>
+            <div class="slider-dot" data-index="1"></div>
+            <div class="slider-dot" data-index="2"></div>
+        </div>
+
+        <div class="slider-arrows">
+            <div class="slider-arrow prev">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+                </svg>
+            </div>
+            <div class="slider-arrow next">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+  
         <div class="container">
             <div class = "quote">
-                <h1 style="font-family: Great Vibes, cursive; font-size: 50px"> <b>“Wearing jewelry is the way to express who you are... without saying a word."</b></h1>
+                <h1 style="font-family: Great Vibes, cursive; font-size: 50px"> <b>"Wearing jewelry is the way to express who you are... without saying a word."</b></h1>
                 <p>Đeo trang sức là cách thể hiện bạn mà không cần một lời nói nào.</p>
             </div>  
             <div class="header">
@@ -117,12 +158,16 @@
         <!-- Customer Care Section -->
         <h2>Chăm sóc khách hàng</h2>
         <div class="care-items">
+                <div class="care-item">
+                    <a href="knowlwdge.php">
+                        <img src="../jewelry-shop//public//assets//images//footer//tiffany-anthony-09bKHOZ29us-unsplash.jpg" alt="Kiến thức về ngọc trai">
+                    </a>
+                    <h3>Kiến thức</h3>
+                </div>
             <div class="care-item">
-                <img src="../jewelry-shop//public//assets//images//footer//tiffany-anthony-09bKHOZ29us-unsplash.jpg" alt="Kiến thức về ngọc trai">
-                <h3>Kiến thức</h3>
-            </div>
-            <div class="care-item">
-                <img src="../jewelry-shop//public//assets//images//footer//cornelia-ng-2zHQhfEpisc-unsplash.jpg" alt="Câu hỏi thường gặp">
+                <a href="FAQ.php">
+                    <img src="../jewelry-shop//public//assets//images//footer//cornelia-ng-2zHQhfEpisc-unsplash.jpg" alt="Câu hỏi thường gặp">
+                </a>
                 <h3>Câu hỏi thường gặp</h3>
             </div>
             <div class="care-item">
@@ -133,6 +178,6 @@
     </div>
     <?php include '../jewelry-shop/public/assets/components/user_footer.php'; ?>
     </main>
-    <script src = "../jewelry-shop//public/assets/js/slider.js"></script>
+    <script src="../jewelry-shop/public/assets/js/slider.js"></script>
 </body>
 </html>

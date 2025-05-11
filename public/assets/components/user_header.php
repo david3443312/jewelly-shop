@@ -77,7 +77,7 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                 </div>
             </li>
             <li><a href="#">Bộ sưu tập</a></li>
-            <li><a href="#">Bài viết</a></li>
+            <li><a href="#">Về chúng tôi</a></li>
             <li><a href="#">Danh sách cửa hàng</a></li>
             <li><a href="#">Liên hệ</a></li>
         </ul>
