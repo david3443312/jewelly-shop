@@ -34,19 +34,21 @@
 </head>
 <body>
     <?php include "public/assets/components/user_header.php"; ?>
-    <!-- Display messages -->
-    <?php
-    if(isset($_SESSION['message'])) {
-        echo '<div class="message" style="margin-top: 100px; text-align: center; padding: 10px; background-color: #f8f9fa; color: #333;">'.$_SESSION['message'].'</div>';
-        unset($_SESSION['message']);
-    }
-    ?>
+    
     <div class="container">
         <h1 class="page-title"><?= $title ?></h1>
         <div class="breadcrumb">
             <a href="home.php">Trang chủ</a> / <a href="shop.php">Trang sức</a> / <a href="#"><?= $title ?></a>
         </div>
-        
+        <div class="filter-sort" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+            <label for="sort-select" style="margin-right: 10px; font-weight: bold;">Sắp xếp:</label>
+            <select id="sort-select" style="padding: 6px 12px; border-radius: 5px; border: 1px solid #ccc;">
+                <option value="az">Tên (A-Z)</option>
+                <option value="za">Tên (Z-A)</option>
+                <option value="price-asc">Giá thấp đến cao</option>
+                <option value="price-desc">Giá cao xuống thấp</option>
+            </select>
+        </div>
         <div class="product-grid">
             <?php
                 // Truy vấn sản phẩm theo category nếu có
@@ -63,7 +65,6 @@
             ?>
             <div class="product-item">
                 <input type="hidden" id="product-id-<?= $fetch_products['id']; ?>" value="<?= $fetch_products['id']; ?>">
-        
                 <div class="product-image">
                     <img src="public/assets/uploaded_files/<?= $fetch_products['image']; ?>" alt="<?= $fetch_products['name']; ?>">
                     <div class="product-actions">
@@ -98,5 +99,125 @@
         </div>
     </div>
     <?php include "public/assets/components/user_footer.php"; ?>
+    <!-- Toast message -->
+    <div id="toast-message" style="display:none; position: fixed; right: 30px; bottom: 30px; background: #4CAF50; color: #fff; padding: 16px 28px; border-radius: 8px; font-size: 18px; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); min-width: 280px; opacity: 0; transition: opacity 0.4s, transform 0.4s; transform: translateY(40px); position: fixed;">
+        Thêm vào giỏ hàng thành công!
+        <div id="toast-progress" style="height: 4px; background: #FFC107; width: 100%; position: absolute; left: 0; bottom: 0; border-radius: 0 0 8px 8px; transition: width 2.5s linear;"></div>
+    </div>
+    <!-- Toast message cho yêu thích -->
+    <div id="toast-wishlist" style="display:none; position: fixed; right: 30px; bottom: 80px; background: #e91e63; color: #fff; padding: 16px 28px; border-radius: 8px; font-size: 18px; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); min-width: 280px; opacity: 0; transition: opacity 0.4s, transform 0.4s; transform: translateY(40px);">
+        Đã thêm vào danh sách yêu thích!
+        <div id="toast-wishlist-progress" style="height: 4px; background: #fff176; width: 100%; position: absolute; left: 0; bottom: 0; border-radius: 0 0 8px 8px; transition: width 2.5s linear;"></div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('form[action*="add_to_cart.php"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.text())
+                .then(() => {
+                    var toast = document.getElementById('toast-message');
+                    var progress = document.getElementById('toast-progress');
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                        toast.style.opacity = '1';
+                        toast.style.transform = 'translateY(0)';
+                        progress.style.width = '100%';
+                        // Reset progress bar
+                        progress.style.transition = 'none';
+                        progress.offsetWidth; // force reflow
+                        progress.style.transition = 'width 2.5s linear';
+                        progress.style.width = '0%';
+                    }, 10);
+
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                        toast.style.transform = 'translateY(40px)';
+                        setTimeout(() => { toast.style.display = 'none'; }, 400);
+                    }, 2500);
+                });
+            });
+        });
+
+        // Handle sorting products
+        const sortSelect = document.getElementById('sort-select');
+        const productGrid = document.querySelector('.product-grid');
+
+        sortSelect.addEventListener('change', function() {
+            const items = Array.from(productGrid.querySelectorAll('.product-item'));
+            let sortedItems = [];
+
+            switch (this.value) {
+                case 'az':
+                    sortedItems = items.sort((a, b) => 
+                        a.querySelector('.product-title').textContent.localeCompare(
+                            b.querySelector('.product-title').textContent, 'vi', {sensitivity: 'base'}
+                        )
+                    );
+                    break;
+                case 'za':
+                    sortedItems = items.sort((a, b) => 
+                        b.querySelector('.product-title').textContent.localeCompare(
+                            a.querySelector('.product-title').textContent, 'vi', {sensitivity: 'base'}
+                        )
+                    );
+                    break;
+                case 'price-asc':
+                    sortedItems = items.sort((a, b) => 
+                        parseInt(a.querySelector('.product-price').textContent.replace(/[^\d]/g, '')) -
+                        parseInt(b.querySelector('.product-price').textContent.replace(/[^\d]/g, ''))
+                    );
+                    break;
+                case 'price-desc':
+                    sortedItems = items.sort((a, b) => 
+                        parseInt(b.querySelector('.product-price').textContent.replace(/[^\d]/g, '')) -
+                        parseInt(a.querySelector('.product-price').textContent.replace(/[^\d]/g, ''))
+                    );
+                    break;
+            }
+
+            // Xóa và thêm lại các sản phẩm đã sắp xếp
+            sortedItems.forEach(item => productGrid.appendChild(item));
+        });
+
+    });
+    document.querySelectorAll('form[action*="add_to_wishlist.php"]').forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.text())
+            .then(() => {
+                var toast = document.getElementById('toast-wishlist');
+                var progress = document.getElementById('toast-wishlist-progress');
+                toast.style.display = 'block';
+                setTimeout(() => {
+                    toast.style.opacity = '1';
+                    toast.style.transform = 'translateY(0)';
+                    progress.style.width = '100%';
+                    // Reset progress bar
+                    progress.style.transition = 'none';
+                    progress.offsetWidth; // force reflow
+                    progress.style.transition = 'width 2.5s linear';
+                    progress.style.width = '0%';
+                }, 10);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(40px)';
+                    setTimeout(() => { toast.style.display = 'none'; }, 400);
+                }, 2500);
+            });
+        });
+    });
+    </script>
 </body>
 </html>

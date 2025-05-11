@@ -90,6 +90,11 @@
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
+    border-radius: 22px; /* tăng độ cong */
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s, transform 0.3s;
+    margin-top: 30px;
 }
 
 .product-item:hover {
@@ -127,6 +132,7 @@
     color: #888;
     margin-top: 8px;
     font-size: 25px;
+    margin-bottom: 15px;
 }
 
 .pagination {
@@ -159,14 +165,19 @@
 .product-actions {
     position: absolute;
     bottom: -100%;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* ngắn lại */
+    min-width: 180px;
+    max-width: 240px;
+    padding: 10px 0;
+    background: rgba(255,255,255,0.97);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    transition: bottom 0.3s ease-in-out;
+    gap: 8px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: bottom 0.3s, box-shadow 0.3s;
 }
 
 .product-item:hover .product-actions {
@@ -175,36 +186,46 @@
 
 .action-btn {
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    padding: 8px 0;
+    border-radius: 22px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: all 0.3s ease;
+    font-size: 16px;
+    font-family: "Cormorant Upright", serif;
+    width: 90%;
+    margin: 0 auto;
+    transition: background 0.25s, color 0.25s, border 0.25s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 .cart-btn {
-    background-color: #333;
-    color: white;
+    background-color: #ff9800;
+    color: #fff;
+    border: 1px solid #ff9800;
 }
 
 .cart-btn:hover {
-    background-color: #444;
+    background-color: #fff3e0;
+    color: #ff9800;
+    border: 1.5px solid #ff9800;
 }
 
+/* Yêu thích: màu hồng */
 .wishlist-btn {
     background-color: #fff;
-    color: #333;
-    border: 1px solid #333;
+    color: #e91e63;
+    border: 1.5px solid #e91e63;
 }
 
 .wishlist-btn:hover {
-    background-color: #fff0f0;
-    border-color: #d4af37;
-    color: #d4af37;
+    background-color: #e91e63;
+    color: #e91e63;
+    border: 1.5px solid #e91e63;
 }
+
 
 .action-btn i {
     font-size: 16px;
@@ -218,27 +239,27 @@ grid-template-columns: repeat(3, 1fr);
 
 @media (max-width: 768px) {
     .product-grid {
-grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 576px) {
     .product-grid {
-grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
     
     .filter-sort {
-flex-direction: column;
-align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .sort-container {
-margin-top: 15px;
-width: 100%;
+        margin-top: 15px;
+        width: 100%;
     }
     
     .sort-dropdown {
-width: 100%;
+        width: 100%;
     }
 }
 
@@ -259,3 +280,4 @@ width: 100%;
     font-size: 14px;
     transition: all 0.3s ease;
 }
+
