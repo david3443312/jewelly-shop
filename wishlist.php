@@ -22,6 +22,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <link rel="icon" href="public/assets/images/logoicon.png" type="image/x-icon">
+    <style>
+    .remove-wishlist-btn:hover {
+        background: #f44336 !important;
+        color: #fff !important;
+        border-color: #f44336 !important;
+    }
+    </style>
 </head>
 <body>
     <?php include "public/assets/components/user_header.php"; ?>
@@ -36,6 +43,7 @@
                         FROM `wishlist` w
                         JOIN `products` p ON w.product_id = p.id
                         WHERE w.user_id = ?
+                        ORDER BY w.id DESC
                     ");
                     $wishlist_query->execute([$user_id]);
                     
@@ -44,9 +52,9 @@
                 ?>
                 <div class="product-item" data-product-id="<?= $item['product_id']; ?>">
                     <div class="product-image">
-                        <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>">
+                        <img src="public/assets/uploaded_files/<?= htmlspecialchars($item['image']); ?>" alt="<?= htmlspecialchars($item['name']); ?>">
                         <div class="product-actions">
-                            <form action="public/assets/components/add_to_cart.php" method="post">
+                            <form action="public/assets/components/add_to_cart.php" method="post" class="add-to-cart-form">
                                 <input type="hidden" name="product_id" value="<?= $item['product_id']; ?>">
                                 <input type="hidden" name="quantity" value="1">
                                 <button type="submit" name="add_to_cart" class="action-btn cart-btn">
@@ -60,8 +68,8 @@
                             </button>
                         </div>
                     </div>
-                    <h3><?= $item['name']; ?></h3>
-                    <div class="price" style="font-size:25px;"><?= number_format($item['price']); ?>đ</div>
+                    <h3 class="product-title"><?= htmlspecialchars($item['name']); ?></h3>
+                    <div class="product-price"><?= number_format($item['price']); ?>đ</div>
                 </div>
                 <?php
                         }
@@ -76,16 +84,33 @@
         </div>
     </main>
     <?php include "public/assets/components/user_footer.php"; ?>
-    
+    <?php include "public/assets/components/toast_message.php"; ?>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Handle removing items from wishlist
-            const removeButtons = document.querySelectorAll('.remove-wishlist-btn');
-            removeButtons.forEach(button => {
+            // Handle add to cart via AJAX + toast
+            document.querySelectorAll('.add-to-cart-form').forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    formData.append('add_to_cart', '1');
+                    fetch('public/assets/components/add_to_cart.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        showToast('cart');
+                    })
+                    .catch(() => {
+                        alert('Có lỗi xảy ra, hãy thử lại.');
+                    });
+                });
+            });
+            // Handle removing items from wishlist via AJAX + toast
+            document.querySelectorAll('.remove-wishlist-btn').forEach(function(button) {
                 button.addEventListener('click', function() {
                     const productId = this.getAttribute('data-product-id');
                     const productItem = this.closest('.product-item');
-                    
                     fetch('public/assets/components/update_wishlist.php', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -93,25 +118,18 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        if (data.success) {
+                        if(data.success) {
                             productItem.remove();
-                            // Check if wishlist is now empty
-                            if (document.querySelectorAll('.product-item').length === 0) {
-                                const productGrid = document.querySelector('.product-grid');
-                                productGrid.innerHTML = `
-                                    <div class="empty-wishlist">
-                                        <p>Danh sách yêu thích của bạn đang trống</p>
-                                        <a href="category.php" class="btn">Khám phá sản phẩm</a>
-                                    </div>
-                                `;
+                            showToast('remove');
+                            // If wishlist is empty after remove, show empty state
+                            if(document.querySelectorAll('.product-item').length === 0) {
+                                document.querySelector('.product-grid').innerHTML = '<div class="empty-wishlist"><p>Danh sách yêu thích của bạn đang trống</p><a href="category.php" class="btn">Khám phá sản phẩm</a></div>';
                             }
-                            alert(data.message);
-                        } else if (data.error) {
-                            alert(data.error);
+                        } else {
+                            alert('Không thể xóa sản phẩm.');
                         }
                     })
-                    .catch(err => {
-                        console.error(err);
+                    .catch(() => {
                         alert('Có lỗi xảy ra, hãy thử lại.');
                     });
                 });

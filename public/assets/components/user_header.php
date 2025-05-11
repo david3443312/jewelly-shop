@@ -40,7 +40,6 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                             <li><a href="/jewelry-shop/products.php?category=necklace">Vòng cổ</a></li>
                             <li><a href="/jewelry-shop/products.php?category=chain">Dây chuyền</a></li>
                             <li><a href="/jewelry-shop/products.php?category=earring">Khuyên tai</a></li>
-                            <li><a href="/jewelry-shop/products.php?category=watch">Đồng hồ</a></li>
                         </ul>
                     </div>
                     <div>
@@ -71,15 +70,14 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                             <li><a href="#">Đặt trang sức đôi</a></li>
                             <li><a href="#">Đặt trang sức theo nhóm</a></li>
                             <li><a href="#">Đặt trang sức thiết kế theo yêu cầu</a></li>
-                            <li><a href="#">Dịch vụ xỏ, bấm khuyên tai</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
             <li><a href="#">Bộ sưu tập</a></li>
-            <li><a href="#">Về chúng tôi</a></li>
-            <li><a href="#">Danh sách cửa hàng</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Bài viết</a></li>
+            <li><a href="about_us.php">Về chúng tôi</a></li>
+            <li><a href="#">Góp ý</a></li>
         </ul>
         <div class="icons">
             <a href="/jewelry-shop/wishlist.php" class="wishlist-link">

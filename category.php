@@ -17,7 +17,7 @@
     <main>
         <div class="container">
             <div class="header">
-                <h1>Nay tình yêu cần trang sức gì?</h1>
+                <h1>Bạn cần trang sức gì hôm nay?</h1>
                 <div class="jewelry-type">
                     <select name="jewelry-type" id="jewelry-type-select">
                         <option value="" disabled selected>Chọn loại trang sức</option>
