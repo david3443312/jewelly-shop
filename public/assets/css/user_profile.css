@@ -2,6 +2,7 @@ body {
     font-family: 'Cormorant Upright', serif;
     background-color: #f9f9f4;
     color: #333;
+    font-size: calc(16px + 2px) !important;
 }
 
 .profile-container {
@@ -11,6 +12,7 @@ body {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: calc(16px + 2px) !important;
 }
 
 .sidebar {
@@ -18,6 +20,7 @@ body {
     background-color: #f5f5f5;
     border-right: 1px solid #ddd;
     padding: 20px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .sidebar ul {
@@ -32,6 +35,7 @@ body {
     color: #555;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    font-size: calc(16px + 2px) !important;
 }
 
 .sidebar ul li:hover {
@@ -42,10 +46,12 @@ body {
 .content {
     width: 75%;
     padding: 20px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .section {
     display: none;
+    font-size: calc(16px + 2px) !important;
 }
 
 .section:not(.hidden) {
@@ -65,6 +71,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-address-btn {
@@ -106,12 +113,14 @@ body {
 
 .order-header p {
     margin: 5px 15px 5px 0;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-status {
     padding: 3px 8px;
     border-radius: 3px;
     font-weight: bold;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-status.pending {
@@ -146,6 +155,7 @@ body {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    font-size: calc(16px + 2px) !important;
 }
 
 .toggle-details:hover {
@@ -156,12 +166,14 @@ body {
     display: none;
     padding: 15px;
     background-color: white;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-details h4 {
     margin-top: 20px;
     margin-bottom: 10px;
     color: #4a4a4a;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-products {
@@ -175,6 +187,7 @@ body {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-products th {
@@ -193,17 +206,20 @@ body {
     text-align: center;
     padding: 20px;
     color: #666;
+    font-size: calc(16px + 2px) !important;
 }
 
 /* Form styling */
 .form-group {
     margin-bottom: 15px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: calc(16px + 2px) !important;
 }
 
 .form-group input {
@@ -212,12 +228,14 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .button-group {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-button, .save-button, .cancel-button {
@@ -227,6 +245,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-button {
@@ -280,6 +299,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     font-size: 12px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-shipping-btn:hover {
@@ -292,6 +312,7 @@ body {
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-shipping-form textarea {
@@ -301,10 +322,12 @@ body {
     border-radius: 4px;
     font-size: 16px;
     font-family: inherit;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-shipping-form .button-group {
     margin-top: 15px;
+    font-size: calc(16px + 2px) !important;
 }
 .edit-shipping-form .form-select {
     width: 100%;
@@ -315,10 +338,12 @@ body {
     font-family: inherit;
     margin-bottom: 10px;
     appearance: menulist;
+    font-size: calc(16px + 2px) !important;
 }
 
 .edit-shipping-form .form-group {
     margin-bottom: 15px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .cancel-order-btn {
@@ -333,6 +358,7 @@ body {
     align-items: center;
     gap: 5px;
     margin-right: 10px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .cancel-order-btn:hover {
@@ -353,11 +379,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-filter label {
     font-weight: bold;
     color: #555;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-filter select {
@@ -369,6 +397,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     min-width: 180px;
+    font-size: calc(16px + 2px) !important;
 }
 
 .order-filter select:focus {
@@ -378,4 +407,50 @@ body {
 
 .order-item.filtered {
     display: none;
+}
+
+/* Price, amount, total, and currency values: +4px */
+.order-header p strong, /* strong in order header (like Tổng tiền) */
+.order-header .order-total, /* if used */
+.order-products td:nth-child(2), /* price column */
+.order-products td:nth-child(4), /* total column */
+.order-products th, /* header for price/total */
+.order-products .price, /* if used */
+.order-products .amount, /* if used */
+.order-products .total, /* if used */
+.order-products .currency, /* if used */
+.order-details .order-total, /* if used */
+.order-details .shipping-cost, /* if used */
+.order-details .final-total, /* if used */
+.order-details .price, /* if used */
+.order-details .amount, /* if used */
+.order-details .total, /* if used */
+.order-details .currency, /* if used */
+.order-details tfoot td, /* totals in tfoot */
+.order-details tfoot td strong,
+.order-details tfoot td span {
+    font-size: calc(16px + 4px) !important;
+    font-weight: bold;
+    color: #433105;
+}
+
+/* Also target any .price, .amount, .total, .currency classes globally in user_profile */
+.price, .amount, .total, .currency {
+    font-size: calc(16px + 4px) !important;
+    font-weight: bold;
+    color: #3d2d05;
+}
+
+/* Responsive: keep increase for mobile too */
+@media (max-width: 768px) {
+    body, .profile-container, .sidebar, .sidebar ul li, .content, .section, .notification-list li, .address-list li, .order-header p, .order-status, .toggle-details, .order-details, .order-details h4, .order-products th, .order-products td, .no-orders, .form-group label, .form-group input, .button-group, .edit-button, .save-button, .cancel-button, .edit-shipping-btn, .edit-shipping-form, .edit-shipping-form textarea, .edit-shipping-form .form-select, .edit-shipping-form .form-group, .cancel-order-btn, .order-filter label, .order-filter select {
+        font-size: calc(14px + 2px) !important;
+    }
+    .price, .amount, .total, .currency,
+    .order-header p strong,
+    .order-products td:nth-child(2),
+    .order-products td:nth-child(4),
+    .order-details tfoot td, .order-details tfoot td strong, .order-details tfoot td span {
+        font-size: calc(14px + 4px) !important;
+    }
 }

@@ -74,15 +74,19 @@
                                 <td>
                                     <button type="button" class="remove-item" data-product-id="<?= $item['product_id']; ?>">×</button>
                                 </td>
-                                <td>
-                                    <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" class="product-image">
-                                    <span class="product-name"><?= $item['name']; ?></span>
+                                <td style="min-width:220px;">
+                                    <div class="cart-product-info">
+                                        <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" class="product-image cart-preview-img">
+                                        <span class="product-name"><?= $item['name']; ?></span>
+                                    </div>
                                 </td>
                                 <td class="product-price"><?= number_format($item['price']); ?>đ</td>
-                                <td class="product-quantity">
-                                    <button class="quantity-button btn-decrement">-</button>
-                                    <input type="text" value="<?= $item['quantity']; ?>" class="quantity-input" readonly>
-                                    <button class="quantity-button btn-increment">+</button>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="btn-decrement">-</button>
+                                        <input type="text" class="quantity-input" value="1">
+                                        <button class="btn-increment">+</button>
+                                    </div>
                                 </td>
                                 <td class="product-subtotal"><?= number_format($sub_total); ?>đ</td>
                             </tr>
@@ -186,6 +190,5 @@
     <script src="public/assets/js/remove_cart_items.js"></script>
     <script src="public/assets/js/vn_address_chooser.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU6ZeC_LFIYbYc9YGtZOkgOc0TlEODdWw"></script>
 </body>
 </html>
