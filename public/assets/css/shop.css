@@ -308,7 +308,6 @@ grid-template-columns: repeat(3, 1fr);
     flex: 0 0 auto;
 }
 .slider-arrow {
-    border: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

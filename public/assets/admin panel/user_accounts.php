@@ -7,25 +7,7 @@
         header('location: login.php');
     }
 
-    if(isset($_GET['delete'])){
-        $delete_id = $_GET['delete'];
-        
-        // Delete user's image if exists
-        $select_image = $conn->prepare("SELECT image FROM `users` WHERE id = ?");
-        $select_image->execute([$delete_id]);
-        $fetch_image = $select_image->fetch(PDO::FETCH_ASSOC);
-        
-        if($fetch_image['image'] != ''){
-            unlink('../uploaded_files/'.$fetch_image['image']);
-        }
-        
-        // Delete user
-        $delete_user = $conn->prepare("DELETE FROM `users` WHERE id = ?");
-        $delete_user->execute([$delete_id]);
-        
-        $message[] = 'User deleted successfully!';
-        header('location: user_accounts.php');
-    }
+    
 ?>  
 <!DOCTYPE html>
 <html lang="en">
@@ -53,24 +35,10 @@
             <div class="heading">
                 <h1>Regestered users</h1>
             </div>
-            <!-- Search form start -->
-            <form method="get" action="user_accounts.php" class="search-form" style="margin-left: 18rem; display: flex; gap: 10px; align-items: center;">
-                <input type="text" name="search" placeholder="Search by name or email..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 250px;">
-                <button type="submit" class="btn us-btn">Search</button>
-                <a href="user_accounts.php" class="btn us-btn" style="background: #888; color: #fff;">Reset</a>
-            </form>
-            <!-- Search form end -->
-            <div class="box-container user-box-container">
+            <div class="box-container">
                 <?php
-                    $search = isset($_GET['search']) ? trim($_GET['search']) : '';
-                    if ($search !== '') {
-                        $select_users = $conn->prepare("SELECT * FROM `users` WHERE name LIKE ? OR email LIKE ?");
-                        $search_param = "%$search%";
-                        $select_users->execute([$search_param, $search_param]);
-                    } else {
-                        $select_users = $conn->prepare("SELECT * FROM `users`");
-                        $select_users->execute();
-                    }
+                    $select_users = $conn->prepare("SELECT * FROM `users`");
+                    $select_users->execute();
 
                     if ($select_users->rowCount() > 0) {
                         while ($fetch_users = $select_users->fetch(PDO::FETCH_ASSOC)) {
@@ -85,21 +53,16 @@
                     <p>User id : <span><?= $user_id; ?></span></p>
                     <p>User name : <span><?= $fetch_users['name']; ?></span></p>
                     <p>User email : <span><?= $fetch_users['email']; ?></span></p>
-                    <div class="flex-btn">
-                        <a href="update_user.php?id=<?= $user_id; ?>" class="btn">Update profile</a>
-                        <button style="background-color: #fff;"><a href="user_accounts.php?delete=<?= $user_id; ?>" class="delete-btn" onclick="return confirm('Delete this user?');">Delete user</a></button>
-                    </div>
                 </div>
                 <?php
                         }
                     }else{
                         echo "<div class='empty'>
-                            <h4>No user registered yet!</h4>
+                            <h4>No user regestered yet!</h4>
                         </div>";
                     }
                 ?>
             </div>
-            <a href="add_user.php" class="btn add_user">Add New User</a>
         </div>
     </section>
     <!-- sweetalert cdn link -->

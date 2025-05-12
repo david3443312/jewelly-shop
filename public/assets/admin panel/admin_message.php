@@ -59,8 +59,10 @@
                             
                 ?>
                 <div class="box">
-                    <h3 class="name"><?= $fetch_message['name']; ?></h3>
-                    <h4><?= $fetch_message['subject']; ?></h4>
+                    <h3 class="name">Tên: <?= $fetch_message['name']; ?></h3>
+                    <p>Email: <?= $fetch_message['email']; ?></p>
+                    <p>Số điện thoại: <?= $fetch_message['phone']; ?></p>
+                    <h4>Nội dung:<?= $fetch_message['subject']; ?></h4>
                     <p><?= $fetch_message['message']; ?></p>
                     <form action="" method="post">
                         <input type="hidden" name="delete_id" value="<?= $fetch_message['id']; ?>">

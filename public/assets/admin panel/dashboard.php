@@ -96,8 +96,8 @@
                 <div class="db-box">
                     <?php
                         try {
-                            $select_orders = $conn->prepare("SELECT * FROM `orders`");
-                            $select_orders->execute();
+                            $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ?");
+                            $select_orders->execute([$vendor_id]);
                             $number_of_orders = $select_orders->rowCount();
                         } catch(PDOException $e) {
                             $number_of_orders = 0;
@@ -111,8 +111,8 @@
                 <div class="db-box">
                     <?php
                         try {
-                            $select_confirm_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-                            $select_confirm_orders->execute(['in progress']);
+                            $select_confirm_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ? AND status = ?");
+                            $select_confirm_orders->execute([$vendor_id, 'in progress']);
                             $number_of_confirm_orders = $select_confirm_orders->rowCount();
                         } catch(PDOException $e) {
                             $number_of_confirm_orders = 0;
@@ -126,8 +126,8 @@
                 <div class="db-box">
                     <?php
                         try {
-                            $select_canceled_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-                            $select_canceled_orders->execute(['cancelled']);
+                            $select_canceled_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ? AND status = ?");
+                            $select_canceled_orders->execute([$vendor_id, 'canceled']);
                             $number_of_canceled_orders = $select_canceled_orders->rowCount();
                         } catch(PDOException $e) {
                             $number_of_canceled_orders = 0;
@@ -137,51 +137,6 @@
                     <h4><?= $number_of_canceled_orders; ?></h4>
                     <p>Total canceled orders</p>
                     <a href="admin_order.php" class="btn">canceled orders</a>
-                </div>
-                <div class="db-box">
-                    <?php
-                        try {
-                            $select_custom_designs = $conn->prepare("SELECT * FROM `custom_designs`");
-                            $select_custom_designs->execute();
-                            $number_of_custom_designs = $select_custom_designs->rowCount();
-                        } catch(PDOException $e) {
-                            $number_of_custom_designs = 0;
-                            error_log("Database error: " . $e->getMessage());
-                        }
-                    ?>
-                    <h4><?= $number_of_custom_designs; ?></h4>
-                    <p>Custom jewelry requests</p>
-                    <a href="custom_designs.php" class="btn">View requests</a>
-                </div>
-                <div class="db-box">
-                    <?php
-                        try {
-                            $select_couple_designs = $conn->prepare("SELECT * FROM `couple_designs`");
-                            $select_couple_designs->execute();
-                            $number_of_couple_designs = $select_couple_designs->rowCount();
-                        } catch(PDOException $e) {
-                            $number_of_couple_designs = 0;
-                            error_log("Database error: " . $e->getMessage());
-                        }
-                    ?>
-                    <h4><?= $number_of_couple_designs; ?></h4>
-                    <p>Couple jewelry requests</p>
-                    <a href="couple_designs.php" class="btn">View requests</a>
-                </div>
-                <div class="db-box">
-                    <?php
-                        try {
-                            $select_group_designs = $conn->prepare("SELECT * FROM `group_designs`");
-                            $select_group_designs->execute();
-                            $number_of_group_designs = $select_group_designs->rowCount();
-                        } catch(PDOException $e) {
-                            $number_of_group_designs = 0;
-                            error_log("Database error: " . $e->getMessage());
-                        }
-                    ?>
-                    <h4><?= $number_of_group_designs; ?></h4>
-                    <p>Group jewelry requests</p>
-                    <a href="group_designs.php" class="btn">View requests</a>
                 </div>
             </div>
         </div>

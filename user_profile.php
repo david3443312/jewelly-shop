@@ -25,39 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-    <style>
-        .order-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .tab-button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #f0f0f0;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-button:hover {
-            background-color: #e0e0e0;
-        }
-        
-        .tab-button.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-        
-        .order-section {
-            display: none;
-        }
-        
-        .order-section.active {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <?php include "public/assets/components/user_header.php"; ?>
@@ -142,14 +109,9 @@
                 </div>
                 
                 <!-- Đơn mua -->
+                <!-- Replace the static order list in user_profile.php -->
                 <div id="orders" class="section hidden">
                     <h2>Đơn mua</h2>
-                    <div class="order-tabs">
-                        <button class="tab-button active" onclick="showOrderTab('regular-orders')">Đơn hàng thường</button>
-                        <button class="tab-button" onclick="showOrderTab('custom-designs')">Thiết kế riêng</button>
-                        <button class="tab-button" onclick="showOrderTab('couple-designs')">Trang sức đôi</button>
-                        <button class="tab-button" onclick="showOrderTab('group-designs')">Đặt theo nhóm</button>
-                    </div>
                     <div class="order-filter">
                         <label for="status-filter">Lọc theo trạng thái:</label>
                         <select id="status-filter" onchange="filterOrders()">
@@ -180,278 +142,150 @@
                             if(isset($_SESSION['cancel_success'])) unset($_SESSION['cancel_success']);
                         ?>
                     <?php endif; ?>
-                    <div id="regular-orders" class="order-section">
-                        <?php
-                        // Query to get user's orders
-                        $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id = ? ORDER BY order_date DESC");
-                        $stmt->execute([$user_id]);
-                        
-                        if ($stmt->rowCount() > 0) {
-                        ?>
-                        <ul class="order-list">
-                            <?php while ($order = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-                            <li class="order-item">
-                                <div class="order-header">
-                                    <p><strong>Mã đơn hàng:</strong> #<?= $order['id']; ?></p>
-                                    <p><strong>Ngày đặt:</strong> <?= date('d/m/Y H:i', strtotime($order['order_date'])); ?></p>
-                                    <p><strong>Trạng thái:</strong> <span class="order-status <?= $order['status']; ?>"><?= $order['status']; ?></span></p>
-                                    <p><strong>Tổng tiền:</strong> <?= number_format($order['total_price']); ?>đ</p>
+                    <?php
+                    // Query to get user's orders
+                    $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id = ? ORDER BY order_date DESC");
+                    $stmt->execute([$user_id]);
+                    
+                    if ($stmt->rowCount() > 0) {
+                    ?>
+                    <ul class="order-list">
+                        <?php while ($order = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                        <li class="order-item">
+                            <div class="order-header">
+                                <p><strong>Mã đơn hàng:</strong> #<?= $order['id']; ?></p>
+                                <p><strong>Ngày đặt:</strong> <?= date('d/m/Y H:i', strtotime($order['order_date'])); ?></p>
+                                <p><strong>Trạng thái:</strong> <span class="order-status <?= $order['status']; ?>"><?= $order['status']; ?></span></p>
+                                <p><strong>Tổng tiền:</strong> <?= number_format($order['total_price']); ?>đ</p>
+                                <?php if($order['status'] == 'pending'): ?>
+                                    <form action="public/assets/components/cancel_order.php" method="post" class="cancel-form" onsubmit="return confirmCancel()">
+                                        <input type="hidden" name="order_id" value="<?= $order['id']; ?>">
+                                        <button type="submit" class="cancel-order-btn">
+                                            <i class="fas fa-times-circle"></i> Hủy đơn hàng
+                                        </button>
+                                    </form>
+                                <?php endif; ?>
+                                
+                                <button class="toggle-details" onclick="toggleOrderDetails('order-<?= $order['id']; ?>')">Chi tiết</button>
+                            </div>
+                            
+                            <!-- Thêm vào phần thông tin giao hàng trong user_profile.php -->
+                            <div class="order-details" id="order-<?= $order['id']; ?>">
+                                <h4>Thông tin giao hàng:
                                     <?php if($order['status'] == 'pending'): ?>
-                                        <form action="public/assets/components/cancel_order.php" method="post" class="cancel-form" onsubmit="return confirmCancel()">
-                                            <input type="hidden" name="order_id" value="<?= $order['id']; ?>">
-                                            <button type="submit" class="cancel-order-btn">
-                                                <i class="fas fa-times-circle"></i> Hủy đơn hàng
-                                            </button>
-                                        </form>
+                                        <button class="edit-shipping-btn" onclick="showEditShippingForm('<?= $order['id']; ?>')">
+                                            <i class="fas fa-edit"></i> Sửa
+                                        </button>
                                     <?php endif; ?>
-                                    
-                                    <button class="toggle-details" onclick="toggleOrderDetails('order-<?= $order['id']; ?>')">Chi tiết</button>
+                                </h4>
+                                <div id="shipping-info-<?= $order['id']; ?>">
+                                    <p><strong>Người nhận:</strong> <?= $order['name']; ?></p>
+                                    <p><strong>Số điện thoại:</strong> <?= $order['phone']; ?></p>
+                                    <p><strong>Địa chỉ:</strong> <?= $order['address']; ?></p>
                                 </div>
                                 
-                                <!-- Thêm vào phần thông tin giao hàng trong user_profile.php -->
-                                <div class="order-details" id="order-<?= $order['id']; ?>">
-                                    <h4>Thông tin giao hàng:
-                                        <?php if($order['status'] == 'pending'): ?>
-                                            <button class="edit-shipping-btn" onclick="showEditShippingForm('<?= $order['id']; ?>')">
-                                                <i class="fas fa-edit"></i> Sửa
-                                            </button>
-                                        <?php endif; ?>
-                                    </h4>
-                                    <div id="shipping-info-<?= $order['id']; ?>">
-                                        <p><strong>Người nhận:</strong> <?= $order['name']; ?></p>
-                                        <p><strong>Số điện thoại:</strong> <?= $order['phone']; ?></p>
-                                        <p><strong>Địa chỉ:</strong> <?= $order['address']; ?></p>
-                                    </div>
-                                    
-                                    <!-- Form sửa thông tin giao hàng (ẩn mặc định) -->
-                                    <div id="edit-shipping-form-<?= $order['id']; ?>" class="edit-shipping-form hidden">
-                                        <form action="public/assets/components/update_shipping_info.php" method="post">
-                                            <input type="hidden" name="order_id" value="<?= $order['id']; ?>">
-                                            
-                                            <!-- Hidden fields for text values -->
-                                            <input type="hidden" id="edit_city_text_<?= $order['id']; ?>" name="city_text" value="">
-                                            <input type="hidden" id="edit_district_text_<?= $order['id']; ?>" name="district_text" value="">
-                                            <input type="hidden" id="edit_ward_text_<?= $order['id']; ?>" name="ward_text" value="">
-                                            
-                                            <div class="form-group">
-                                                <label for="edit-name-<?= $order['id']; ?>">Người nhận:</label>
-                                                <input type="text" id="edit-name-<?= $order['id']; ?>" name="name" value="<?= $order['name']; ?>" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="edit-phone-<?= $order['id']; ?>">Số điện thoại:</label>
-                                                <input type="tel" id="edit-phone-<?= $order['id']; ?>" name="phone" value="<?= $order['phone']; ?>" required>
-                                            </div>
-                                            
-                                            <div class="form-group">
-                                                <label for="edit-city-<?= $order['id']; ?>">Tỉnh/Thành phố:</label>
-                                                <select class="form-select edit-city" id="edit-city-<?= $order['id']; ?>" name="city" data-order-id="<?= $order['id']; ?>" required>
-                                                    <option value="" selected>Chọn tỉnh thành</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="edit-district-<?= $order['id']; ?>">Quận/Huyện:</label>
-                                                <select class="form-select edit-district" id="edit-district-<?= $order['id']; ?>" name="district" data-order-id="<?= $order['id']; ?>" required>
-                                                    <option value="" selected>Chọn quận huyện</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="edit-ward-<?= $order['id']; ?>">Xã/Phường:</label>
-                                                <select class="form-select edit-ward" id="edit-ward-<?= $order['id']; ?>" name="ward" data-order-id="<?= $order['id']; ?>" required>
-                                                    <option value="" selected>Chọn phường xã</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="edit-specific-address-<?= $order['id']; ?>">Địa chỉ cụ thể:</label>
-                                                <input type="text" id="edit-specific-address-<?= $order['id']; ?>" name="specific_address" placeholder="Số nhà, đường..." required>
-                                            </div>
-                                            
-                                            <div class="button-group">
-                                                <button type="submit" class="save-button">Lưu thay đổi</button>
-                                                <button type="button" class="cancel-button" onclick="hideEditShippingForm('<?= $order['id']; ?>')">Hủy</button>
-                                            </div>
-                                        </form>
-                                    </div>
-        
-                                    
-                                    <h4>Sản phẩm:</h4>
-                                    <table class="order-products">
-                                        <thead>
-                                            <tr>
-                                                <th>Sản phẩm</th>
-                                                <th>Giá</th>
-                                                <th>Số lượng</th>
-                                                <th>Thành tiền</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            // Get order items
-                                            $items_stmt = $conn->prepare("
-                                                SELECT oi.*, p.name, p.image
-                                                FROM order_items oi
-                                                JOIN products p ON oi.product_id = p.id
-                                                WHERE oi.order_id = ?
-                                            ");
-                                            $items_stmt->execute([$order['id']]);
-                                            
-                                            while ($item = $items_stmt->fetch(PDO::FETCH_ASSOC)):
-                                                $item_total = $item['price'] * $item['quantity'];
-                                            ?>
-                                            <tr>
-                                                <td>
-                                                    <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" class="product-thumbnail">
-                                                    <?= $item['name']; ?>
-                                                </td>
-                                                <td><?= number_format($item['price']); ?>đ</td>
-                                                <td><?= $item['quantity']; ?></td>
-                                                <td><?= number_format($item_total); ?>đ</td>
-                                            </tr>
-                                            <?php endwhile; ?>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="3">Phí vận chuyển:</td>
-                                                <td><?= number_format($order['shipping_cost']); ?>đ</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="3"><strong>Tổng cộng:</strong></td>
-                                                <td><strong><?= number_format($order['total_price']); ?>đ</strong></td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                <!-- Form sửa thông tin giao hàng (ẩn mặc định) -->
+                                <div id="edit-shipping-form-<?= $order['id']; ?>" class="edit-shipping-form hidden">
+                                    <form action="public/assets/components/update_shipping_info.php" method="post">
+                                        <input type="hidden" name="order_id" value="<?= $order['id']; ?>">
+                                        
+                                        <!-- Hidden fields for text values -->
+                                        <input type="hidden" id="edit_city_text_<?= $order['id']; ?>" name="city_text" value="">
+                                        <input type="hidden" id="edit_district_text_<?= $order['id']; ?>" name="district_text" value="">
+                                        <input type="hidden" id="edit_ward_text_<?= $order['id']; ?>" name="ward_text" value="">
+                                        
+                                        <div class="form-group">
+                                            <label for="edit-name-<?= $order['id']; ?>">Người nhận:</label>
+                                            <input type="text" id="edit-name-<?= $order['id']; ?>" name="name" value="<?= $order['name']; ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-phone-<?= $order['id']; ?>">Số điện thoại:</label>
+                                            <input type="tel" id="edit-phone-<?= $order['id']; ?>" name="phone" value="<?= $order['phone']; ?>" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="edit-city-<?= $order['id']; ?>">Tỉnh/Thành phố:</label>
+                                            <select class="form-select edit-city" id="edit-city-<?= $order['id']; ?>" name="city" data-order-id="<?= $order['id']; ?>" required>
+                                                <option value="" selected>Chọn tỉnh thành</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-district-<?= $order['id']; ?>">Quận/Huyện:</label>
+                                            <select class="form-select edit-district" id="edit-district-<?= $order['id']; ?>" name="district" data-order-id="<?= $order['id']; ?>" required>
+                                                <option value="" selected>Chọn quận huyện</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-ward-<?= $order['id']; ?>">Xã/Phường:</label>
+                                            <select class="form-select edit-ward" id="edit-ward-<?= $order['id']; ?>" name="ward" data-order-id="<?= $order['id']; ?>" required>
+                                                <option value="" selected>Chọn phường xã</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-specific-address-<?= $order['id']; ?>">Địa chỉ cụ thể:</label>
+                                            <input type="text" id="edit-specific-address-<?= $order['id']; ?>" name="specific_address" placeholder="Số nhà, đường..." required>
+                                        </div>
+                                        
+                                        <div class="button-group">
+                                            <button type="submit" class="save-button">Lưu thay đổi</button>
+                                            <button type="button" class="cancel-button" onclick="hideEditShippingForm('<?= $order['id']; ?>')">Hủy</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </li>
-                            <?php endwhile; ?>
-                        </ul>
-                        <?php } else { ?>
-                        <p class="no-orders">Bạn chưa có đơn hàng nào.</p>
-                        <?php } ?>
-                    </div>
-                </div>
-
-                <!-- Thiết kế riêng -->
-                <div id="custom-designs" class="order-section hidden">
-                    <h3>Đơn thiết kế riêng</h3>
-                    <?php
-                    $custom_stmt = $conn->prepare("SELECT * FROM custom_designs WHERE user_id = ? ORDER BY created_at DESC");
-                    $custom_stmt->execute([$user_id]);
-                    
-                    if ($custom_stmt->rowCount() > 0) {
-                    ?>
-                    <ul class="order-list">
-                        <?php while ($design = $custom_stmt->fetch(PDO::FETCH_ASSOC)): ?>
-                        <li class="order-item">
-                            <div class="order-header">
-                                <p><strong>Mã đơn:</strong> #<?= $design['id']; ?></p>
-                                <p><strong>Ngày đặt:</strong> <?= date('d/m/Y H:i', strtotime($design['created_at'])); ?></p>
-                                <p><strong>Trạng thái:</strong> <span class="order-status <?= $design['status']; ?>"><?= $design['status']; ?></span></p>
-                                <p><strong>Loại thiết kế:</strong> <?= $design['design_type']; ?></p>
-                                <?php if($design['status'] != 'cancelled' && $design['status'] != 'delivered'): ?>
-                                    <form action="public/assets/components/cancel_design.php" method="post" class="cancel-form" onsubmit="return confirmCancel()">
-                                        <input type="hidden" name="design_id" value="<?= $design['id']; ?>">
-                                        <input type="hidden" name="design_type" value="custom">
-                                        <button type="submit" class="cancel-order-btn">
-                                            <i class="fas fa-times-circle"></i> Hủy đơn hàng
-                                        </button>
-                                    </form>
-                                <?php endif; ?>
-                                <button class="toggle-details" onclick="toggleOrderDetails('custom-<?= $design['id']; ?>')">Chi tiết</button>
-                            </div>
-                            <div class="order-details" id="custom-<?= $design['id']; ?>">
-                                <h4>Thông tin thiết kế:</h4>
-                                <p><strong>Mô tả:</strong> <?= $design['description']; ?></p>
-                                <p><strong>Ngân sách:</strong> <?= number_format($design['budget']); ?>đ</p>
-                                <p><strong>Hạn hoàn thành:</strong> <?= date('d/m/Y', strtotime($design['deadline'])); ?></p>
-                            </div>
-                        </li>
-                        <?php endwhile; ?>
-                    </ul>
-                    <?php } else { ?>
-                    <p class="no-orders">Bạn chưa có đơn thiết kế riêng nào.</p>
-                    <?php } ?>
-                </div>
-
-                <!-- Trang sức đôi -->
-                <div id="couple-designs" class="order-section hidden">
-                    <h3>Đơn trang sức đôi</h3>
-                    <?php
-                    $couple_stmt = $conn->prepare("SELECT * FROM couple_designs WHERE user_id = ? ORDER BY created_at DESC");
-                    $couple_stmt->execute([$user_id]);
-                    
-                    if ($couple_stmt->rowCount() > 0) {
-                    ?>
-                    <ul class="order-list">
-                        <?php while ($design = $couple_stmt->fetch(PDO::FETCH_ASSOC)): ?>
-                        <li class="order-item">
-                            <div class="order-header">
-                                <p><strong>Mã đơn:</strong> #<?= $design['id']; ?></p>
-                                <p><strong>Ngày đặt:</strong> <?= date('d/m/Y H:i', strtotime($design['created_at'])); ?></p>
-                                <p><strong>Trạng thái:</strong> <span class="order-status <?= $design['status']; ?>"><?= $design['status']; ?></span></p>
-                                <p><strong>Loại thiết kế:</strong> <?= $design['design_type']; ?></p>
-                                <?php if($design['status'] != 'cancelled' && $design['status'] != 'delivered'): ?>
-                                    <form action="public/assets/components/cancel_design.php" method="post" class="cancel-form" onsubmit="return confirmCancel()">
-                                        <input type="hidden" name="design_id" value="<?= $design['id']; ?>">
-                                        <input type="hidden" name="design_type" value="couple">
-                                        <button type="submit" class="cancel-order-btn">
-                                            <i class="fas fa-times-circle"></i> Hủy đơn hàng
-                                        </button>
-                                    </form>
-                                <?php endif; ?>
-                                <button class="toggle-details" onclick="toggleOrderDetails('couple-<?= $design['id']; ?>')">Chi tiết</button>
-                            </div>
-                            <div class="order-details" id="couple-<?= $design['id']; ?>">
-                                <h4>Thông tin thiết kế:</h4>
-                                <p><strong>Mô tả:</strong> <?= $design['description']; ?></p>
-                                <p><strong>Ngân sách:</strong> <?= number_format($design['budget']); ?>đ</p>
-                                <p><strong>Hạn hoàn thành:</strong> <?= date('d/m/Y', strtotime($design['deadline'])); ?></p>
+    
+                                
+                                <h4>Sản phẩm:</h4>
+                                <table class="order-products">
+                                    <thead>
+                                        <tr>
+                                            <th>Sản phẩm</th>
+                                            <th>Giá</th>
+                                            <th>Số lượng</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Get order items
+                                        $items_stmt = $conn->prepare("
+                                            SELECT oi.*, p.name, p.image
+                                            FROM order_items oi
+                                            JOIN products p ON oi.product_id = p.id
+                                            WHERE oi.order_id = ?
+                                        ");
+                                        $items_stmt->execute([$order['id']]);
+                                        
+                                        while ($item = $items_stmt->fetch(PDO::FETCH_ASSOC)):
+                                            $item_total = $item['price'] * $item['quantity'];
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" class="product-thumbnail">
+                                                <?= $item['name']; ?>
+                                            </td>
+                                            <td><?= number_format($item['price']); ?>đ</td>
+                                            <td><?= $item['quantity']; ?></td>
+                                            <td><?= number_format($item_total); ?>đ</td>
+                                        </tr>
+                                        <?php endwhile; ?>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3">Phí vận chuyển:</td>
+                                            <td><?= number_format($order['shipping_cost']); ?>đ</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>Tổng cộng:</strong></td>
+                                            <td><strong><?= number_format($order['total_price']); ?>đ</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
                             </div>
                         </li>
                         <?php endwhile; ?>
                     </ul>
                     <?php } else { ?>
-                    <p class="no-orders">Bạn chưa có đơn trang sức đôi nào.</p>
-                    <?php } ?>
-                </div>
-
-                <!-- Đặt theo nhóm -->
-                <div id="group-designs" class="order-section hidden">
-                    <h3>Đơn đặt theo nhóm</h3>
-                    <?php
-                    $group_stmt = $conn->prepare("SELECT * FROM group_designs WHERE user_id = ? ORDER BY created_at DESC");
-                    $group_stmt->execute([$user_id]);
-                    
-                    if ($group_stmt->rowCount() > 0) {
-                    ?>
-                    <ul class="order-list">
-                        <?php while ($design = $group_stmt->fetch(PDO::FETCH_ASSOC)): ?>
-                        <li class="order-item">
-                            <div class="order-header">
-                                <p><strong>Mã đơn:</strong> #<?= $design['id']; ?></p>
-                                <p><strong>Ngày đặt:</strong> <?= date('d/m/Y H:i', strtotime($design['created_at'])); ?></p>
-                                <p><strong>Trạng thái:</strong> <span class="order-status <?= $design['status']; ?>"><?= $design['status']; ?></span></p>
-                                <p><strong>Loại thiết kế:</strong> <?= $design['design_type']; ?></p>
-                                <?php if($design['status'] != 'cancelled' && $design['status'] != 'delivered'): ?>
-                                    <form action="public/assets/components/cancel_design.php" method="post" class="cancel-form" onsubmit="return confirmCancel()">
-                                        <input type="hidden" name="design_id" value="<?= $design['id']; ?>">
-                                        <input type="hidden" name="design_type" value="group">
-                                        <button type="submit" class="cancel-order-btn">
-                                            <i class="fas fa-times-circle"></i> Hủy đơn hàng
-                                        </button>
-                                    </form>
-                                <?php endif; ?>
-                                <button class="toggle-details" onclick="toggleOrderDetails('group-<?= $design['id']; ?>')">Chi tiết</button>
-                            </div>
-                            <div class="order-details" id="group-<?= $design['id']; ?>">
-                                <h4>Thông tin thiết kế:</h4>
-                                <p><strong>Mô tả:</strong> <?= $design['description']; ?></p>
-                                <p><strong>Ngân sách:</strong> <?= number_format($design['budget']); ?>đ</p>
-                                <p><strong>Hạn hoàn thành:</strong> <?= date('d/m/Y', strtotime($design['deadline'])); ?></p>
-                            </div>
-                        </li>
-                        <?php endwhile; ?>
-                    </ul>
-                    <?php } else { ?>
-                    <p class="no-orders">Bạn chưa có đơn đặt theo nhóm nào.</p>
+                    <p class="no-orders">Bạn chưa có đơn hàng nào.</p>
                     <?php } ?>
                 </div>
             </div>
@@ -680,48 +514,6 @@
                 document.getElementById('status-filter').value = savedFilter;
                 filterOrders();
             }
-        });
-    </script>
-    <script>
-        // Hàm chuyển đổi giữa các tab đơn hàng
-        function showOrderTab(tabId) {
-            // Ẩn tất cả các section
-            document.querySelectorAll('.order-section').forEach(section => {
-                section.classList.remove('active');
-                section.style.display = 'none';
-            });
-            
-            // Bỏ active tất cả các tab button
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Hiển thị section được chọn
-            const selectedSection = document.getElementById(tabId);
-            selectedSection.classList.add('active');
-            selectedSection.style.display = 'block';
-            
-            // Active tab button được chọn
-            event.target.classList.add('active');
-
-            // Reset status filter when switching tabs
-            document.getElementById('status-filter').value = 'all';
-            if (tabId === 'regular-orders') {
-                filterOrders();
-            }
-        }
-        
-        // Hiển thị tab đơn hàng thường mặc định
-        document.addEventListener('DOMContentLoaded', function() {
-            // Ẩn tất cả các section trước
-            document.querySelectorAll('.order-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Hiển thị section đơn hàng thường
-            const regularOrders = document.getElementById('regular-orders');
-            regularOrders.classList.add('active');
-            regularOrders.style.display = 'block';
         });
     </script>
 </body>

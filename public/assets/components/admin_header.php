@@ -40,6 +40,10 @@
                 <span class="material-icons-sharp">receipt_long</span>
                 <h4>Orders</h4>
             </a>
+            <a href="#" class="db-decorate">
+                <span class="material-icons-sharp">insights</span>
+                <h4>Collection</h4>
+            </a>
             <a href="admin_message.php" class="db-decorate <?php echo ($current_page == 'admin_message.php') ? 'active' : ''; ?>">
                 <span class="material-icons-sharp">mail_outline</span>
                 <h4>Messages</h4>
@@ -48,6 +52,13 @@
                 <span class="material-icons-sharp">inventory</span>
                 <h4>Products</h4>
             </a>
+            <a href="#" class="db-decorate">
+                <span class="material-icons-sharp">report</span>
+                <h4>Material</h4>
+            </a>
+            <a href="#" class="db-decorate">
+                <span class="material-icons-sharp">settings</span>
+                <h4>Special Occasion Jewelry</h4>
             </a>
             <a href="add_products.php" class="db-decorate <?php echo ($current_page == 'add_products.php') ? 'active' : ''; ?>">
                 <span class="material-icons-sharp">add</span>
