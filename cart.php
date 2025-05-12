@@ -190,8 +190,10 @@
                             </label>
                         </div>
 
+
                         <button type="submit" class="checkout-button" id="checkout-button-cod">Đặt hàng</button>
                         <button type="button" class="checkout-button" id="checkout-button-vnpay" style="display:none;">Thanh toán VNPay</button>
+
                     </form>
                 </div>
             </div>
@@ -204,8 +206,12 @@
         let text = el.textContent.replace(/\D/g, '');
         return parseInt(text, 10) || 0;
     }
+
     
     document.getElementById('checkout-button-vnpay').onclick = function() {
+
+
+
         const amount = getGrandTotal();
         // Chuyển hướng sang file trung gian để tự động submit form sang VNPAY
         window.location.href = 'vnpay_redirect.php?amount=' + amount;

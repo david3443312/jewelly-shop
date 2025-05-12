@@ -24,7 +24,7 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
 <!-- Rest of the header remains the same -->
 <header class="header-area">
     <nav>
-        <a href="/jewelry-shop/home.php">
+        <a href="../jewelry-shop/home.php">
             <img src="public/assets/images/logoicon.png" alt="Brand logo" class="logo" style="width: 50px; height: 50px;">
         </a>
         <ul class="menu">
@@ -74,10 +74,31 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     </div>
                 </div>
             </li>
-            <li><a href="#">Bộ sưu tập</a></li>
-            <li><a href="#">Bài viết</a></li>
+
+            <li class="dropdown-category"><a>Bộ sưu tập</a>
+                <div class="submenu submenu2">
+                    <div>
+                        <ul>
+                            <li><a href="knowledge_1.php">Ngọc Trai Nước Ngọt</a></li>
+                            <li><a href="knowledge_2.php">Ngọc Trai Biển Nam</a></li>
+                            <li><a href="knowledge_3.php">Ngọc Trai Tahiti</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
             <li><a href="about_us.php">Về chúng tôi</a></li>
-            <li><a href="#">Góp ý</a></li>
+            <li class="dropdown-category"><a>Bài viết</a>
+                <div class="submenu submenu1">
+                    <div>
+                        <ul>
+                            <li><a href="knowlwdge.php">Kiến thức</a></li>
+                            <li><a href="FAQ.php">Câu hỏi thường gặp</a></li>
+                            <li><a href="#">Chăm sóc sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li><a href="contact.php">Liên hệ</a></li>
         </ul>
         <div class="icons">
             <a href="/jewelry-shop/wishlist.php" class="wishlist-link">
@@ -109,14 +130,14 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
             </div>
             <div class="account-container">
                 <div class="account-icon">
-                    <a href="/jewelry-shop/signup.php"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
+                    <a href="../jewelry-shop/signup.php"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
                 </div>
                 <div class="dropdown-menu">
                     <?php
                     if ($user_id) { // Người dùng đã đăng nhập
                     ?>
-                        <li><a href="/jewelry-shop/user_profile.php"><i class="fi fi-rs-sign-in mr-10"></i>Hồ sơ</a></li>
-                        <li><a href="/jewelry-shop/user_logout.php" onclick="return confirm('Chúng tôi sẽ rất nhớ bạn!');"><i class="fi fi-rs-sign-out mr-10"></i>Đăng xuất</a></li>
+                        <li><a href="../jewelry-shop/user_profile.php"><i class="fi fi-rs-sign-in mr-10"></i>Hồ sơ</a></li>
+                        <li><a href="../jewelry-shop/user_logout.php" onclick="return confirm('Chúng tôi sẽ rất nhớ bạn!');"><i class="fi fi-rs-sign-out mr-10"></i>Đăng xuất</a></li>
                     <?php
                     } else { // Người dùng chưa đăng nhập
                     ?>
