@@ -60,6 +60,7 @@
                                 FROM `cart` c 
                                 JOIN `products` p ON c.product_id = p.id 
                                 WHERE c.user_id = ?
+                                ORDER BY c.id DESC
                             ");
                             $cart_query->execute([$user_id]);
 
