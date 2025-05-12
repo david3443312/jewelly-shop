@@ -25,39 +25,39 @@
     <main>
     <div class="header">
         <div class="container">
-            <div class="category">KIẾN THỨC</div>
-            <h1>Ngọc Trai Tahiti</h1>
+            <div class="category">KNOWLEDGE</div>
+            <h1>The Tahitian Pearl</h1>
         </div>
     </div>
     
     <div class="container">
         <div class="content-section">
             <div class="text-content">
-                <p>Ngọc Trai Tahiti là một trong những loại ngọc trai sang trọng nhất thế giới. Với vẻ đẹp độc đáo và sự quý hiếm của mình, Ngọc Trai Tahiti được săn lùng để chế tác trang sức cao cấp.</p>
+                <p>The Tahitian Pearls is one of the most luxurious pearls in the world. Because of its exclusive beauty and rareness, Tahitian Pearls are hunted for making fine jewelry.</p>
             </div>
         </div>
         <div class="image-content">
-            <img src="../jewelry-shop/public/assets/images/knowledge/3.jpg" alt="Trang sức ngọc trai nước ngọt trên nền tối">
+            <img src="../jewelry-shop/public/assets/images/knowledge/3.jpg" alt="Freshwater pearl jewelry on dark background">
         </div>
         
         <div class="content-section">
             <div class="text-content">
-                <h2>Lịch sử</h2>
-                <p>Ngọc trai Tahiti được hình thành từ hàu môi đen và được đặt tên theo nơi chúng được nuôi cấy chủ yếu - xung quanh các đảo của Polynesia thuộc Pháp, gần Tahiti. Những viên ngọc trai này đã được thử nghiệm từ năm 1961, nhưng mãi đến năm 1972, chúng mới bắt đầu được xuất khẩu từ nơi khởi nguồn ra khắp thế giới. Kể từ đó, chúng được biết đến như một trong những loại ngọc trai nuôi cấy quý giá nhất.</p>
+                <h2>History</h2>
+                <p>The Tahitian pearl is formed from the black-lip oyster and own its’ name by being primarily cultivated around the islands of French Polynesia, around Tahiti. The pearls have been in experiment since as early as 1961, but only until 1972, they started being exported from their origin across the world. They are known as one of the most precious cultured pearls ever since.</p>
                 
-                <h2>Vẻ đẹp đen huyền</h2>
-                <p>Mặc dù ngọc trai Tahiti có nhiều màu sắc khác nhau, từ trắng đến đen với nhiều tông màu phụ như xanh lá, xanh dương hoặc tím, chúng nổi tiếng với độ bóng lấp lánh tự nhiên và màu tối - bắt nguồn từ hàu môi đen. So với ngọc trai nước ngọt và akoya, nơi màu đen thường được nhuộm hoặc chiếu xạ, ngọc trai đen Tahiti là độc nhất vô nhị vì chúng hoàn toàn tự nhiên. Do đó, một viên ngọc trai Tahiti đen thật sự cực kỳ hiếm và được xác định là một trong những loại ngọc trai có giá trị nhất thế giới. Bề mặt lấp lánh phản chiếu ánh sáng là điều làm cho ngọc trai Tahiti trở nên kỳ lạ và đáng chú ý, tăng thêm giá trị cho vẻ đẹp của những người sở hữu nó.</p>
+                <h2>The Black beauty</h2>
+                <p>Although the Tahitian pearls come in a wide range of colours, from white to black with a variety of overtones that includes greenish, bluish, or purplish. They are renowned for its’ radiant lustre with natural dark colour – derives from the black lip oysters. Comparing to freshwater and akoya, which the colour black is often dyed or irradiated, the black Tahitians are unique among pearls as they are natural. Therefore, a true black Tahitian pearl is extremely rare and identified as one of the most valuable pearls in the world. The shimmering surfaces that shine as they refract the light is what makes a Tahitian pearl exotic and remarkable, adding values to the beauty of those who own it.</p>
                 
-                <h2>Hình dạng của ngọc trai Tahiti</h2>
-                <p>Hình dạng của ngọc trai Tahiti rất đa dạng và thường được thể hiện dưới dạng tròn, bán tròn, nút, hình quả lê, hình giọt, hình bầu dục, baroque hoặc có vòng. Điều này làm cho chúng phù hợp với nhiều dịp khác nhau và có thể được chế tác theo sở thích cá nhân.</p>
+                <h2>The Tahitian pearls’ shapes</h2>
+                <p>The Tahitian pearls shapes are diverse and are often expressed in round, semi-round, button, pear, drop, oval, baroque or ringed. This makes them suitable for different occasions and crafted to any personal liking.</p>
             </div>
             
         </div>
         
         <div class="content-section">
             <div class="text-content">
-                <h2>Tại sao ngọc trai Tahiti có giá trị?</h2>
-                <p>Hàu môi đen là loài hàu lớn với đường kính hơn một foot, do đó, những viên ngọc trai chúng tạo ra có kích thước lớn, làm tăng giá trị so với ngọc trai nhỏ hơn. Quá trình nuôi cấy để sản xuất ngọc trai Tahiti cũng rất độc đáo khi phải mất 2 năm để một con hàu trưởng thành và sẵn sàng tạo ra ngọc trai. Sự quý hiếm và vẻ đẹp độc đáo của ngọc trai Tahiti làm cho chúng trở nên đáng mong muốn, đặc biệt là khi được sử dụng để chế tác trang sức cao cấp.</p>
+                <h2>Why Tahitian pearls are valuable?</h2>
+                <p>The black-lips are large oysters with over a foot in diameter, therefore, the pearls they produce are large in size which increases the value compared to smaller pearls. The culturing process that takes to produce the Tahitian pearls is also exclusive when it takes 2 years for an oyster to become mature and be ready to produce pearls. The rareness and unique beauty of the Tahitian pearls makes them desirable, especially when in use of crafting fine jewelries.</p>
             </div>
         </div>
     </div>
