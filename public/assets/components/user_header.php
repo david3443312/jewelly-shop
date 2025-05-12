@@ -67,14 +67,14 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     <div>
                         <h3>Thiết kế riêng</h3>
                         <ul>
-                            <li><a href="/jewelry-shop/couple_design.php">Đặt trang sức đôi</a></li>
-                            <li><a href="/jewelry-shop/group_design.php">Đặt trang sức theo nhóm</a></li>
-                            <li><a href="/jewelry-shop/custom_design.php">Đặt trang sức thiết kế theo yêu cầu</a></li>
-                            <li><a href="#">Dịch vụ xỏ, bấm khuyên tai</a></li>
+                            <li><a href="#">Đặt trang sức đôi</a></li>
+                            <li><a href="#">Đặt trang sức theo nhóm</a></li>
+                            <li><a href="#">Đặt trang sức thiết kế theo yêu cầu</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
+
             <li class="dropdown-category"><a>Bộ sưu tập</a>
                 <div class="submenu submenu2">
                     <div>

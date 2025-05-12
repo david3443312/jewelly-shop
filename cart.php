@@ -60,6 +60,7 @@
                                 FROM `cart` c 
                                 JOIN `products` p ON c.product_id = p.id 
                                 WHERE c.user_id = ?
+                                ORDER BY c.id DESC
                             ");
                             $cart_query->execute([$user_id]);
 
@@ -84,7 +85,7 @@
                                 <td>
                                     <div class="quantity-control">
                                         <button class="btn-decrement">-</button>
-                                        <input type="text" class="quantity-input" value="1">
+                                        <input type="text" class="quantity-input" value="<?= $item['quantity']; ?>">
                                         <button class="btn-increment">+</button>
                                     </div>
                                 </td>
@@ -124,7 +125,7 @@
                     </table>
                     <form action="public/assets/components/process_order.php" method="post" id="checkout-form">
                         <input type="hidden" name="shipping_cost" id="shipping-cost-input" value="0">
-                        <input type="hidden" name="payment_method" value="COD">
+                        <input type="hidden" name="payment_method" id="payment-method-input" value="COD">
 
                         <input type="hidden" id="city_text" name="city_text" value="">
                         <input type="hidden" id="district_text" name="district_text" value="">
@@ -178,8 +179,21 @@
                                 <td class="value grand-total"><?= number_format($grand_total); ?>đ</td>
                             </tr>
                         </table>
+                        
+                        <div class="payment-options">
+                            <h2>Chọn phương thức thanh toán</h2>
+                            <label>
+                                <input type="radio" name="payment_method_choice" value="COD" checked onchange="document.getElementById('payment-method-input').value='COD'; document.getElementById('checkout-button-cod').style.display='block'; document.getElementById('checkout-button-vnpay').style.display='none';"> Thanh toán khi nhận hàng (COD)
+                            </label>
+                            <label>
+                                <input type="radio" name="payment_method_choice" value="VNPAY_QR" onchange="document.getElementById('payment-method-input').value='VNPAY_QR'; document.getElementById('checkout-button-cod').style.display='none'; document.getElementById('checkout-button-vnpay').style.display='block';"> Thanh toán bằng VNPay
+                            </label>
+                        </div>
 
-                        <button type="button" class="checkout-button" id="show-qr-btn">Đặt hàng</button>
+
+                        <button type="submit" class="checkout-button" id="checkout-button-cod">Đặt hàng</button>
+                        <button type="button" class="checkout-button" id="checkout-button-vnpay" style="display:none;">Thanh toán VNPay</button>
+
                     </form>
                 </div>
             </div>
@@ -192,11 +206,12 @@
         let text = el.textContent.replace(/\D/g, '');
         return parseInt(text, 10) || 0;
     }
-    function generateVnpayDemoUrl(amount) {
-        // Thêm orderType=billpayment để chọn sẵn loại hàng hóa là Thanh toán hóa đơn
-        return `http://sandbox.vnpayment.vn/tryitnow/Home/CreateOrder?amount=${amount}&orderType=billpayment`;
-    }
-    document.getElementById('show-qr-btn').onclick = function() {
+
+    
+    document.getElementById('checkout-button-vnpay').onclick = function() {
+
+
+
         const amount = getGrandTotal();
         // Chuyển hướng sang file trung gian để tự động submit form sang VNPAY
         window.location.href = 'vnpay_redirect.php?amount=' + amount;
