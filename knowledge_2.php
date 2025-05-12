@@ -20,6 +20,101 @@
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
         <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
         <link rel="icon" href="../jewelry-shop/public/assets/images/logoicon.png" type="image/x-icon">
+        <style>
+            body * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Times New Roman', serif;
+                color: #5a5a5a;
+                line-height: 1.6;
+                background-color: #fff;
+            }
+            
+            .header {
+                background-color: #f5f3ea;
+                padding: 80px 0;
+                text-align: center;
+                margin-top: 80px;
+                margin-bottom: 50px;
+            }
+            
+            .header .category {
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-size: 12px;
+                color: #777;
+                margin-bottom: 10px;
+                margin: 0 auto;
+            }
+            
+            .header h1 {
+                font-size: 42px;
+                font-weight: normal;
+                color: #444;
+                padding-bottom: 30px;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            
+            .content-section {
+                margin: 0 auto;
+            }
+            
+            .content-section .text-content {
+                max-width: 500px;
+                padding: 0 40px;
+                margin: 0 auto;
+            }
+            
+            .content-section .image-content {
+                max-width: 550px;
+                margin: 0 auto;
+            }
+            
+            .content-section .image-content img {
+                width: 100%;
+                display: block;
+            }
+            
+            .content-section h2 {
+                font-size: 20px;
+                font-weight: normal;
+                color: #777;
+                margin: 30px 0 0px 0;
+                color: #7A7A7A;
+                font-weight: bold;
+            }
+            
+            .content-section p {
+                margin-bottom: 15px;
+                font-size: 15px;
+                color: #777;
+            }
+            
+            @media (max-width: 900px) {
+                .content-section {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .content-section .text-content {
+                    padding: 0 20px 40px 20px;
+                }
+                
+                .content-section .image-content {
+                    order: -1;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
     </head>
 <body>
     <?php include "public/assets/components/user_header.php"; ?>

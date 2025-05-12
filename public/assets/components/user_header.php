@@ -70,7 +70,6 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                             <li><a href="/jewelry-shop/couple_design.php">Đặt trang sức đôi</a></li>
                             <li><a href="/jewelry-shop/group_design.php">Đặt trang sức theo nhóm</a></li>
                             <li><a href="/jewelry-shop/custom_design.php">Đặt trang sức thiết kế theo yêu cầu</a></li>
-                            <li><a href="#">Dịch vụ xỏ, bấm khuyên tai</a></li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +85,7 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     </div>
                 </div>
             </li>
-            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="about_us.php">Về chúng tôi</a></li>
             <li class="dropdown-category"><a>Bài viết</a>
                 <div class="submenu submenu1">
                     <div>
@@ -98,7 +97,7 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     </div>
                 </div>
             </li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="contact.php">Liên hệ</a></li>
         </ul>
         <div class="icons">
             <a href="/jewelry-shop/wishlist.php" class="wishlist-link">
@@ -123,17 +122,19 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     }
                 }
                 ?>
-            </a>
-            <div class="search">
+            </a>            <div class="search">
                 <input type="text" placeholder="Tìm kiếm...">
                 <button><span class="iconify" data-icon="ph:magnifying-glass"></span></button>
             </div>
             <div class="account-container">
                 <div class="account-icon">
-                    <a href="/jewelry-shop/signup.php"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
+                    <?php if ($user_id): ?>
+                        <a href="/jewelry-shop/user_profile.php"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
+                    <?php else: ?>
+                        <a href="/jewelry-shop/signup.php"><span class="iconify" data-icon="codicon:account" style="height: 95%; width: 95%;"></span></a>
+                    <?php endif; ?>
                 </div>
-                <div class="dropdown-menu">
-                    <?php
+                <div class="dropdown-menu">                    <?php
                     if ($user_id) { // Người dùng đã đăng nhập
                     ?>
                         <li><a href="/jewelry-shop/user_profile.php"><i class="fi fi-rs-sign-in mr-10"></i>Hồ sơ</a></li>
@@ -142,6 +143,7 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     } else { // Người dùng chưa đăng nhập
                     ?>
                         <li><a href="login.php"><i class="fi fi-rs-sign-in mr-10"></i>Đăng nhập</a></li>
+                        <li><a href="signup.php"><i class="fi fi-rs-user-add mr-10"></i>Đăng ký</a></li>
                     <?php
                     }
                     ?>
