@@ -15,12 +15,9 @@
         $update_payment = $_POST['update_payment'];
         $update_payment = filter_var($update_payment, FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $update_status = $_POST['update_status'];
-        $update_status = filter_var($update_status, FILTER_SANITIZE_SPECIAL_CHARS);
-
-        $update_order = $conn->prepare("UPDATE `orders` SET payment_status = ?, status = ? WHERE id = ?");
-        $update_order->execute([$update_payment, $update_status, $order_id]);
-        $success_msg[] = "Order updated successfully!";
+        $update_pay = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
+        $update_pay->execute([$update_payment, $order_id]);
+        $success_msg[] = "Order payment status updated successfully!";
     }
 ?>  
 <!DOCTYPE html>
@@ -51,8 +48,8 @@
             </div>
             <div class="box-container">
                 <?php
-                    $select_order = $conn->prepare("SELECT * FROM `orders`");
-                    $select_order->execute();
+                    $select_order = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ?");
+                    $select_order->execute([$vendor_id]);
                     
                     if ($select_order->rowCount() > 0) {
                         while ($fetch_order = $select_order->fetch(PDO::FETCH_ASSOC)) {
@@ -63,35 +60,22 @@
                     <div class="details">
                         <p>User name : <span><?= $fetch_order['name'] ?></span></p>
                         <p>User id : <span><?= $fetch_order['user_id'] ?></span></p>
-                        <p>Placed on : <span><?= $fetch_order['order_date'] ?></span></p>
+                        <p>Placed on : <span><?= $fetch_order['date'] ?></span></p>
                         <p>User number : <span><?= $fetch_order['phone'] ?></span></p>
                         <p>User email : <span><?= $fetch_order['email'] ?></span></p>
-                        <p>Total price : <span><?= $fetch_order['total_price'] ?></span></p>
-                        <p>Payment method : <span><?= $fetch_order['payment_method'] ?></span></p>
+                        <p>Total price : <span><?= $fetch_order['price'] ?></span></p>
+                        <p>Payment method : <span><?= $fetch_order['method'] ?></span></p>
                         <p>User address : <span><?= $fetch_order['address'] ?></span></p>
                     </div>
                     <form action="" method="post">
                         <input type="hidden" name="order_id" value="<?= $fetch_order['id'] ?>">
-                        <div class="select-container">
-                            <label>Payment Status:</label>
-                            <select name="update_payment" class="box" style="width: 90%;">
-                                <option value="<?= $fetch_order['payment_status']; ?>" selected><?= $fetch_order['payment_status']; ?></option>
-                                <option value="pending">Pending</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                        </div>
-                        <div class="select-container">
-                            <label>Order Status:</label>
-                            <select name="update_status" class="box" style="width: 90%;">
-                                <option value="<?= $fetch_order['status']; ?>" selected><?= $fetch_order['status']; ?></option>
-                                <option value="pending">Pending</option>
-                                <option value="in progress">In Progress</option>
-                                <option value="completed">Completed</option>
-                                <option value="cancelled">Cancelled</option>
-                            </select>
-                        </div>
+                        <select name="update_payment" class="box" style="width: 90%;">
+                            <option disabled selected><?= $fetch_order['payment_status']; ?></option>
+                            <option value="pending">Pending</option>
+                            <option value="order deliverd">Order deliverd</option>
+                        </select>
                         <div class="flex-btn">
-                            <input type="submit" name="update_order" value="update order" class="btn">
+                            <input type="submit" name="update_order" value="update payment" class="btn">
                             <input type="submit" name="delete_order" value="delete order" class="btn" 
                             onclick="return confirm('Are you sure you want to delete this order?')">
                         </div>

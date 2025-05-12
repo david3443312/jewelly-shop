@@ -1,0 +1,93 @@
+/* CSS cho trang about_us */
+.about-container {
+    max-width: 900px;
+    margin: 60px auto 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 40px 32px 32px 32px;
+    font-family: 'Cormorant Upright', serif;
+}
+.about-title {
+    font-size: 2.5rem;
+    color: #7D6E5D;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+}
+.about-section {
+    margin-bottom: 32px;
+}
+.about-section h2 {
+    color: #8c9e9a;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.about-section p, .about-section ul {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.about-contact p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.about-contact i {
+    color: #8c9e9a;
+    font-size: 1.1em;
+    min-width: 22px;
+    text-align: center;
+}
+.showroom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.showroom-list li {
+    background: #e8efea;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    padding: 18px 20px 12px 20px;
+    box-shadow: 0 1px 6px rgba(140,158,154,0.08);
+}
+.showroom-title {
+    font-weight: 600;
+    color: #7D6E5D;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+.showroom-address {
+    color: #4a4a4a;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+.showroom-btn {
+    display: inline-block;
+    background: #8c9e9a;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 4px;
+    transition: background 0.2s;
+}
+.showroom-btn:hover {
+    background: #7D6E5D;
+}
+@media (max-width: 700px) {
+    .about-container {
+        padding: 18px 6px 18px 6px;
+    }
+    .about-title {
+        font-size: 2rem;
+    }
+    .about-section h2 {
+        font-size: 1.2rem;
+    }
+}

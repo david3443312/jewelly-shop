@@ -25,7 +25,7 @@
     <?php include "public/assets/components/user_header.php"; ?>
     <main>
         <div class="kn_header">
-            <h1>Kiến Thức</h1>
+            <h1>Knowledge</h1>
         </div>
         
         <div class="container">
@@ -33,52 +33,52 @@
                 <!-- Row 1 -->
                 <div class="pearl-card">
                     <a href="knowledge_1.php">
-                        <img src="../jewelry-shop/public/assets/images/knowledge/1.jpg" alt="Trang sức ngọc trai nước ngọt" class="pearl-image">
+                        <img src="../jewelry-shop/public/assets/images/knowledge/1.jpg" alt="Freshwater Pearl Jewelry" class="pearl-image">
                     </a>
                     <div class="pearl-info">
-                        <h2 class="pearl-title">Ngọc Trai Nước Ngọt</h2>
-                        <p class="pearl-date">28 tháng 4, 2022</p>
+                        <h2 class="pearl-title">The Freshwater Pearl</h2>
+                        <p class="pearl-date">April 28, 2022</p>
                     </div>
                 </div>
                 
                 <div class="pearl-card">
                     <a href="knowledge_2.php">
-                        <img src="../jewelry-shop/public/assets/images/knowledge/2.jpg" alt="Trang sức ngọc trai Biển Nam" class="pearl-image">
+                        <img src="../jewelry-shop/public/assets/images/knowledge/2.jpg" alt="South Sea Pearl Jewelry" class="pearl-image">
                     </a>
                     <div class="pearl-info">
-                        <h2 class="pearl-title">Ngọc Trai Biển Nam</h2>
-                        <p class="pearl-date">27 tháng 4, 2022</p>
+                        <h2 class="pearl-title">The South Sea Pearl</h2>
+                        <p class="pearl-date">April 27, 2022</p>
                     </div>
                 </div>
                 
                 <div class="pearl-card">
                     <a href="knowledge_3.php">
-                        <img src="../jewelry-shop/public/assets/images/knowledge/3.jpg" alt="Trang sức ngọc trai Tahiti" class="pearl-image">
+                        <img src="../jewelry-shop/public/assets/images/knowledge/3.jpg" alt="Tahitian Pearl Jewelry" class="pearl-image">
                     </a>
                     <div class="pearl-info">
-                        <h2 class="pearl-title">Ngọc Trai Tahiti</h2>
-                        <p class="pearl-date">27 tháng 4, 2022</p>
+                        <h2 class="pearl-title">The Tahitian Pearl</h2>
+                        <p class="pearl-date">April 27, 2022</p>
                     </div>
                 </div>
                 
                 <!-- Row 2 -->
                 <div class="pearl-card">
                     <a href="knowledge_4.php">
-                        <img src="../jewelry-shop/public/assets/images/knowledge/4.jpg" alt="Ý nghĩa của ngọc trai" class="pearl-image">
+                        <img src="../jewelry-shop/public/assets/images/knowledge/4.jpg" alt="Pearl Meaning" class="pearl-image">
                     </a>
                     <div class="pearl-info">
-                        <h2 class="pearl-title">Ngọc Trai – Thuần Khiết, Rộng Lượng & Chính Trực</h2>
-                        <p class="pearl-date">25 tháng 5, 2020</p>
+                        <h2 class="pearl-title">Pearl – Purity, Generosity, & Integrity</h2>
+                        <p class="pearl-date">May 25, 2020</p>
                     </div>
                 </div>
                 
                 <div class="pearl-card">
                     <a href="knowledge_5.php">
-                        <img src="../jewelry-shop/public/assets/images/knowledge/5.jpg" alt="Trang sức ngọc trai bạc và vàng" class="pearl-image">
+                        <img src="../jewelry-shop/public/assets/images/knowledge/5.jpg" alt="Sterling Silver and Gold Pearl Jewelry" class="pearl-image">
                     </a>
                     <div class="pearl-info">
-                        <h2 class="pearl-title">Lựa Chọn Ngọc Trai, Bạc & Vàng</h2>
-                        <p class="pearl-date">20 tháng 11, 2016</p>
+                        <h2 class="pearl-title">Select Pearl, Sterling Silver & Gold</h2>
+                        <p class="pearl-date">November 20, 2016</p>
                     </div>
                 </div>
             </div>
