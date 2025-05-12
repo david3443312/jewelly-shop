@@ -26,18 +26,18 @@
     <main>
         <div class="header">
             <div class="container">
-                <h1>Shopping FAQ</h1>
+                <h1>Câu hỏi mua sắm</h1>
             </div>
         </div>
     
     <div class="container">
         <div class="sidebar">
             <ul class="sidebar-menu">
-                <li><a href="FAQ_Covid19.php">Covid-19 Updates</a></li>
-                <li><a href="FAQ_Covid19_shopping.php" class="active">Shopping FAQ</a></li>
-                <li><a href="FAQ_Covid19_product.php">Product Repair FAQ</a></li>
-                <li><a href="FAQ_Covid19_shipping.php">Shipping & Return FAQ</a></li>
-                <li><a href="FAQ_Covid19_engraving.php">Engraving FAQ</a></li>
+                <li><a href="FAQ_Covid19.php">Cập Nhật Covid-19</a></li>
+                <li><a href="FAQ_Covid19_shopping.php" class="active">Câu Hỏi về Mua Sắm</a></li>
+                <li><a href="FAQ_Covid19_product.php">Câu Hỏi về Sửa Chữa Sản Phẩm</a></li>
+                <li><a href="FAQ_Covid19_shipping.php">Câu Hỏi về Vận Chuyển & Đổi Trả</a></li>
+                <li><a href="FAQ_Covid19_engraving.php">Câu Hỏi về Khắc Chữ</a></li>
             </ul>
         </div>
         
@@ -45,92 +45,92 @@
             <div class="faq-section">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>1. How do I place an order on Huongjewellery.vn?</span>
+                        <span>1. Làm thế nào để đặt hàng trên Ptitjewellery.vn?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Ordering on Huongjewellery.vn is fast and convenient. Once you have found the item you would like to purchase, click on the "Add to Bag" button to place it in your Shopping Bag. Follow the directions through the checkout process to complete your order.</p>
-                        <p>Your order will not be placed until the end of the checkout process when you will be asked for your credit card information or your PayPal account.</p>
-                        <p>You may also order over the phone by calling Hotline (+84) 85 281 4372.</p>
+                        <p>Đặt hàng trên Ptitjewellery.vn rất nhanh chóng và tiện lợi. Khi bạn đã tìm thấy sản phẩm muốn mua, hãy nhấp vào nút "Thêm vào giỏ hàng" để đặt vào Giỏ hàng của bạn. Làm theo hướng dẫn trong quá trình thanh toán để hoàn tất đơn hàng của bạn.</p>
+                        <p>Đơn hàng của bạn sẽ không được đặt cho đến khi kết thúc quá trình thanh toán khi bạn được yêu cầu cung cấp thông tin thẻ tín dụng hoặc tài khoản PayPal.</p>
+                        <p>Bạn cũng có thể đặt hàng qua điện thoại bằng cách gọi Hotline (+84) 85 281 4372.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>2. Can I include a personalized gift message with my purchase?</span>
+                        <span>2. Tôi có thể thêm lời nhắn quà tặng cá nhân với đơn hàng của mình không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, you will be given the opportunity to create a personalized message at checkout. The message will be written in a white card which includes Huong's Jewellery Logo. We will follow your notes to decide whether put the buyer's name in the package or not. For this reason, we suggest you enter your name on the gift message and make a detailed instruction for us in the "Order Note" section.</p>
-                        <p>Please contact Customer Service at Hotline (+84) 85 281 4372 if you have any questions regarding change of personalized message.</p>
+                        <p>Có, bạn sẽ có cơ hội tạo lời nhắn cá nhân khi thanh toán. Lời nhắn sẽ được viết trên một tấm thiệp trắng có logo Ptit's Jewellery. Chúng tôi sẽ làm theo hướng dẫn của bạn để quyết định việc có đặt tên người mua trong gói hàng hay không. Vì lý do này, chúng tôi khuyên bạn nên nhập tên của bạn vào lời nhắn quà tặng và đưa ra hướng dẫn chi tiết cho chúng tôi trong phần "Ghi chú đơn hàng".</p>
+                        <p>Vui lòng liên hệ Dịch vụ Khách hàng qua Hotline (+84) 85 281 4372 nếu bạn có bất kỳ câu hỏi nào về việc thay đổi lời nhắn cá nhân.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>3. What payment methods does Huongjewellery.vn accept?</span>
+                        <span>3. Ptitjewellery.vn chấp nhận những phương thức thanh toán nào?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong's Jewellery accepts all major credit cards, direct bank transfer and PayPal. For information on alternate payment methods, please contact Customer Service at Hotline (+84) 85 281 4372, or email us at sales@huongjewellery.vn</p>
+                        <p>Ptit's Jewellery chấp nhận tất cả các loại thẻ tín dụng chính, chuyển khoản trực tiếp và PayPal. Để biết thông tin về các phương thức thanh toán khác, vui lòng liên hệ Dịch vụ Khách hàng qua Hotline (+84) 85 281 4372, hoặc gửi email cho chúng tôi tại sales@Ptitjewellery.vn</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>4. Is it safe to order on Huongjewellery.vn?</span>
+                        <span>4. Đặt hàng trên Ptitjewellery.vn có an toàn không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, it is safe to order on Huongjewellery.vn. We encrypt order information for your protection using industry-standard SSL encryption. SSL encrypts your personal account information and secures your purchase and credit card information.</p>
+                        <p>Có, việc đặt hàng trên Ptitjewellery.vn rất an toàn. Chúng tôi mã hóa thông tin đơn hàng để bảo vệ bạn bằng cách sử dụng mã hóa SSL tiêu chuẩn ngành. SSL mã hóa thông tin tài khoản cá nhân của bạn và bảo mật thông tin mua hàng và thẻ tín dụng của bạn.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>5. How can I find out if an item sold online is available at my local store?</span>
+                        <span>5. Làm thế nào để biết một sản phẩm bán trực tuyến có sẵn tại cửa hàng địa phương của tôi không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Please contact Customer Service at Hotline (84) 85 281 4372 to check availability of products. Please note that the availability of products is subject to change.</p>
+                        <p>Vui lòng liên hệ Dịch vụ Khách hàng qua Hotline (84) 85 281 4372 để kiểm tra tình trạng sẵn có của sản phẩm. Lưu ý rằng tình trạng sẵn có của sản phẩm có thể thay đổi.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>6. Is in-store pickup available for online items purchased on Huongjewellery.vn?</span>
+                        <span>6. Có thể nhận hàng tại cửa hàng cho các sản phẩm mua trực tuyến trên Ptitjewellery.vn không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Please contact us via Email: sales@huongjewellery.vn or Hotline (84) 85 281 4372 to check which showroom where your ordered items are located.</p>
-                        <p>In-store pickup of items ordered online is available at our showrooms:</p>
-                        <p>- Huong's Jewellery - 123 Nguyễn Thị Minh Khai, P. Bến Nghé, Q.1, TP.HCM</p>
-                        <p>- Huong's Jewellery - 123 Nguyễn Thị Minh Khai, P. Bến Nghé, Q.1, TP.HCM</p>
+                        <p>Vui lòng liên hệ với chúng tôi qua Email: sales@Ptitjewellery.vn hoặc Hotline (84) 85 281 4372 để kiểm tra showroom nào có sản phẩm bạn đã đặt hàng.</p>
+                        <p>Nhận hàng tại cửa hàng cho các sản phẩm đặt trực tuyến có sẵn tại các showroom của chúng tôi:</p>
+                        <p>- Ptit's Jewellery - 123 Nguyễn Thị Minh Khai, P. Bến Nghé, Q.1, TP.HCM</p>
+                        <p>- Ptit's Jewellery - 123 Nguyễn Thị Minh Khai, P. Bến Nghé, Q.1, TP.HCM</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>7. Are prices on Huongjewellery.vn subject to change?</span>
+                        <span>7. Giá trên Ptitjewellery.vn có thể thay đổi không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Prices on Huongjewellery.vn are subject to change without notice. Please expect to be charged the price for the merchandise you buy as it is listed on the day of purchase.</p>
+                        <p>Giá trên Ptitjewellery.vn có thể thay đổi mà không cần thông báo trước. Vui lòng chấp nhận thanh toán theo giá niêm yết của sản phẩm vào ngày mua hàng.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>8. Does Huong's Jewellery offer resizing?</span>
+                        <span>8. Ptit's Jewellery có dịch vụ điều chỉnh kích thước không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong's Jewellery offers resizing for selected items. Please contact Customer Service at Hotline (+84) 85 281 4372 to learn more.</p>
+                        <p>Ptit's Jewellery cung cấp dịch vụ điều chỉnh kích thước cho một số sản phẩm được chọn. Vui lòng liên hệ Dịch vụ Khách hàng qua Hotline (+84) 85 281 4372 để biết thêm chi tiết.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>9. Does Huong's Jewellery have a ring size conversion chart?</span>
+                        <span>9. Ptit's Jewellery có bảng quy đổi kích thước nhẫn không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes. Huong's Jewellery has a ring size conversion chart available online to help you determine your ring size. Please click here to view chart.</p>
+                        <p>Có. Ptit's Jewellery có bảng quy đổi kích thước nhẫn trực tuyến để giúp bạn xác định kích thước nhẫn của mình. Vui lòng nhấp vào đây để xem bảng quy đổi.</p>
                     </div>
                 </div>
             </div>

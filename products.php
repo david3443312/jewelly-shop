@@ -71,7 +71,7 @@
                         <form action="public/assets/components/add_to_cart.php" method="post" class="action-form">
                             <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                             <input type="hidden" name="quantity" value="1">
-                            <button type="submit" name="add_to_cart" class="action-btn cart-btn">
+                            <button type="submit" name="add_to_cart" value="1" class="action-btn cart-btn">
                                 <i class="fas fa-shopping-cart"></i>
                                 Thêm vào giỏ hàng
                             </button>
@@ -99,22 +99,15 @@
         </div>
     </div>
     <?php include "public/assets/components/user_footer.php"; ?>
-    <!-- Toast message -->
-    <div id="toast-message" style="display:none; position: fixed; right: 30px; bottom: 30px; background: #4CAF50; color: #fff; padding: 16px 28px; border-radius: 8px; font-size: 18px; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); min-width: 280px; opacity: 0; transition: opacity 0.4s, transform 0.4s; transform: translateY(40px); position: fixed;">
-        Thêm vào giỏ hàng thành công!
-        <div id="toast-progress" style="height: 4px; background: #FFC107; width: 100%; position: absolute; left: 0; bottom: 0; border-radius: 0 0 8px 8px; transition: width 2.5s linear;"></div>
-    </div>
-    <!-- Toast message cho yêu thích -->
-    <div id="toast-wishlist" style="display:none; position: fixed; right: 30px; bottom: 80px; background: #e91e63; color: #fff; padding: 16px 28px; border-radius: 8px; font-size: 18px; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); min-width: 280px; opacity: 0; transition: opacity 0.4s, transform 0.4s; transform: translateY(40px);">
-        Đã thêm vào danh sách yêu thích!
-        <div id="toast-wishlist-progress" style="height: 4px; background: #fff176; width: 100%; position: absolute; left: 0; bottom: 0; border-radius: 0 0 8px 8px; transition: width 2.5s linear;"></div>
-    </div>
+    <?php include "public/assets/components/toast_message.php"; ?>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('form[action*="add_to_cart.php"]').forEach(function(form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 var formData = new FormData(form);
+                // Always append add_to_cart=1 to ensure backend receives it
+                formData.append('add_to_cart', '1');
                 fetch(form.action, {
                     method: 'POST',
                     body: formData

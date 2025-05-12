@@ -26,18 +26,18 @@
     <main>
         <div class="header">
             <div class="container">
-                <h1>Product Repair FAQ</h1>
+                <h1>Câu hỏi về Sửa chữa Sản phẩm</h1>
             </div>
         </div>
     
     <div class="container">
         <div class="sidebar">
             <ul class="sidebar-menu">
-                <li><a href="FAQ_Covid19.php">Covid-19 Updates</a></li>
-                <li><a href="FAQ_Covid19_shopping.php">Shopping FAQ</a></li>
-                <li><a href="FAQ_Covid19_product.php" class="active">Product Repair FAQ</a></li>
-                <li><a href="FAQ_Covid19_shipping.php">Shipping & Return FAQ</a></li>
-                <li><a href="FAQ_Covid19_engraving.php">Engraving FAQ</a></li>
+                <li><a href="FAQ_Covid19.php"">Cập Nhật Covid-19</a></li>
+                <li><a href="FAQ_Covid19_shopping.php">Câu Hỏi về Mua Sắm</a></li>
+                <li><a href="FAQ_Covid19_product.php"  class="active">Câu Hỏi về Sửa Chữa Sản Phẩm</a></li>
+                <li><a href="FAQ_Covid19_shipping.php">Câu Hỏi về Vận Chuyển & Đổi Trả</a></li>
+                <li><a href="FAQ_Covid19_engraving.php">Câu Hỏi về Khắc Chữ</a></li>
             </ul>
         </div>
         
@@ -45,73 +45,73 @@
             <div class="faq-section">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>1. How can I get an item repaired?</span>
+                        <span>1. Làm thế nào để sửa chữa một sản phẩm?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We repair all items made by Huong’s Jewellery. With customer owned jewelry, we need to make an assessment to decide whether we can accept or refuse to repair.</p>
-                        <p>You may bring your item to our showroom which is nearest you. Our staff will discuss with you about the current status and estimate the solutions.</p>
-                        <p>If you have any special request about repairing service, please contact us via Hotline (84) 85 281 4372.</p>
+                        <p>Chúng tôi sửa chữa tất cả các sản phẩm được làm bởi Ptit's Jewellery. Đối với trang sức của khách hàng, chúng tôi cần đánh giá để quyết định có thể chấp nhận hoặc từ chối sửa chữa hay không.</p>
+                        <p>Bạn có thể mang sản phẩm đến showroom gần nhất. Nhân viên của chúng tôi sẽ thảo luận với bạn về tình trạng hiện tại và ước tính các giải pháp.</p>
+                        <p>Nếu bạn có yêu cầu đặc biệt về dịch vụ sửa chữa, vui lòng liên hệ với chúng tôi qua Hotline (84) 85 281 4372.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>2. How can I check on the status of my repair?</span>
+                        <span>2. Làm thế nào để kiểm tra tình trạng sửa chữa của tôi?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>To check the status of your repair, please contact Customer Service at Hotline (84) 85 281 4372. Representatives are available 8:30AM – 8:30PM GMT Monday-Sunday.</p>
-                        <p>If you leave a message after hours, a representative will contact you the next day.</p>
+                        <p>Để kiểm tra tình trạng sửa chữa, vui lòng liên hệ Dịch vụ Khách hàng qua Hotline (84) 85 281 4372. Nhân viên tư vấn có mặt từ 8:30 sáng đến 8:30 tối GMT từ thứ Hai đến Chủ nhật.</p>
+                        <p>Nếu bạn để lại tin nhắn ngoài giờ làm việc, nhân viên sẽ liên hệ với bạn vào ngày hôm sau.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>3. How much does it cost to repair my jewelry??</span>
+                        <span>3. Chi phí sửa chữa trang sức là bao nhiêu?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>The cost to repair a product varies and is determined after an assessment is made. Repair pricing varies based on the type of product, material and gemstone. When the assessment is complete, we will send you an estimate. If you agree with the solutions and the price, we will process your repairing order.</p>
+                        <p>Chi phí sửa chữa sản phẩm khác nhau và được xác định sau khi đánh giá. Giá sửa chữa thay đổi dựa trên loại sản phẩm, chất liệu và đá quý. Khi hoàn thành đánh giá, chúng tôi sẽ gửi cho bạn báo giá. Nếu bạn đồng ý với các giải pháp và giá cả, chúng tôi sẽ xử lý đơn sửa chữa của bạn.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>4. What cleaning and care services does Huong’s Jewellery offer?</span>
+                        <span>4. Ptit's Jewellery cung cấp những dịch vụ làm sạch và chăm sóc nào?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong’s Jewellery offers a range of care services and resources to help you care for your jewelry.</p>
-                        <p>Cleaning & Care services include:</p>
-                        <p>- Professional cleaning offered on-site showroom by specialized staff</p>
-                        <p>- Resizing</p>
-                        <p>- Necklace restringing</p>
-                        <p>- Engagement ring consultations</p>
-                        <p>- Engraving</p>
-                        <p>- Jewelry polishing and ultrasonic cleaning by professional silversmiths</p>
-                        <p>- Strap & Clasps replacement</p>
-                        <p>- Bracelet shortening</p>
-                        <p>- Jewelry check-up</p>
-                        <p>- Repairs</p>
+                        <p>Ptit's Jewellery cung cấp nhiều dịch vụ chăm sóc và tài nguyên để giúp bạn chăm sóc trang sức của mình.</p>
+                        <p>Dịch vụ Làm sạch & Chăm sóc bao gồm:</p>
+                        <p>- Làm sạch chuyên nghiệp tại showroom bởi nhân viên chuyên môn</p>
+                        <p>- Điều chỉnh kích thước</p>
+                        <p>- Làm mới dây chuyền</p>
+                        <p>- Tư vấn nhẫn đính hôn</p>
+                        <p>- Khắc</p>
+                        <p>- Đánh bóng và làm sạch siêu âm trang sức bởi thợ bạc chuyên nghiệp</p>
+                        <p>- Thay thế khóa và móc</p>
+                        <p>- Rút ngắn vòng tay</p>
+                        <p>- Kiểm tra trang sức</p>
+                        <p>- Sửa chữa</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>5. How often should I get my jewelry cleaned?</span>
+                        <span>5. Tôi nên làm sạch trang sức bao lâu một lần?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We recommend customers bring jewelry in at least once every 6 months. Items worn daily and frequently should be cleaned and checked every 3 months.</p>
+                        <p>Chúng tôi khuyến nghị khách hàng mang trang sức đến ít nhất 6 tháng một lần. Các sản phẩm được đeo hàng ngày và thường xuyên nên được làm sạch và kiểm tra mỗi 3 tháng.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>6. How often should I polish my silver?</span>
+                        <span>6. Tôi nên đánh bóng bạc bao lâu một lần?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Polishing silver is a process to remove tarnish and shine silver jewelry. Because some silver is removed in the process of polishing, silver jewelry should be polished only a few times in its lifetime.</p>
+                        <p>Đánh bóng bạc là quá trình loại bỏ vết xỉn và làm sáng trang sức bạc. Vì một số bạc bị mất trong quá trình đánh bóng, trang sức bạc chỉ nên được đánh bóng vài lần trong suốt vòng đời của nó.</p>
                     </div>
                 </div>
             </div>

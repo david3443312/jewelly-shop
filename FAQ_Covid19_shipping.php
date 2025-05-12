@@ -26,18 +26,18 @@
     <main>
         <div class="header">
             <div class="container">
-                <h1>Shipping & Return FAQ</h1>
+                <h1>Câu hỏi về Vận chuyển & Đổi trả</h1>
             </div>
         </div>
     
     <div class="container">
         <div class="sidebar">
             <ul class="sidebar-menu">
-                <li><a href="FAQ_Covid19.php">Covid-19 Updates</a></li>
-                <li><a href="FAQ_Covid19_shopping.php">Shopping FAQ</a></li>
-                <li><a href="FAQ_Covid19_product.php">Product Repair FAQ</a></li>
-                <li><a href="FAQ_Covid19_shipping.php" class="active">Shipping & Return FAQ</a></li>
-                <li><a href="FAQ_Covid19_engraving.php">Engraving FAQ</a></li>
+                <li><a href="FAQ_Covid19.php">Cập Nhật Covid-19</a></li>
+                <li><a href="FAQ_Covid19_shopping.php">Câu Hỏi về Mua Sắm</a></li>
+                <li><a href="FAQ_Covid19_product.php">Câu Hỏi về Sửa Chữa Sản Phẩm</a></li>
+                <li><a href="FAQ_Covid19_shipping.php"  class="active">Câu Hỏi về Vận Chuyển & Đổi Trả</a></li>
+                <li><a href="FAQ_Covid19_engraving.php">Câu Hỏi về Khắc Chữ</a></li>
             </ul>
         </div>
         
@@ -45,113 +45,113 @@
             <div class="faq-section">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>1. What shipping options are available on Huongjewellery.vn?</span>
+                        <span>1. Ptitjewellery.vn có những phương thức vận chuyển nào?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong’s Jewellery offers both domestic and international for all orders (online orders and in store orders).</p>
-                        <h2>Domestic Shipping</h2>
-                        <p>Option 1: In-store Pickup at our Showrooms</p>
-                        <p>- Showroom 1: 62 Hang Ngang Street, Hoan Kiem District, Hanoi, Vietnam</p>
-                        <p>- Showroom 1: 62 Hang Ngang Street, Hoan Kiem District, Hanoi, Vietnam</p>
-                        <p>Option 2: We use EMS – VNPost service to ship the items to your address.</p>
-                        <h2>International Shipping</h2>
-                        <p>We use the UPS international shipping service for all international orders. To ensure the secure delivery of your order, Huong’s Jewellery does not ship orders to post office boxes. Huong’s Jewellery is able to accept post office box addresses for your billing needs.</p>
+                        <p>Ptit's Jewellery cung cấp dịch vụ vận chuyển trong nước và quốc tế cho tất cả đơn hàng (đơn hàng trực tuyến và đơn hàng tại cửa hàng).</p>
+                        <h2>Vận chuyển trong nước</h2>
+                        <p>Lựa chọn 1: Nhận hàng tại Showroom của chúng tôi</p>
+                        <p>- Showroom 1: 62 Hàng Ngang, Quận Hoàn Kiếm, Hà Nội, Việt Nam</p>
+                        <p>- Showroom 1: 62 Hàng Ngang, Quận Hoàn Kiếm, Hà Nội, Việt Nam</p>
+                        <p>Lựa chọn 2: Chúng tôi sử dụng dịch vụ EMS - VNPost để gửi hàng đến địa chỉ của bạn.</p>
+                        <h2>Vận chuyển quốc tế</h2>
+                        <p>Chúng tôi sử dụng dịch vụ vận chuyển quốc tế UPS cho tất cả đơn hàng quốc tế. Để đảm bảo việc giao hàng an toàn, Ptit's Jewellery không gửi hàng đến hộp thư bưu điện. Ptit's Jewellery có thể chấp nhận địa chỉ hộp thư bưu điện cho nhu cầu thanh toán của bạn.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>2. Can I track my online order?</span>
+                        <span>2. Tôi có thể theo dõi đơn hàng trực tuyến của mình không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>A shipping notification with tracking details will be sent via email after your order has shipped. You may receive multiple email acknowledgements if your place your orders in different times, resulting in more than one shipment</p>
+                        <p>Thông báo vận chuyển với chi tiết theo dõi sẽ được gửi qua email sau khi đơn hàng của bạn đã được gửi đi. Bạn có thể nhận được nhiều email xác nhận nếu bạn đặt nhiều đơn hàng vào các thời điểm khác nhau, dẫn đến nhiều lần gửi hàng.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>3. Will my online purchase arrive gift-wrapped?</span>
+                        <span>3. Đơn hàng trực tuyến của tôi có được gói quà không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>All purchases from Huong’s Jewellery arrive in the signature Huong’s Jewellery brown boxes, covered by creamy lids with Huong’s Jewellery logo on brown ribbons. At the checkout process, there is an optional “Order Notes” box that you can fill out your special instructions about your order: writing a gift message or instructions for delivery methods. We will email you when we get the “Order Notes” to confirm the information with you.</p>
+                        <p>Tất cả các sản phẩm từ Ptit's Jewellery đều được đóng trong hộp nâu đặc trưng của Ptit's Jewellery, được phủ bởi nắp màu kem với logo Ptit's Jewellery trên ruy-băng nâu. Trong quá trình thanh toán, có một ô "Ghi chú đơn hàng" tùy chọn mà bạn có thể điền các hướng dẫn đặc biệt về đơn hàng của mình: viết lời nhắn quà tặng hoặc hướng dẫn về phương thức giao hàng. Chúng tôi sẽ gửi email cho bạn khi nhận được "Ghi chú đơn hàng" để xác nhận thông tin với bạn.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>4. Can I ship my order to an international location?</span>
+                        <span>4. Tôi có thể gửi đơn hàng đến địa chỉ quốc tế không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, currently we are able to accept online orders to shipping addresses worldwide with a preset flat rate applied for specific country in the checkout process.</p>
-                        <p>If the shipping price is not listed for the country that you choose, please contact us via Email: sales@huongjewellery.vn before placing the order to check the shipping price.</p>
-                        <p>For international orders, depending on the shipping destinations there may be import duty (or customs duty) – a tax collected by customs authorities on all goods sold across borders. The buyers are responsible for paying import duties and taxes. Duties are imposed by the Customs of the importing country, not the exporting country. </p>
+                        <p>Có, hiện tại chúng tôi có thể chấp nhận đơn hàng trực tuyến đến các địa chỉ giao hàng trên toàn thế giới với mức phí cố định được áp dụng cho từng quốc gia cụ thể trong quá trình thanh toán.</p>
+                        <p>Nếu giá vận chuyển không được liệt kê cho quốc gia bạn chọn, vui lòng liên hệ với chúng tôi qua Email: sales@Ptitjewellery.vn trước khi đặt hàng để kiểm tra giá vận chuyển.</p>
+                        <p>Đối với đơn hàng quốc tế, tùy thuộc vào điểm đến vận chuyển có thể phát sinh thuế nhập khẩu (hoặc thuế hải quan) - một loại thuế được thu bởi cơ quan hải quan đối với tất cả hàng hóa được bán qua biên giới. Người mua chịu trách nhiệm thanh toán thuế nhập khẩu và các loại thuế. Thuế được áp dụng bởi Hải quan của quốc gia nhập khẩu, không phải quốc gia xuất khẩu.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>5. How long does a Huong's Jewellery order take to ship?</span>
+                        <span>5. Đơn hàng Ptit's Jewellery mất bao lâu để giao?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We will email you to confirm the order before we send the package to the shipping service company (the UPS for international orders and EMS Vietnam Postal Service for domestic orders). The time of shipping depends on when we get the reply email from you about the confirmation.</p>
-                        <p>- Domestic Shipping: 1-3 business day(s).</p>
-                        <p>- International Shipping: 5-7 business days.</p>
-                        <p>Please note that due to Covid-19 pandemic, the shipping time may be affected and could be longer. We still keep on track to ensure the package is arrived safely.</p>
+                        <p>Chúng tôi sẽ gửi email cho bạn để xác nhận đơn hàng trước khi gửi gói hàng đến công ty vận chuyển (UPS cho đơn hàng quốc tế và EMS Vietnam Postal Service cho đơn hàng trong nước). Thời gian vận chuyển phụ thuộc vào thời điểm chúng tôi nhận được email phản hồi từ bạn về việc xác nhận.</p>
+                        <p>- Vận chuyển trong nước: 1-3 ngày làm việc.</p>
+                        <p>- Vận chuyển quốc tế: 5-7 ngày làm việc.</p>
+                        <p>Xin lưu ý rằng do đại dịch Covid-19, thời gian vận chuyển có thể bị ảnh hưởng và có thể lâu hơn. Chúng tôi vẫn tiếp tục theo dõi để đảm bảo gói hàng đến nơi an toàn.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>6. Are Huong’s Jewellery products insured when shipped?</span>
+                        <span>6. Sản phẩm Ptit's Jewellery có được bảo hiểm khi vận chuyển không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong’s Jewellery is responsible for orders until the package is delivered to the customer.  If the package goes missing, Huong’s Jewellery may choose to open an investigation with the carrier to determine the responsible party.</p>
-                        <p>Please contact us via Hotline (+84) 85 281 4372 immediately if your order tracking details indicate the package has been delivered but nothing was received.</p>
+                        <p>Ptit's Jewellery chịu trách nhiệm về các đơn hàng cho đến khi gói hàng được giao đến khách hàng. Nếu gói hàng bị mất, Ptit's Jewellery có thể mở cuộc điều tra với đơn vị vận chuyển để xác định bên chịu trách nhiệm.</p>
+                        <p>Vui lòng liên hệ với chúng tôi qua Hotline (+84) 85 281 4372 ngay lập tức nếu thông tin theo dõi đơn hàng của bạn cho thấy gói hàng đã được giao nhưng không nhận được gì.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>7. How much is shipping?</span>
+                        <span>7. Phí vận chuyển là bao nhiêu?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong’s Jewellery offers complimentary shipping and exchanges for online orders within Hanoi. For domestic orders, the flat rate $2.99 would be applied. For international orders, flat rate varies and the shipping fees will appear after you fill out your shipping address.</p>
-                        <p>Huong’s Jewellery doesn’t cover the shipping fees with any exchanges for both domestic and international orders.</p>
+                        <p>Ptit's Jewellery cung cấp dịch vụ vận chuyển và đổi trả miễn phí cho các đơn hàng trực tuyến trong nội thành Hà Nội. Đối với đơn hàng trong nước, mức phí cố định $2.99 sẽ được áp dụng. Đối với đơn hàng quốc tế, mức phí cố định khác nhau và phí vận chuyển sẽ xuất hiện sau khi bạn điền địa chỉ giao hàng.</p>
+                        <p>Ptit's Jewellery không chi trả phí vận chuyển cho bất kỳ lần đổi trả nào đối với cả đơn hàng trong nước và quốc tế.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>8. How can I make returns or exchanges?</span>
+                        <span>8. Tôi có thể đổi trả như thế nào?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>All Huong’s Jewellery orders are nonrefundable. However, if there are any manufacturing defects from us, we offer returns and full refund will be applied. We only accept manufacturing defect reports within 2 days of receiving the packages.</p>
-                        <p>Huong’s Jewellery accepts exchanges for domestic orders within 7 days from the date of receiving the package. International exchanges can be applied but buyers have to pay the shipping fees for 2-way delivery.</p>
-                        <p>Please note that for any gemstone products, we require photos of status quo of the products before you return the package. In case the gemstones are broken during the shipment and not because of our faults, full refunds will not be applied and we will issue partial refunds.</p>
-                        <p>All items that are personalized with engraving, etching, embossing and other customized services are not returned or exchanged.</p>
-                        <p>A refund will be made to the purchaser upon request if payment has been received. Gift recipients are entitled to a nonrefundable merchandise credit. Only buyers who directly place the order from Huong’s Jewellery can request a refund. Cash refunds are not available for returns made at retail locations. To return or exchange your gift selection, please contact us via Hotline (84) 85 281 4372 or via Email: sales@huongjewellery.vn</p>
+                        <p>Tất cả các đơn hàng của Ptit's Jewellery đều không được hoàn tiền. Tuy nhiên, nếu có bất kỳ lỗi sản xuất nào từ phía chúng tôi, chúng tôi sẽ chấp nhận đổi trả và hoàn tiền đầy đủ. Chúng tôi chỉ chấp nhận báo cáo lỗi sản xuất trong vòng 2 ngày kể từ khi nhận được gói hàng.</p>
+                        <p>Ptit's Jewellery chấp nhận đổi trả cho đơn hàng trong nước trong vòng 7 ngày kể từ ngày nhận được gói hàng. Đổi trả quốc tế có thể được áp dụng nhưng người mua phải trả phí vận chuyển cho cả hai chiều.</p>
+                        <p>Xin lưu ý rằng đối với bất kỳ sản phẩm đá quý nào, chúng tôi yêu cầu hình ảnh về tình trạng hiện tại của sản phẩm trước khi bạn trả lại gói hàng. Trong trường hợp đá quý bị vỡ trong quá trình vận chuyển và không phải do lỗi của chúng tôi, việc hoàn tiền đầy đủ sẽ không được áp dụng và chúng tôi sẽ hoàn lại một phần tiền.</p>
+                        <p>Tất cả các sản phẩm được cá nhân hóa bằng khắc, khắc axit, dập nổi và các dịch vụ tùy chỉnh khác đều không được đổi trả.</p>
+                        <p>Việc hoàn tiền sẽ được thực hiện cho người mua theo yêu cầu nếu đã nhận được thanh toán. Người nhận quà được quyền nhận tín dụng hàng hóa không hoàn tiền. Chỉ người mua trực tiếp đặt hàng từ Ptit's Jewellery mới có thể yêu cầu hoàn tiền. Không có hoàn tiền mặt cho các lần trả hàng tại các cửa hàng bán lẻ. Để trả hoặc đổi sản phẩm đã chọn, vui lòng liên hệ với chúng tôi qua Hotline (84) 85 281 4372 hoặc qua Email: sales@Ptitjewellery.vn</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>9. How can I make returns or exchanges without a receipt?</span>
+                        <span>9. Tôi có thể đổi trả mà không có hóa đơn không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong’s Jewellery does not issue refunds or exchanges without a sales receipt. We accept refunds for manufacturing defects within 2 days and exchanges for 7 days since the date of purchasing orders, accompanied by a sales receipt. Some exclusions may apply. Please note that items that are personalized with engraving, etching, embossing and other customized services may not be returned or exchanged.</p>
+                        <p>Ptit's Jewellery không hoàn tiền hoặc đổi trả mà không có hóa đơn bán hàng. Chúng tôi chấp nhận hoàn tiền cho lỗi sản xuất trong vòng 2 ngày và đổi trả trong vòng 7 ngày kể từ ngày mua hàng, kèm theo hóa đơn bán hàng. Một số trường hợp có thể được loại trừ. Xin lưu ý rằng các sản phẩm được cá nhân hóa bằng khắc, khắc axit, dập nổi và các dịch vụ tùy chỉnh khác có thể không được đổi trả.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>10. May I return an engraved item?</span>
+                        <span>10. Tôi có thể trả lại sản phẩm đã khắc không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Unfortunately, engraved items cannot be returned or exchanged.</p>
+                        <p>Rất tiếc, các sản phẩm đã khắc không thể được trả lại hoặc đổi trả.</p>
                     </div>
                 </div>
             </div>

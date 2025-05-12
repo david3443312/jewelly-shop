@@ -209,6 +209,35 @@
                                     <td class="product-subtotal"><?= number_format($grand_total); ?>đ</td>
                                 </tr>
                                 <?php
+                            ?>
+                            <tr data-product-id="<?= $item['product_id']; ?>">
+                                <td>
+                                    <button type="button" class="remove-item" data-product-id="<?= $item['product_id']; ?>">×</button>
+                                </td>
+                                <td style="min-width:220px;">
+                                    <div class="cart-product-info">
+                                        <img src="public/assets/uploaded_files/<?= $item['image']; ?>" alt="<?= $item['name']; ?>" class="product-image cart-preview-img">
+                                        <span class="product-name"><?= $item['name']; ?></span>
+                                    </div>
+                                </td>
+                                <td class="product-price"><?= number_format($item['price']); ?>đ</td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="btn-decrement">-</button>
+                                        <input type="text" class="quantity-input" value="1">
+                                        <button class="btn-increment">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-subtotal"><?= number_format($sub_total); ?>đ</td>
+                            </tr>
+                            <?php
+                                } // Đóng vòng lặp while ở đây
+                            ?>
+                            <tr class="cart-total-row">
+                                <td colspan="4" style="text-align: right; font-weight: bold;">Tổng cộng:</td>
+                                <td class="product-subtotal"><?= number_format($grand_total); ?>đ</td>
+                            </tr>
+                            <?php
                             } else {
                                 echo '<tr><td colspan="5" class="cart-empty">Giỏ hàng của bạn đang trống</td></tr>';
                             }

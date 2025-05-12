@@ -26,27 +26,27 @@
     <main>
     <div class="header">
         <div class="container">
-            <div class="category">KNOWLEDGE</div>
-            <h1>Select Pearl, Sterling Silver & Gold</h1>
+            <div class="category">KIẾN THỨC</div>
+            <h1>Lựa Chọn Ngọc Trai, Bạc Sterling & Vàng</h1>
         </div>
     </div>
     
     <div class="container">
-        <h2>The quality of Pearl are commonly identified by a set of qualification of 2C and 4S</h2>
+        <h2>Chất lượng của Ngọc trai thường được xác định bởi một bộ tiêu chuẩn 2C và 4S</h2>
         <div class="content-section">
             <div class="text-content">
-                <h2>Color & Coating</h2>
-                <p>Color: Natural and cultured pearls have a wide range of hues. The most common hues are yellow, orange, and pink. Other cool tones are blue, violet, and green. Pearl colors frequently obtain soft and subtle quality. There are three components of pearl colors. Body color is the main color of the pearl. Overtone is another translucent color which lies over the body color. Orient is a shine color of iridescent rainbow colors on a pearl’s surface. Every pearl shows their body colors, but only some pearls display overtone and orient colors.</p>
-                <p>Coating: or Luster of pearl. Coating or luster is the most important factor to determine the beauty of a pearl. The higher the luster, the more valuable and rarer of the pearl. High quality pearls acquire shiny luster along with clear overtone and orient colors.</p>
+                <h2>Màu sắc & Lớp phủ</h2>
+                <p>Màu sắc: Ngọc trai tự nhiên và nuôi cấy có nhiều sắc thái khác nhau. Các màu phổ biến nhất là vàng, cam và hồng. Các tông màu lạnh khác là xanh dương, tím và xanh lá. Màu sắc của ngọc trai thường có chất lượng mềm mại và tinh tế. Có ba thành phần của màu ngọc trai. Màu nền là màu chính của ngọc trai. Màu phủ là một màu trong suốt khác nằm trên màu nền. Màu óng ánh là màu sắc cầu vồng óng ánh trên bề mặt ngọc trai. Mỗi viên ngọc trai đều thể hiện màu nền của chúng, nhưng chỉ một số viên ngọc trai mới hiển thị màu phủ và màu óng ánh.</p>
+                <p>Lớp phủ: hay Độ bóng của ngọc trai. Lớp phủ hoặc độ bóng là yếu tố quan trọng nhất để xác định vẻ đẹp của một viên ngọc trai. Độ bóng càng cao, ngọc trai càng có giá trị và hiếm. Ngọc trai chất lượng cao có độ bóng sáng cùng với màu phủ và màu óng ánh rõ ràng.</p>
                 
-                <h2>Shape, Shine, Size & Spot</h2>
-                <p>Shape: Pearls can come in different shapes. Cultured pearls usually appear in oval or pear shapes. Round is considered as a perfect shape for pearls since it is difficult for mussels to create it. However, baroque pearls in irregularly shapes are hunted by many pearl lovers because of its uniqueness.</p>
-                <p>Shine: The more shiny of a pearl, the better it’s worth. Most pearls never achieve perfection. Some of them might show scratches on the surface, or a flattened section. However, real pearls never lose their shine and imperfections do not affect the pearls’s shapes.</p>
-                <p>Size: Because of its subtleness, normally pearls are measured by millimeters. Size of pearls appear in various number, from small like 2mm to bigger ones like 20mm. Every other things are equal, larger pearls are more expensive than smaller pearls.</p>
-                <p>Spot: It is quite rare to find a pearl without any spot. The spots are created during the period when mussels are forming pearls. However, when it comes to jewelries, spots won’t be appeared in the surface of products. Pearls themselves are gemstones that are refrained from chemical exposure. Moreover, they are vulnerable to the weather. There is sometime very high humidity in Hanoi, therefore they should be treated with care. After using them, please wipe them gently with soft cloth.</p>
+                <h2>Hình dạng, Độ sáng, Kích thước & Vết bẩn</h2>
+                <p>Hình dạng: Ngọc trai có thể có nhiều hình dạng khác nhau. Ngọc trai nuôi cấy thường xuất hiện dưới dạng hình bầu dục hoặc hình quả lê. Hình tròn được coi là hình dạng hoàn hảo cho ngọc trai vì rất khó để trai tạo ra nó. Tuy nhiên, ngọc trai baroque với hình dạng không đều được nhiều người yêu thích vì sự độc đáo của nó.</p>
+                <p>Độ sáng: Ngọc trai càng sáng thì giá trị càng cao. Hầu hết ngọc trai không bao giờ đạt được sự hoàn hảo. Một số có thể có vết xước trên bề mặt, hoặc một phần bị dẹt. Tuy nhiên, ngọc trai thật không bao giờ mất đi độ sáng và những khiếm khuyết không ảnh hưởng đến hình dạng của ngọc trai.</p>
+                <p>Kích thước: Do tính chất tinh tế của nó, ngọc trai thường được đo bằng milimét. Kích thước ngọc trai xuất hiện với nhiều số đo khác nhau, từ nhỏ như 2mm đến lớn hơn như 20mm. Khi các yếu tố khác bằng nhau, ngọc trai lớn hơn sẽ đắt hơn ngọc trai nhỏ hơn.</p>
+                <p>Vết bẩn: Khá hiếm để tìm thấy một viên ngọc trai không có bất kỳ vết bẩn nào. Các vết bẩn được tạo ra trong quá trình trai hình thành ngọc trai. Tuy nhiên, khi làm thành trang sức, các vết bẩn sẽ không xuất hiện trên bề mặt sản phẩm. Bản thân ngọc trai là loại đá quý cần tránh tiếp xúc với hóa chất. Hơn nữa, chúng dễ bị ảnh hưởng bởi thời tiết. Đôi khi độ ẩm ở Hà Nội rất cao, vì vậy chúng cần được chăm sóc cẩn thận. Sau khi sử dụng, hãy lau nhẹ nhàng bằng vải mềm.</p>
 
-                <h2>Sterling silver is our standard silver whereas gold is usually of 14k and 18k</h2>
-                <p>You do not need fancy jewellery cleaner to get your silver to shine, your gold to gleam. Toothpaste can be excellent in cleaning gold and silver item. Mild, abrasive toothpaste is very good for loosening the dirt and grime of the items. Pls rinse them thoroughly with a soft cloth.</p>
+                <h2>Bạc Sterling là tiêu chuẩn bạc của chúng tôi trong khi vàng thường là 14k và 18k</h2>
+                <p>Bạn không cần chất tẩy rửa trang sức đặc biệt để làm cho bạc của bạn sáng bóng, vàng của bạn lấp lánh. Kem đánh răng có thể rất tốt trong việc làm sạch các món đồ bằng vàng và bạc. Kem đánh răng có tính mài mòn nhẹ rất tốt để làm sạch bụi bẩn và vết bẩn trên các món đồ. Vui lòng rửa sạch chúng kỹ lưỡng bằng vải mềm.</p>
             </div>  
         </div>
     </div>
