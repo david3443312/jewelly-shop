@@ -1,0 +1,90 @@
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background: #f7f7f7;
+}
+
+.form-container form {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    text-align: center;
+    width: 500px;
+}
+
+.form-container form h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Cormorant Upright', serif;
+}
+
+.form-container form .inputBox {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.form-container form .inputBox input {
+    width: 88%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #eee;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-container form .inputBox input:focus {
+    border-color: #c8a97e;
+    outline: none;
+}
+
+.form-container form .inputBox input[type="file"] {
+    padding: 10px 0;
+    background: none;
+    border: none;
+}
+
+.form-container form .inputBox img {
+    display: block;
+    margin: 10px auto;
+    border: 2px solid #c8a97e;
+}
+
+.form-container form .btn {
+    width: 85%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 17px;
+    background: #c8a97e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-container form .btn:hover {
+    background: #b38d5f;
+}
+
+.form-container form .btn:last-child {
+    background: #333;
+}
+
+.form-container form .btn:last-child:hover {
+    background: #444;
+}
+
+@media (max-width: 768px) {
+    .form-container form {
+        width: 100%;
+        max-width: 500px;
+    }
+} 
