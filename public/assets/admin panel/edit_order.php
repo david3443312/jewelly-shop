@@ -57,7 +57,7 @@ $order = $select_order->fetch(PDO::FETCH_ASSOC);
         .edit-order-box h2 { margin-bottom: 25px; }
         .edit-order-box .form-group { margin-bottom: 18px; }
         .edit-order-box label { display: block; margin-bottom: 6px; font-weight: 500; }
-        .edit-order-box input, .edit-order-box select, .edit-order-box textarea { width: 100%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; }
+        .edit-order-box input, .edit-order-box select, .edit-order-box textarea { width: 95%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; }
         .edit-order-box textarea { height: 70px; resize: vertical; }
         .edit-order-box .btn { background: #4CAF50; color: #fff; border: none; padding: 10px 22px; border-radius: 5px; font-weight: 500; cursor: pointer; }
         .edit-order-box .btn-cancel { background: #f44336; margin-left: 10px; }

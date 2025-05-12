@@ -87,14 +87,14 @@
                     <p>User email : <span><?= $fetch_users['email']; ?></span></p>
                     <div class="flex-btn">
                         <a href="update_user.php?id=<?= $user_id; ?>" class="btn">Update profile</a>
-                        <button><a href="user_accounts.php?delete=<?= $user_id; ?>" class="delete-btn" onclick="return confirm('Delete this user?');">Delete user</a></button>
+                        <button style="background-color: #fff;"><a href="user_accounts.php?delete=<?= $user_id; ?>" class="delete-btn" onclick="return confirm('Delete this user?');">Delete user</a></button>
                     </div>
                 </div>
                 <?php
                         }
                     }else{
                         echo "<div class='empty'>
-                            <h4>No user regestered yet!</h4>
+                            <h4>No user registered yet!</h4>
                         </div>";
                     }
                 ?>

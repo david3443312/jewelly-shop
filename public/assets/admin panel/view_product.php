@@ -21,6 +21,20 @@
     if (isset($_POST['search_product'])) {
         $search_keyword = trim($_POST['search_keyword']);
     }
+
+    // Lấy danh sách category (cố định hoặc từ DB)
+    $categories = [
+        '' => 'Tất cả',
+        'ring' => 'Nhẫn',
+        'bracelet' => 'Vòng tay',
+        'necklace' => 'Vòng cổ',
+        'chain' => 'Dây chuyền',
+        'earring' => 'Khuyên tai',
+    ];
+    $selected_category = '';
+    if (isset($_POST['search_product'])) {
+        $selected_category = isset($_POST['category']) ? $_POST['category'] : '';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,21 +61,32 @@
             <div class="heading mt-xxl-5 ">
                 <h1>Your products</h1>
             </div>
-            <div class="search-container" style="margin: 20px 0;">
+            <div class="search-container" style="margin-left: 2rem;">
                 <form method="post" action="" style="display:inline-block;">
                     <input type="text" name="search_keyword" placeholder="Tìm kiếm sản phẩm..." value="<?= htmlspecialchars($search_keyword) ?>" style="padding:8px; width:250px;">
+                    <select name="category" style="padding:8px; min-width:150px;">
+                        <?php foreach($categories as $cat_val => $cat_name): ?>
+                            <option value="<?= $cat_val ?>" <?= ($selected_category == $cat_val) ? 'selected' : '' ?>><?= $cat_name ?></option>
+                        <?php endforeach; ?>
+                    </select>
                     <button type="submit" name="search_product" class="btn">Tìm kiếm</button>
                 </form>
             </div>
             <div class="container">
                 <?php 
+                    // Xử lý lọc kết hợp
+                    $query = "SELECT * FROM `products` WHERE vendor_id = ?";
+                    $params = [$vendor_id];
                     if ($search_keyword != '') {
-                        $select_product = $conn->prepare("SELECT * FROM `products` WHERE vendor_id = ? AND name LIKE ?");
-                        $select_product->execute([$vendor_id, "%$search_keyword%"]);
-                    } else {
-                        $select_product = $conn->prepare("SELECT * FROM `products` WHERE vendor_id = ?");
-                        $select_product->execute([$vendor_id]);
+                        $query .= " AND name LIKE ?";
+                        $params[] = "%$search_keyword%";
                     }
+                    if ($selected_category != '') {
+                        $query .= " AND category = ?";
+                        $params[] = $selected_category;
+                    }
+                    $select_product = $conn->prepare($query);
+                    $select_product->execute($params);
                     if ($select_product->rowCount() > 0) {
                         while ($fetch_products = $select_product->fetch(PDO::FETCH_ASSOC)) {
                                            
@@ -80,7 +105,7 @@
                         <div class="content">
                             <div class="title"><?= $fetch_products['name']; ?></div>
                             <div class="flex-btn">
-                            <a href="edit_product.php?id=<?= $fetch_products['id']; ?>" class="btn">Edit</a>
+                            <a href="edit_product.php?id=<?= $fetch_products['id']; ?>" class="btn ep-btn">Edit</a>
                             <button type="submit" name="delete" class="btn btn-delete" onclick="return confirm('Delete the product?');">Delete</button>
                             <a href="read_product.php?post_id=<?= $fetch_products['id']; ?>" class="btn">Read product</a>
                     </div>

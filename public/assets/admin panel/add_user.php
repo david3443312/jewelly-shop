@@ -67,7 +67,7 @@ if(isset($_POST['submit'])) {
         <?php include '../components/admin_header.php'?>
     </div>
 
-    <section class="form-container">
+    <section class="form-container" style="margin-left: 50rem;">
         <form action="" method="POST" enctype="multipart/form-data">
             <h3>Add New User</h3>
             <div class="inputBox">
@@ -90,8 +90,8 @@ if(isset($_POST['submit'])) {
                 <label for="image">Profile Image</label>
                 <input type="file" name="image" id="image" accept="image/*" required>
             </div>
-            <input type="submit" name="submit" value="Add User" class="btn">
-            <a href="user_accounts.php" class="btn">Go Back</a>
+            <input type="submit" name="submit" style="margin: 0 auto;" value="Add User" class="btn">
+            <a href="user_accounts.php" style="margin: 0 auto;" class="btn">Go Back</a>
         </form>
     </section>
 

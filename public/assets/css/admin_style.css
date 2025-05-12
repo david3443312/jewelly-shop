@@ -414,6 +414,13 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     position: relative;
     width: 24%;
+    transition: box-shadow 0.3s cubic-bezier(.4,2,.6,1), transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.box-container .show_post .container .box:hover {
+    box-shadow: 0 1.5rem 2.5rem rgba(0,0,0,0.18), 0 0.5rem 1rem rgba(0,0,0,0.10);
+    transform: translateY(-10px) scale(1.03);
+    z-index: 2;
 }
 
 .box-container .show_post .container .box .view-image {
@@ -463,7 +470,7 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 }
 
 .box-container .show_post .container .box .content .flex-btn .btn {
-    padding: 0.7rem 0.7rem;
+    padding: 0.5rem 0.5rem;
     font-size: 1.2rem;
     border-radius: 0.3rem;
     cursor: pointer;
@@ -520,6 +527,7 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
     padding: 4rem;
     background: #f8f9fa;
     border-radius: 6px;
+    max-width: unset;
     margin: 0;
 }
 
@@ -577,12 +585,12 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 }
 
 .main-container .post-editor .form-container .btn {
-    width: 170px;
     margin: 0 18px;
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     font-weight: 500;
     transition: all 0.3s ease;
+    background-color: #ad9f6e;
 }
 
 .main-container .post-editor .form-container .btn-delete {
@@ -1312,7 +1320,7 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 .order-search-form .btn {
     padding: 8px 22px;
     font-size: 1rem;
-    background: #4CAF50;
+    background: #666;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -1321,7 +1329,7 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
     margin-bottom: 0;
 }
 .order-search-form .btn:hover {
-    background: #388e3c;
+    background: #555;
 }
 
 /* Custom form styling for edit_couple_design.php */
@@ -1456,4 +1464,14 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 
 .us-btn {
     margin-bottom: 0px !important;
+}
+
+.ep-btn {
+    align-content: center;
+    background-color: #856404 !important;
+}
+
+.ap-btn, .ud-btn {
+    background-color: #4CAF50 !important;
+    color: #fff !important;
 }
