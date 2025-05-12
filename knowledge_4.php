@@ -26,41 +26,41 @@
     <main>
     <div class="header">
         <div class="container">
-            <div class="category">KNOWLEDGE</div>
-            <h1>Pearl – Purity, Generosity, & Integrity</h1>
+            <div class="category">KIẾN THỨC</div>
+            <h1>Ngọc Trai – Thuần Khiết, Hào Phóng & Chính Trực</h1>
         </div>
     </div>
     
     <div class="container">
         <div class="content-section">
             <div class="text-content">
-                <p>Known as the one and only gem from a living creature, Pearl represents the “imperfect” perfection. A pearl symbolizes the purity, generosity, and integrity. Ancient people also believed that Pearl has the calming effect to balance the wearer. Moreover, you will never find a pearl which looks exactly like the other. Each pearl features different shape, size, and lustre. Hence, the uniqueness between Pearls creates a diversity that makes them valuable on their own way. That’s why we say the “imperfect” pearl makes it become a “perfect” beauty.</p>
+                <p>Được biết đến như loại đá quý duy nhất đến từ sinh vật sống, Ngọc Trai đại diện cho sự hoàn hảo "không hoàn hảo". Ngọc trai tượng trưng cho sự thuần khiết, hào phóng và chính trực. Người xưa cũng tin rằng Ngọc Trai có tác dụng làm dịu để cân bằng người đeo. Hơn nữa, bạn sẽ không bao giờ tìm thấy hai viên ngọc trai giống hệt nhau. Mỗi viên ngọc trai có hình dạng, kích thước và độ bóng khác nhau. Do đó, sự độc đáo giữa các viên Ngọc Trai tạo nên sự đa dạng khiến chúng có giá trị theo cách riêng. Đó là lý do tại sao chúng ta nói viên ngọc trai "không hoàn hảo" làm cho nó trở thành vẻ đẹp "hoàn hảo".</p>
             </div>
         </div>
         <br>
         <div class="image-content">
-            <img src="../jewelry-shop/public/assets/images/knowledge/4_1.jpg" alt="Freshwater pearl jewelry on dark background">
+            <img src="../jewelry-shop/public/assets/images/knowledge/4_1.jpg" alt="Trang sức ngọc trai nước ngọt trên nền tối">
         </div>
         <br>
         <div class="content-section">
             <div class="text-content">
-                <p>Like Pearl, we as humanbeings are born to be a part of the diversity. We don’t look for comparison to one another because any simile is meaningless. We are unique individuals who carry different personalities. The flaws that we have are all parts of our uniqueness.</p>
+                <p>Giống như Ngọc Trai, chúng ta là con người được sinh ra để là một phần của sự đa dạng. Chúng ta không tìm kiếm sự so sánh với người khác vì bất kỳ sự so sánh nào cũng vô nghĩa. Chúng ta là những cá thể độc đáo mang những tính cách khác nhau. Những khiếm khuyết mà chúng ta có đều là một phần của sự độc đáo của chúng ta.</p>
             </div>
         </div>
         <br>
         <div class="image-content">
-            <img src="../jewelry-shop/public/assets/images/knowledge/4_2.jpg" alt="Freshwater pearl jewelry on dark background">
-            <img src="../jewelry-shop/public/assets/images/knowledge/4_3.jpg" alt="Freshwater pearl jewelry on dark background">
+            <img src="../jewelry-shop/public/assets/images/knowledge/4_2.jpg" alt="Trang sức ngọc trai nước ngọt trên nền tối">
+            <img src="../jewelry-shop/public/assets/images/knowledge/4_3.jpg" alt="Trang sức ngọc trai nước ngọt trên nền tối">
         </div>
         <br>
         <div class="content-section">
             <div class="text-content">
-                <p>A piece of jewelry can speak its own words. Truly, each of us will choose different style of jewelry to signify who we are. Pearl represents the individuality that we can find it among human beings. If you have a pearl in your hand, would you make it into the jewelry that speaks out your own personality?</p>
+                <p>Một món trang sức có thể nói lên tiếng nói riêng của nó. Thực sự, mỗi người chúng ta sẽ chọn phong cách trang sức khác nhau để thể hiện con người của mình. Ngọc Trai đại diện cho cá tính mà chúng ta có thể tìm thấy giữa con người. Nếu bạn có một viên ngọc trai trong tay, bạn có muốn biến nó thành món trang sức thể hiện cá tính riêng của mình không?</p>
             </div>
         </div>
         <br>
         <div class="image-content">
-            <img src="../jewelry-shop/public/assets/images/knowledge/4_4.jpg" alt="Freshwater pearl jewelry on dark background">
+            <img src="../jewelry-shop/public/assets/images/knowledge/4_4.jpg" alt="Trang sức ngọc trai nước ngọt trên nền tối">
         </div>
         <br>
         
