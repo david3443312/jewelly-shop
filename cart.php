@@ -179,12 +179,29 @@
                             </tr>
                         </table>
 
-                        <button type="submit" class="checkout-button">Đặt hàng</button>
+                        <button type="button" class="checkout-button" id="show-qr-btn">Đặt hàng</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
+    <script>
+    function getGrandTotal() {
+        const el = document.querySelector('.grand-total');
+        if (!el) return 0;
+        let text = el.textContent.replace(/\D/g, '');
+        return parseInt(text, 10) || 0;
+    }
+    function generateVnpayDemoUrl(amount) {
+        // Thêm orderType=billpayment để chọn sẵn loại hàng hóa là Thanh toán hóa đơn
+        return `http://sandbox.vnpayment.vn/tryitnow/Home/CreateOrder?amount=${amount}&orderType=billpayment`;
+    }
+    document.getElementById('show-qr-btn').onclick = function() {
+        const amount = getGrandTotal();
+        // Chuyển hướng sang file trung gian để tự động submit form sang VNPAY
+        window.location.href = 'vnpay_redirect.php?amount=' + amount;
+    };
+    </script>
     <script src="public/assets/js/cal_total_price.js"></script>
     <script src="public/assets/js/shipping_cal.js"></script>
     <script src="public/assets/js/remove_cart_items.js"></script>

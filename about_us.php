@@ -10,82 +10,15 @@
     <link rel="stylesheet" href="public/assets/css/user_header.css">
     <link rel="stylesheet" href="public/assets/css/styleshomepage.css">
     <link rel="stylesheet" href="public/assets/css/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="public/assets/images/logoicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/assets/css/about_us.css">
     <style>
-        .about-container {
-            max-width: 1100px;
-            margin: 120px auto 40px auto;
-            background: #fff;
-            border-radius: 22px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-            padding: 40px 30px;
-        }
-        .about-title {
-            text-align: center;
-            font-size: 40px;
-            color: #3A5F41;
-            margin-bottom: 30px;
-            font-family: 'Cormorant Upright', serif;
-        }
-        .about-section {
-            margin-bottom: 36px;
-        }
-        .about-section h2 {
-            color: #7D6E5D;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        .about-section p, .about-section li {
-            font-size: 20px;
-            color: #444;
-            margin-bottom: 8px;
-        }
-        .showroom-list {
-            list-style: none;
-            padding: 0;
-        }
-        .showroom-list li {
-            margin-bottom: 18px;
-            background: #f9f9f4;
-            border-radius: 12px;
-            padding: 18px 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .showroom-list .showroom-title {
-            font-weight: bold;
-            color: #3A5F41;
-            font-size: 22px;
-        }
-        .showroom-list .showroom-address {
-            margin: 6px 0 8px 0;
-            color: #555;
-        }
-        .showroom-list .showroom-btn {
-            display: inline-block;
-            background: #7D6E5D;
-            color: #fff;
-            border-radius: 8px;
-            padding: 8px 18px;
-            text-decoration: none;
-            font-size: 17px;
-            margin-top: 6px;
-            transition: background 0.2s;
-        }
-        .showroom-list .showroom-btn:hover {
-            background: #3A5F41;
-        }
-        .about-contact p {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-        @media (max-width: 700px) {
-            .about-container { padding: 18px 4vw; }
-            .about-title { font-size: 30px; }
-            .about-section h2 { font-size: 22px; }
-            .showroom-list .showroom-title { font-size: 18px; }
-        }
+    /* Đã chuyển toàn bộ CSS sang file about_us.css */
     </style>
 </head>
 <body>
@@ -132,9 +65,9 @@
     <div class="about-section">
         <h2>Kết nối với chúng tôi</h2>
         <div class="about-contact">
-            <p><i class="fab fa-facebook-f"></i> <a href="https://fb.com/HocVienPTIT" target="_blank">fb.com/HocVienPTIT</a></p>
-            <p><i class="fab fa-instagram"></i> <a href="https://instagram/HocVienPTIT" target="_blank">instagram/HocVienPTIT</a></p>
-            <p><i class="fab fa-pinterest"></i> <a href="https://pinterest.com/HocVienPTIT" target="_blank">pinterest.com/HocVienPTIT</a></p>
+            <p><i class="fab fa-facebook-f"></i> <a href="https://fb.com/HocVienPTIT" target="_blank" style="color: #7D6E5D;">fb.com/HocVienPTIT</a></p>
+            <p><i class="fab fa-instagram"></i> <a href="https://instagram/HocVienPTIT" target="_blank" style="color: #7D6E5D;">instagram/HocVienPTIT</a></p>
+            <p><i class="fab fa-pinterest"></i> <a href="https://pinterest.com/HocVienPTIT" target="_blank" style="color: #7D6E5D;">pinterest.com/HocVienPTIT</a></p>
         </div>
     </div>
 </div>
