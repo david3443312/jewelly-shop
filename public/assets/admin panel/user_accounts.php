@@ -53,10 +53,24 @@
             <div class="heading">
                 <h1>Regestered users</h1>
             </div>
+            <!-- Search form start -->
+            <form method="get" action="user_accounts.php" class="search-form" style="margin-left: 18rem; display: flex; gap: 10px; align-items: center;">
+                <input type="text" name="search" placeholder="Search by name or email..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 250px;">
+                <button type="submit" class="btn us-btn">Search</button>
+                <a href="user_accounts.php" class="btn us-btn" style="background: #888; color: #fff;">Reset</a>
+            </form>
+            <!-- Search form end -->
             <div class="box-container user-box-container">
                 <?php
-                    $select_users = $conn->prepare("SELECT * FROM `users`");
-                    $select_users->execute();
+                    $search = isset($_GET['search']) ? trim($_GET['search']) : '';
+                    if ($search !== '') {
+                        $select_users = $conn->prepare("SELECT * FROM `users` WHERE name LIKE ? OR email LIKE ?");
+                        $search_param = "%$search%";
+                        $select_users->execute([$search_param, $search_param]);
+                    } else {
+                        $select_users = $conn->prepare("SELECT * FROM `users`");
+                        $select_users->execute();
+                    }
 
                     if ($select_users->rowCount() > 0) {
                         while ($fetch_users = $select_users->fetch(PDO::FETCH_ASSOC)) {

@@ -329,7 +329,7 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 }
 
 .box-container .post-editor .form-container .box {
-    width: 100%;
+    width: 92%;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
@@ -1452,4 +1452,8 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
     .form-container {
         padding: 18px 6px 12px 6px;
     }
+}
+
+.us-btn {
+    margin-bottom: 0px !important;
 }
