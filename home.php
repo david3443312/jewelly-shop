@@ -118,7 +118,7 @@
                 <div class="featured-content">
                     <h2>Kỳ diệu của thiên nhiên</h2>
                     <p>Vẻ đẹp được săn đón của ngọc trai Tahiti trong trang sức hoa tinh xảo</p>
-                    <button class="btn">KHÁM PHÁ</button>
+                    <button class="btn"><a href="knowledge_3.php">KHÁM PHÁ</a></button>
                 </div>
             </div>
         
@@ -130,7 +130,7 @@
             <div class="featured-content">
                 <h2>Sự tinh tế của ngọc trai Biển Nam Cổ điển</h2>
                 <p>Thiết kế thủ công độc đáo tôn lên vẻ rạng rỡ tuyệt vời</p>
-                <button class="btn">KHÁM PHÁ</button>
+                <button class="btn"><a href="knowledge_3.php">KHÁM PHÁ</a></button>
             </div>
         </div>
         
