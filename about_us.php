@@ -17,9 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="public/assets/images/logoicon.png" type="image/x-icon">
     <link rel="stylesheet" href="public/assets/css/about_us.css">
-    <style>
-    /* Đã chuyển toàn bộ CSS sang file about_us.css */
-    </style>
 </head>
 <body>
 <?php include "public/assets/components/user_header.php"; ?>
