@@ -68,20 +68,14 @@ if(isset($_POST['update_status'])){
                     <p>Deadline: <span><?= $fetch_requests['deadline']; ?></span></p>
                     <div class="status-section">
                         <p>Status: <span data-status="<?= strtolower($fetch_requests['status']); ?>"><?= $fetch_requests['status']; ?></span></p>
-                        <form action="" method="POST" class="update-status-form">
-                            <input type="hidden" name="update_id" value="<?= $fetch_requests['id']; ?>">
-                            <select name="status" class="box">
-                                <option value="pending" <?= $fetch_requests['status'] == 'pending' ? 'selected' : ''; ?>>Pending</option>
-                                <option value="in progress" <?= $fetch_requests['status'] == 'in progress' ? 'selected' : ''; ?>>In Progress</option>
-                                <option value="completed" <?= $fetch_requests['status'] == 'completed' ? 'selected' : ''; ?>>Completed</option>
-                                <option value="cancelled" <?= $fetch_requests['status'] == 'cancelled' ? 'selected' : ''; ?>>Cancelled</option>
-                            </select>
-                            <input type="submit" name="update_status" value="Update Status" class="option-btn">
-                        </form>
                     </div>
                     <p>Created At: <span><?= $fetch_requests['created_at']; ?></span></p>
                 </div>
                 <div class="flex-btn">
+                    <form action="edit_couple_design.php" method="GET" style="display:inline-block;">
+                        <input type="hidden" name="id" value="<?= $fetch_requests['id']; ?>">
+                        <button type="submit" class="option-btn cs-btn">Edit</button>
+                    </form>
                     <form action="" method="POST" class="flex-btn">
                         <input type="hidden" name="delete_id" value="<?= $fetch_requests['id']; ?>">
                         <button type="submit" name="delete" class="delete-btn" onclick="return confirm('Delete this request?');">Delete</button>
@@ -99,4 +93,4 @@ if(isset($_POST['update_status'])){
 
     <script src="../js/admin_script.js"></script>
 </body>
-</html> 
+</html>

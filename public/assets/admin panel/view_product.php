@@ -15,6 +15,12 @@
         $delete_product->execute([$product_id]);
         $success_msg[] = 'Product deleted successfully';
     }
+
+    // Search product
+    $search_keyword = '';
+    if (isset($_POST['search_product'])) {
+        $search_keyword = trim($_POST['search_keyword']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,16 +42,26 @@
     <div class="main-container">
         <?php include '../components/admin_header.php'?>
     </div>
-    
     <div class="box-container">
         <section class="show_post">
             <div class="heading mt-xxl-5 ">
                 <h1>Your products</h1>
             </div>
+            <div class="search-container" style="margin: 20px 0;">
+                <form method="post" action="" style="display:inline-block;">
+                    <input type="text" name="search_keyword" placeholder="Tìm kiếm sản phẩm..." value="<?= htmlspecialchars($search_keyword) ?>" style="padding:8px; width:250px;">
+                    <button type="submit" name="search_product" class="btn">Tìm kiếm</button>
+                </form>
+            </div>
             <div class="container">
                 <?php 
-                    $select_product = $conn->prepare("SELECT * FROM `products` WHERE vendor_id = ?");
-                    $select_product->execute([$vendor_id]);
+                    if ($search_keyword != '') {
+                        $select_product = $conn->prepare("SELECT * FROM `products` WHERE vendor_id = ? AND name LIKE ?");
+                        $select_product->execute([$vendor_id, "%$search_keyword%"]);
+                    } else {
+                        $select_product = $conn->prepare("SELECT * FROM `products` WHERE vendor_id = ?");
+                        $select_product->execute([$vendor_id]);
+                    }
                     if ($select_product->rowCount() > 0) {
                         while ($fetch_products = $select_product->fetch(PDO::FETCH_ASSOC)) {
                                            
@@ -74,9 +90,13 @@
                         }
                     } else {
                         echo '<div class="empty">
-                            <h1>No products found</h1>
-                            <a href="add_products.php" class="btn">Add products</a> 
-                        </div>';
+                            <h1>No products found</h1>';
+                        if ($search_keyword != '') {
+                            echo '<a href="view_product.php" class="btn">Xem tất cả sản phẩm</a>';
+                        } else {
+                            echo '<a href="add_products.php" class="btn">Add products</a>';
+                        }
+                        echo '</div>';
                     }
 
                 ?>

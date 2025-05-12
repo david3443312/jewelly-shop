@@ -595,7 +595,6 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
     transform: translateY(-2px);
 }
 
-
 /* Read product */
 .box-container .rp-heading {
     display: flex;
@@ -1123,9 +1122,12 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 }
 
 .flex-btn button {
-    background: none;
     border: none;
-    padding: 0;
+}
+
+.flex-btn .cs-btn {
+    margin-top: 10px;
+    padding: 10.5px;
 }
 
 .flex-btn .delete-btn {
@@ -1154,13 +1156,6 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 
 .user-box-container {
     min-height: auto !important;
-}
-
-.status-section {
-    margin-top: 15px;
-    padding: 10px;
-    background: #f8f9fa;
-    border-radius: 8px;
 }
 
 .status-section p {
@@ -1220,4 +1215,241 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 
 .update-status-form .option-btn:hover {
     background: #0056b3;
+}
+
+.option-btn {
+    padding: 8px 18px;
+    font-size: 15px;
+    background-color: #8B7355;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 6px rgba(139,115,85,0.08);
+    font-family: 'Cormorant Upright', serif;
+    letter-spacing: 0.5px;
+}
+.option-btn:hover {
+    background-color: #bfa77b;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(139,115,85,0.15);
+}
+
+.edit-form-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(139,115,85,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 600px;
+    margin: 3rem auto 2rem auto;
+}
+.edit-form-container .input-feild {
+    margin-bottom: 1.2rem;
+}
+.edit-form-container .input-feild p {
+    margin-bottom: 0.3rem;
+    color: #8B7355;
+    font-weight: 500;
+}
+.edit-form-container .box,
+.edit-form-container textarea.box {
+    width: 95%;
+    padding: 10px 12px;
+    border: 1px solid #bfa77b;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Cormorant Upright', serif;
+    background: #f8f6f0;
+    color: #333;
+    margin-bottom: 0.5rem;
+    transition: border 0.2s;
+}
+.edit-form-container .box:focus,
+.edit-form-container textarea.box:focus {
+    border: 1.5px solid #8B7355;
+    outline: none;
+}
+.edit-form-container .option-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+.edit-form-container .btn {
+    margin-top: 0.5rem;
+    width: 93.2%;
+    background: #bfa77b;
+    color: #fff;
+}
+.edit-form-container .btn:hover {
+    background: #8B7355;
+}
+
+/* Tìm kiếm đơn hàng trong admin_order */
+.order-search-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    margin-left: 18rem;
+}
+.order-search-form input[type="text"] {
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 240px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    transition: border 0.2s;
+}
+.order-search-form input[type="text"]:focus {
+    border: 1.5px solid #8B7355;
+    outline: none;
+    background: #fff;
+}
+.order-search-form .btn {
+    padding: 8px 22px;
+    font-size: 1rem;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 0;
+}
+.order-search-form .btn:hover {
+    background: #388e3c;
+}
+
+/* Custom form styling for edit_couple_design.php */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 32px 28px 24px 28px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.form-container .box, .form-container textarea, .form-container select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+.form-container .box:focus, .form-container textarea:focus, .form-container select:focus {
+    border: 1.5px solid #007bff;
+    outline: none;
+}
+.form-container textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+.form-container .btn, .form-container .option-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+.form-container .btn:hover, .form-container .option-btn:hover {
+    background: #0056b3;
+}
+.form-container .option-btn {
+    background: #6c757d;
+    margin-top: 0;
+    margin-left: 8px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .form-container {
+        padding: 18px 6px 12px 6px;
+    }
+}
+
+/* Custom form styling for edit_group_design.php */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 32px 28px 24px 28px;
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.form-container .box, .form-container textarea, .form-container select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+.form-container .box:focus, .form-container textarea:focus, .form-container select:focus {
+    border: 1.5px solid #007bff;
+    outline: none;
+}
+.form-container textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+.form-container .btn, .form-container .option-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+.form-container .btn:hover, .form-container .option-btn:hover {
+    background: #0056b3;
+}
+.form-container .option-btn {
+    background: #6c757d;
+    margin-top: 0;
+    margin-left: 8px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .form-container {
+        padding: 18px 6px 12px 6px;
+    }
 }
