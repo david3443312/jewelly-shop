@@ -134,6 +134,10 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
     text-decoration: none;
 }
 
+.cs_heading {
+    margin-left: 21rem;
+}
+
 .fd-ps {
     margin-left: 50px;
 }
@@ -1150,4 +1154,70 @@ header nav .account-container:hover .dropdown-menu .box-menu a {
 
 .user-box-container {
     min-height: auto !important;
+}
+
+.status-section {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.status-section p {
+    margin-bottom: 10px;
+}
+
+.status-section span {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.status-section span[data-status="pending"] {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.status-section span[data-status="in progress"] {
+    background: #b8daff;
+    color: #004085;
+}
+
+.status-section span[data-status="completed"] {
+    background: #c3e6cb;
+    color: #155724;
+}
+
+.status-section span[data-status="cancelled"] {
+    background: #f5c6cb;
+    color: #721c24;
+}
+
+.update-status-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.update-status-form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    min-width: 150px;
+}
+
+.update-status-form .option-btn {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.update-status-form .option-btn:hover {
+    background: #0056b3;
 }
