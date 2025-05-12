@@ -26,7 +26,7 @@
     <main>
         <div class="header">
             <div class="container">
-                <h1>Frequently Asked Questions</h1>
+                <h1>Câu Hỏi Thường Gặp</h1>
             </div>
         </div>
         
@@ -37,7 +37,7 @@
                         <div class="faq-icon">
                             <i class="fa-solid fa-shield-virus"></i>
                         </div>
-                        <div class="faq-title">Covid-19 Updates FAQ</div>
+                        <div class="faq-title">Cập Nhật Covid-19</div>
                     </div>
                 </a>
                 <a href="FAQ_Covid19_shopping.php">
@@ -45,7 +45,7 @@
                         <div class="faq-icon">
                             <i class="fa-solid fa-bag-shopping"></i>
                         </div>
-                        <div class="faq-title">Shopping FAQ</div>
+                        <div class="faq-title">Mua Sắm</div>
                     </div>
                 </a>
                 <a href="FAQ_Covid19_product.php">
@@ -60,7 +60,7 @@
                                 <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
                             </svg>
                         </div>
-                        <div class="faq-title">Product Repair FAQ</div>
+                        <div class="faq-title">Sửa Chữa Sản Phẩm</div>
                     </div>
                 </a>
             </div>
@@ -71,7 +71,7 @@
                         <div class="faq-icon">
                             <i class="fa-solid fa-truck-moving"></i>
                         </div>
-                        <div class="faq-title">Shipping & Return FAQ</div>
+                        <div class="faq-title">Vận Chuyển & Đổi Trả</div>
                     </div>
                 </a>
                 <a href="FAQ_Covid19_engraving.php">
@@ -79,7 +79,7 @@
                         <div class="faq-icon">
                             <i class="fa-solid fa-feather-pointed"></i>
                         </div>
-                        <div class="faq-title">Engraving FAQ</div>
+                        <div class="faq-title">Khắc Chữ</div>
                     </div>
                 </a>
             </div>

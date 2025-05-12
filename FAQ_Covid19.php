@@ -26,75 +26,75 @@
     <main>
         <div class="header">
             <div class="container">
-                <h1>Covid-19 Updates & FAQ</h1>
+                <h1>Cập Nhật & Câu Hỏi Thường Gặp về Covid-19</h1>
             </div>
         </div>
     
     <div class="container">
         <div class="sidebar">
             <ul class="sidebar-menu">
-                <li><a href="FAQ_Covid19.php" class="active">Covid-19 Updates</a></li>
-                <li><a href="FAQ_Covid19_shopping.php">Shopping FAQ</a></li>
-                <li><a href="FAQ_Covid19_product.php">Product Repair FAQ</a></li>
-                <li><a href="FAQ_Covid19_shipping.php">Shipping & Return FAQ</a></li>
-                <li><a href="FAQ_Covid19_engraving.php">Engraving FAQ</a></li>
+                <li><a href="FAQ_Covid19.php" class="active">Cập Nhật Covid-19</a></li>
+                <li><a href="FAQ_Covid19_shopping.php">Câu Hỏi về Mua Sắm</a></li>
+                <li><a href="FAQ_Covid19_product.php">Câu Hỏi về Sửa Chữa Sản Phẩm</a></li>
+                <li><a href="FAQ_Covid19_shipping.php">Câu Hỏi về Vận Chuyển & Đổi Trả</a></li>
+                <li><a href="FAQ_Covid19_engraving.php">Câu Hỏi về Khắc Chữ</a></li>
             </ul>
         </div>
         
         <div class="main-content">
             <div class="intro">
-                <p>Our showrooms already get back to normal operation. We are looking forward to welcoming you back.</p>
+                <p>Các showroom của chúng tôi đã hoạt động bình thường trở lại. Chúng tôi rất mong được chào đón quý khách.</p>
             </div>
             
             <div class="safety-measures">
-                <h2>COVID-19 Safety Operational Measures</h2>
-                <p>We follow guidance from regulatory authorities to ensure the safety of Huong's Jewellery teams, customers and social communities during COVID-19 pandemic. Huong's Jewellery are closely following safety measures, including:</p>
+                <h2>Biện Pháp An Toàn Phòng Chống Covid-19</h2>
+                <p>Chúng tôi tuân thủ hướng dẫn từ các cơ quan quản lý để đảm bảo an toàn cho đội ngũ nhân viên, khách hàng và cộng đồng của Ptit's Jewellery trong đại dịch Covid-19. Ptit's Jewellery đang thực hiện nghiêm túc các biện pháp an toàn, bao gồm:</p>
                 <ul>
-                    <li>All staffs wear mask</li>
-                    <li>We maintain social distance between staffs and customers</li>
-                    <li>Huong's Jewellery showrooms are cleaned up everyday</li>
-                    <li>We provide masks and hand sanitizer dispensers at our showrooms</li>
+                    <li>Tất cả nhân viên đều đeo khẩu trang</li>
+                    <li>Duy trì khoảng cách an toàn giữa nhân viên và khách hàng</li>
+                    <li>Showroom của Ptit's Jewellery được vệ sinh hàng ngày</li>
+                    <li>Chúng tôi cung cấp khẩu trang và nước rửa tay khử khuẩn tại các showroom</li>
                 </ul>
             </div>
             
             <div class="faq-section">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>1. How Soon Can I Pick Up My Order In-Store?</span>
+                        <span>1. Tôi Có Thể Nhận Hàng Tại Cửa Hàng Sau Bao Lâu?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Huong's Jewellery is offering in-store pick-up. Local customers can place an order with us via phone. Our store teams will confirm product availability, process payment and provide confirmation once items are ready for pick-up.</p>
+                        <p>Ptit's Jewellery đang cung cấp dịch vụ nhận hàng tại cửa hàng. Khách hàng địa phương có thể đặt hàng qua điện thoại. Đội ngũ cửa hàng của chúng tôi sẽ xác nhận tình trạng sản phẩm, xử lý thanh toán và thông báo khi hàng đã sẵn sàng để nhận.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>2. Does Huong's Jewellery Complete Daily Wellness Checks on Staff?</span>
+                        <span>2. Ptit's Jewellery Có Kiểm Tra Sức Khỏe Hàng Ngày Cho Nhân Viên Không?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, all our staff members undergo daily wellness checks before starting their shifts. This includes temperature checks and health questionnaires to ensure everyone in our stores is healthy and safe to serve you.</p>
+                        <p>Có, tất cả nhân viên của chúng tôi đều được kiểm tra sức khỏe hàng ngày trước khi bắt đầu ca làm việc. Điều này bao gồm kiểm tra nhiệt độ và bảng câu hỏi sức khỏe để đảm bảo mọi người trong cửa hàng đều khỏe mạnh và an toàn để phục vụ quý khách.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>3. How has COVID-19 Impacted Care and Repair Services?</span>
+                        <span>3. Covid-19 Đã Ảnh Hưởng Đến Dịch Vụ Chăm Sóc Và Sửa Chữa Như Thế Nào?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Our care and repair services are now operating normally with enhanced safety protocols. All items received for repair are thoroughly sanitized before and after service. Please note that due to our safety measures, repair times may be slightly longer than usual.</p>
+                        <p>Dịch vụ chăm sóc và sửa chữa của chúng tôi hiện đang hoạt động bình thường với các quy trình an toàn được tăng cường. Tất cả các sản phẩm được nhận để sửa chữa đều được khử trùng kỹ lưỡng trước và sau khi phục vụ. Xin lưu ý rằng do các biện pháp an toàn của chúng tôi, thời gian sửa chữa có thể lâu hơn bình thường một chút.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>4. How is Huong's Jewellery Ensuring Products Touched, Tried On or Returned by Clients are Safe?</span>
+                        <span>4. Ptit's Jewellery Đảm Bảo An Toàn Cho Các Sản Phẩm Được Khách Hàng Chạm Vào, Thử Hoặc Trả Lại Như Thế Nào?</span>
                         <span class="toggle-btn">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>All products that are tried on in-store are thoroughly cleaned and sanitized after each use. For returned items, we implement a 48-hour quarantine period followed by detailed cleaning and sanitization before returning them to display or inventory.</p>
+                        <p>Tất cả các sản phẩm được thử trong cửa hàng đều được làm sạch và khử trùng kỹ lưỡng sau mỗi lần sử dụng. Đối với các sản phẩm bị trả lại, chúng tôi thực hiện thời gian cách ly 48 giờ, sau đó làm sạch và khử trùng chi tiết trước khi đưa trở lại trưng bày hoặc kho.</p>
                     </div>
                 </div>
             </div>

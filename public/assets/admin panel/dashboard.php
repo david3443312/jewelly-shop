@@ -96,8 +96,8 @@
                 <div class="db-box">
                     <?php
                         try {
-                            $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ?");
-                            $select_orders->execute([$vendor_id]);
+                            $select_orders = $conn->prepare("SELECT * FROM `orders`");
+                            $select_orders->execute();
                             $number_of_orders = $select_orders->rowCount();
                         } catch(PDOException $e) {
                             $number_of_orders = 0;
@@ -111,8 +111,8 @@
                 <div class="db-box">
                     <?php
                         try {
-                            $select_confirm_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ? AND status = ?");
-                            $select_confirm_orders->execute([$vendor_id, 'in progress']);
+                            $select_confirm_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
+                            $select_confirm_orders->execute(['in progress']);
                             $number_of_confirm_orders = $select_confirm_orders->rowCount();
                         } catch(PDOException $e) {
                             $number_of_confirm_orders = 0;
@@ -126,8 +126,8 @@
                 <div class="db-box">
                     <?php
                         try {
-                            $select_canceled_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ? AND status = ?");
-                            $select_canceled_orders->execute([$vendor_id, 'canceled']);
+                            $select_canceled_orders = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
+                            $select_canceled_orders->execute(['cancelled']);
                             $number_of_canceled_orders = $select_canceled_orders->rowCount();
                         } catch(PDOException $e) {
                             $number_of_canceled_orders = 0;

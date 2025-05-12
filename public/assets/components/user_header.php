@@ -68,17 +68,37 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                     <div>
                         <h3>Thiết kế riêng</h3>
                         <ul>
-                            <li><a href="#">Đặt trang sức đôi</a></li>
-                            <li><a href="#">Đặt trang sức theo nhóm</a></li>
-                            <li><a href="#">Đặt trang sức thiết kế theo yêu cầu</a></li>
+                            <li><a href="/jewelry-shop/couple_design.php">Đặt trang sức đôi</a></li>
+                            <li><a href="/jewelry-shop/group_design.php">Đặt trang sức theo nhóm</a></li>
+                            <li><a href="/jewelry-shop/custom_design.php">Đặt trang sức thiết kế theo yêu cầu</a></li>
                             <li><a href="#">Dịch vụ xỏ, bấm khuyên tai</a></li>
                         </ul>
                     </div>
                 </div>
             </li>
-            <li><a href="#">Bộ sưu tập</a></li>
+            <li class="dropdown-category"><a>Bộ sưu tập</a>
+                <div class="submenu submenu2">
+                    <div>
+                        <ul>
+                            <li><a href="knowledge_1.php">Ngọc Trai Nước Ngọt</a></li>
+                            <li><a href="knowledge_2.php">Ngọc Trai Biển Nam</a></li>
+                            <li><a href="knowledge_3.php">Ngọc Trai Tahiti</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
             <li><a href="#">Về chúng tôi</a></li>
-            <li><a href="#">Danh sách cửa hàng</a></li>
+            <li class="dropdown-category"><a>Bài viết</a>
+                <div class="submenu submenu1">
+                    <div>
+                        <ul>
+                            <li><a href="knowlwdge.php">Kiến thức</a></li>
+                            <li><a href="FAQ.php">Câu hỏi thường gặp</a></li>
+                            <li><a href="#">Chăm sóc sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
             <li><a href="#">Liên hệ</a></li>
         </ul>
         <div class="icons">
