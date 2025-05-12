@@ -178,14 +178,14 @@
                                         <input type="submit" name="delete_image" value="Delete Image" class="btn btn-delete">
                                         <a href="view_product.php" class="btn">Go Back</a>
                                         <a href="view_product.php" class="btn">View Product</a>
-                                        <a href="add_products.php" class="btn">Add Product</a>
+                                        <a href="add_products.php" class="btn ap-btn">Add Product</a>
                                     </div>
                                 </div>
                             <?php } ?>
                         </div>
                         <div class="button-container">
-                            <input type="submit" name="update" value="Update" class="btn">
-                            <input type="submit" name="cancel" value="Delete product" class="btn">
+                            <input type="submit" name="update" value="Update" class="btn ud-btn">
+                            <input type="submit" name="cancel" value="Delete product" class="btn btn-delete" onclick="return confirm('Delete this product?');">
                     </form>
                     <?php 
                             }
