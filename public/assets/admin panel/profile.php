@@ -20,7 +20,10 @@
     $select_products->execute([$vendor_id]);
     $total_products = $select_products->rowCount();
 
-    $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE vendor_id = ?");
+    $select_orders = $conn->prepare("SELECT DISTINCT o.* FROM `orders` o 
+        INNER JOIN `order_items` oi ON o.id = oi.order_id 
+        INNER JOIN `products` p ON oi.product_id = p.id 
+        WHERE p.vendor_id = ?");
     $select_orders->execute([$vendor_id]);
     $total_orders = $select_orders->rowCount();
 

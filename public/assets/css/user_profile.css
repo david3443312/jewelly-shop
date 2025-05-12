@@ -409,12 +409,9 @@ body {
     display: none;
 }
 
-/* Price, amount, total, and currency values: +4px */
+/* Price, amount, total, and currency values: +4px
 .order-header p strong, /* strong in order header (like Tổng tiền) */
 .order-header .order-total, /* if used */
-.order-products td:nth-child(2), /* price column */
-.order-products td:nth-child(4), /* total column */
-.order-products th, /* header for price/total */
 .order-products .price, /* if used */
 .order-products .amount, /* if used */
 .order-products .total, /* if used */
@@ -425,14 +422,11 @@ body {
 .order-details .price, /* if used */
 .order-details .amount, /* if used */
 .order-details .total, /* if used */
-.order-details .currency, /* if used */
-.order-details tfoot td, /* totals in tfoot */
-.order-details tfoot td strong,
-.order-details tfoot td span {
+.order-details .currency{
     font-size: calc(16px + 4px) !important;
     font-weight: bold;
     color: #433105;
-}
+} */
 
 /* Also target any .price, .amount, .total, .currency classes globally in user_profile */
 .price, .amount, .total, .currency {
@@ -441,16 +435,3 @@ body {
     color: #3d2d05;
 }
 
-/* Responsive: keep increase for mobile too */
-@media (max-width: 768px) {
-    body, .profile-container, .sidebar, .sidebar ul li, .content, .section, .notification-list li, .address-list li, .order-header p, .order-status, .toggle-details, .order-details, .order-details h4, .order-products th, .order-products td, .no-orders, .form-group label, .form-group input, .button-group, .edit-button, .save-button, .cancel-button, .edit-shipping-btn, .edit-shipping-form, .edit-shipping-form textarea, .edit-shipping-form .form-select, .edit-shipping-form .form-group, .cancel-order-btn, .order-filter label, .order-filter select {
-        font-size: calc(14px + 2px) !important;
-    }
-    .price, .amount, .total, .currency,
-    .order-header p strong,
-    .order-products td:nth-child(2),
-    .order-products td:nth-child(4),
-    .order-details tfoot td, .order-details tfoot td strong, .order-details tfoot td span {
-        font-size: calc(14px + 4px) !important;
-    }
-}

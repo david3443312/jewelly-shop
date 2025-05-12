@@ -161,6 +161,16 @@ nav {
     transition: visibility 0.3s ease, opacity 0.3s ease; /* Thêm hiệu ứng mượt */
 }
 
+.dropdown-category .submenu1 {
+    left: 25% !important;
+    padding: 20px 0 0 0 !important;
+}
+
+.dropdown-category .submenu2 {
+    left: 12.2% !important;
+    padding: 20px 0 0 0 !important;
+}
+
 .dropdown-category .submenu div {
     margin-right: 50px;
     margin-left: 30px;
