@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="public/assets/css/user_header.css">
         <link rel="stylesheet" href="public/assets/css/styleshomepage.css">
         <link rel="stylesheet" href="public/assets/css/slider.css">
+        <link rel="stylesheet" href="public/assets/css/shop.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -135,24 +136,41 @@
         
         <!-- New Arrivals Section -->
         <h2>Hàng Mới Về</h2>
-        <div class="products">
-            <div class="product">
-                <div class="product-image">
-                    <img src="../jewelry-shop//public//assets//images//gallery//2023-10-06-13-54-33-281x281.jpg" alt="Mặt dây chuyền nho bạc sterling Tourmaline">
-                    <div class="product-actions">
-                        <button type="submit" name="add_to_cart" class="action-btn">
-                            <i class="fas fa-shopping-cart"></i>
-                            Thêm vào giỏ hàng
-                        </button>
-                        <button type="submit" name="add_to_wishlist" class="action-btn">
-                            <i class="fas fa-heart"></i>
-                            Yêu thích
-                        </button>
+        <div class="new-arrivals-slider-container">
+            <button class="slider-arrow prev" id="new-arrivals-prev">&#10094;</button>
+            <div class="new-arrivals-slider" id="new-arrivals-slider">
+                <?php
+                    $new_arrivals = $conn->prepare("SELECT * FROM products WHERE status = 'active' ORDER BY stock DESC, id DESC LIMIT 12");
+                    $new_arrivals->execute();
+                    while ($product = $new_arrivals->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="public/assets/uploaded_files/<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                        <div class="product-actions">
+                            <form action="public/assets/components/add_to_cart.php" method="post" class="action-form">
+                                <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="submit" name="add_to_cart" value="1" class="action-btn cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Thêm vào giỏ hàng
+                                </button>
+                            </form>
+                            <form action="public/assets/components/add_to_wishlist.php" method="post" class="action-form">
+                                <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
+                                <button type="submit" name="add_to_wishlist" class="action-btn wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                    Yêu thích
+                                </button>
+                            </form>
+                        </div>
                     </div>
+                    <h3 class="product-title"><?= htmlspecialchars($product['name']) ?></h3>
+                    <div class="product-price"><?= number_format($product['price']) ?>đ</div>
                 </div>
-                <h3>Mặt dây chuyền nho bạc sterling Tourmaline</h3>
-                <div class="price">$60.00</div>
+                <?php } ?>
             </div>
+            <button class="slider-arrow next" id="new-arrivals-next">&#10095;</button>
         </div>
         
         <!-- Customer Care Section -->
@@ -177,7 +195,112 @@
         </div>
     </div>
     <?php include '../jewelry-shop/public/assets/components/user_footer.php'; ?>
+    <?php include "public/assets/components/toast_message.php"; ?>
     </main>
     <script src="../jewelry-shop/public/assets/js/slider.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.getElementById('new-arrivals-slider');
+        const prevBtn = document.getElementById('new-arrivals-prev');
+        const nextBtn = document.getElementById('new-arrivals-next');
+        const scrollAmount = 280; // px, tùy chỉnh theo min-width sản phẩm
+    
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        // Xử lý toast cho form thêm giỏ hàng và yêu thích trong slider
+        slider.querySelectorAll('form[action*="add_to_cart.php"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(form);
+                formData.append('add_to_cart', '1'); // thêm dòng này!
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.text())
+                .then(() => {
+                    showToast('cart');
+                });
+            });
+        });
+        slider.querySelectorAll('form[action*="add_to_wishlist.php"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.text())
+                .then(() => {
+                    showToast('wishlist');
+                });
+            });
+        });
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.getElementById('new-arrivals-slider');
+        const prevBtn = document.getElementById('new-arrivals-prev');
+        const nextBtn = document.getElementById('new-arrivals-next');
+        const scrollAmount = 280;
+
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        // Kéo ngang bằng chuột hoặc cảm ứng
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.2; // tốc độ kéo
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Hỗ trợ cảm ứng trên mobile
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    });
+    </script>
 </body>
 </html>

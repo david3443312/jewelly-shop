@@ -1,32 +1,29 @@
-document.querySelector('.shipping-calculate').addEventListener('click', function(e) {
+document.querySelector('.shipping-calculate').addEventListener('click', async function(e) {
     e.preventDefault();
-    
-    // Reference point - Mỗ Lao, Hà Đông, Hà Nội
-    const REFERENCE_POINT = "Mỗ Lao, Hà Đông, Hà Nội, Việt Nam";
-    
+
+    // Reference point - PTIT Hà Đông
+    const REFERENCE_POINT = { lat: 20.981127280039136, lng: 105.78747626240298 };
+
+    // Mapbox token
+    const MAPBOX_TOKEN = "pk.eyJ1IjoiZHVja2hvaTA0IiwiYSI6ImNtYWp5czhwdjB5Mjcya3ExMnphYmg4bTYifQ.iWecHdvJh9DaN0UTcLDpdQ";
+
     // Price threshold for free shipping (1 million VND)
     const FREE_SHIPPING_THRESHOLD = 1000000;
-    
-    // Base shipping cost for orders below threshold (within 20km)
     const BASE_SHIPPING_COST = 15000;
-    
-    // Additional cost per 10km beyond initial 20km
     const COST_PER_10KM = 10000;
-    
-    // Initial free distance range
     const INITIAL_DISTANCE = 20; // in kilometers
-    
-    // Check if all required fields are filled
+
+    // Get address fields
     const city = document.getElementById('city');
     const district = document.getElementById('district');
     const ward = document.getElementById('ward');
     const specificAddress = document.getElementById('specific-address');
-    
+
     if (!city.value || !district.value || !ward.value || !specificAddress.value) {
         alert('Vui lòng điền đầy đủ thông tin địa chỉ');
         return;
     }
-    
+
     // Get product total
     const productTotalEl = document.querySelector('.cart-totals .totals-table tr:first-child .value');
     let productTotal = 0;
@@ -34,159 +31,100 @@ document.querySelector('.shipping-calculate').addEventListener('click', function
         const productTotalText = productTotalEl.textContent;
         productTotal = parseInt(productTotalText.replace(/[^0-9]/g, '')) || 0;
     }
-    
-    // Get selected address components
+
+    // Build full address
     const cityText = city.options[city.selectedIndex].text;
     const districtText = district.options[district.selectedIndex].text;
     const wardText = ward.options[ward.selectedIndex].text;
     const specificAddressText = specificAddress.value;
-    
-    // Construct full address
     const fullAddress = `${specificAddressText}, ${wardText}, ${districtText}, ${cityText}, Việt Nam`;
-    
-    // Update shipping cost display to "Đang tính..."
+
     const shippingCostEl = document.querySelector('.shipping-cost');
     shippingCostEl.textContent = "Đang tính...";
-    
-    // Calculate distance using Google Maps API
-    if (typeof google !== 'undefined' && google.maps) {
-        const service = new google.maps.DistanceMatrixService();
-        service.getDistanceMatrix({
-            origins: [REFERENCE_POINT],
-            destinations: [fullAddress],
-            travelMode: 'DRIVING',
-            unitSystem: google.maps.UnitSystem.METRIC
-        }, function(response, status) {
-            let shippingCost = 0;
-            
-            if (status === 'OK' && response.rows[0].elements[0].status === 'OK') {
-                // Get distance value in meters and convert to km
-                const distanceValue = response.rows[0].elements[0].distance.value / 1000;
-                console.log("Khoảng cách tính được: " + distanceValue + " km");
 
-                // Display the distance in the UI
-                const distanceEl = document.querySelector('.shipping-distance');
-                if (distanceEl) {
-                    distanceEl.textContent = distanceValue.toFixed(1) + " km";
-                }
-                
-                // Calculate shipping cost based on distance and product total
-                if (distanceValue <= INITIAL_DISTANCE) {
-                    // Within 20km
-                    if (productTotal >= FREE_SHIPPING_THRESHOLD) {
-                        shippingCost = 0; // Free shipping for orders >= 1 million VND
-                    } else {
-                        shippingCost = BASE_SHIPPING_COST; // 15,000đ for orders < 1 million VND
-                    }
-                } else {
-                    // Beyond 20km
-                    if (productTotal >= FREE_SHIPPING_THRESHOLD) {
-                        // Start with 0đ for first 20km, then add 10,000đ per 10km
-                        const additionalDistance = distanceValue - INITIAL_DISTANCE;
-                        const additionalChunks = Math.ceil(additionalDistance / 10);
-                        shippingCost = additionalChunks * COST_PER_10KM;
-                    } else {
-                        // Start with 15,000đ for first 20km, then add 10,000đ per 10km
-                        const additionalDistance = distanceValue - INITIAL_DISTANCE;
-                        const additionalChunks = Math.ceil(additionalDistance / 10);
-                        shippingCost = BASE_SHIPPING_COST + (additionalChunks * COST_PER_10KM);
-                    }
-                }
-                
-                // Update shipping cost display
-                shippingCostEl.textContent = shippingCost.toLocaleString() + 'đ';
-                
-                // Update grand total
-                const finalTotal = productTotal + shippingCost;
-                const finalTotalEl = document.querySelector('.grand-total');
-                if (finalTotalEl) {
-                    finalTotalEl.textContent = finalTotal.toLocaleString() + 'đ';
-                }
-                
-            } else {
-                console.error("Error calculating distance:", status);
-                // Fall back to default shipping cost if API fails
-                if (productTotal >= FREE_SHIPPING_THRESHOLD) {
-                    shippingCost = 0;
-                } else {
-                    shippingCost = BASE_SHIPPING_COST;
-                }
-                
-                shippingCostEl.textContent = shippingCost.toLocaleString() + 'đ';
-                document.getElementById('shipping-cost-input').value = shippingCost;
-            }
-        });
-    } else {
-        // Google Maps API not loaded - use fallback method
-        let shippingCost = 0;
-        let estimatedDistance = 0;
-        if (cityText.includes("Hà Nội")) {
-            if (districtText.includes("Hà Đông")) {
-                estimatedDistance = 5; 
-                shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? 0 : BASE_SHIPPING_COST;
-            } else {
-                estimatedDistance = 15;
-                shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? COST_PER_10KM : BASE_SHIPPING_COST + COST_PER_10KM;
-            }
+    // Geocode địa chỉ khách hàng sang tọa độ
+    let destLat = null, destLng = null;
+    try {
+        const geoRes = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(fullAddress)}.json?access_token=${MAPBOX_TOKEN}&limit=1&country=VN`);
+        const geoData = await geoRes.json();
+        if (geoData.features && geoData.features.length > 0) {
+            destLng = geoData.features[0].center[0];
+            destLat = geoData.features[0].center[1];
         } else {
-            estimatedDistance = 50; 
-            shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? COST_PER_10KM * 3 : BASE_SHIPPING_COST + (COST_PER_10KM * 3);
+            throw new Error("Không tìm thấy địa chỉ.");
         }
-        
-        // Display the estimated distance
-        const distanceEl = document.querySelector('.shipping-distance');
-        if (distanceEl) {
-            distanceEl.textContent = `~${estimatedDistance} km (ước tính)`;
-        }
+    } catch (err) {
+        shippingCostEl.textContent = "Không xác định được vị trí!";
+        alert("Không tìm thấy địa chỉ giao hàng. Vui lòng kiểm tra lại.");
+        return;
+    }
 
-        shippingCostEl.textContent = shippingCost.toLocaleString() + 'đ';
-        
-        // Update grand total
-        const finalTotal = productTotal + shippingCost;
-        const finalTotalEl = document.querySelector('.grand-total');
-        if (finalTotalEl) {
-            finalTotalEl.textContent = finalTotal.toLocaleString() + 'đ';
+    // Gọi Mapbox Directions API để lấy quãng đường
+    let distanceValue = 0;
+    try {
+        const directionsRes = await fetch(
+            `https://api.mapbox.com/directions/v5/mapbox/driving/${REFERENCE_POINT.lng},${REFERENCE_POINT.lat};${destLng},${destLat}?access_token=${MAPBOX_TOKEN}&overview=false`
+        );
+        const directionsData = await directionsRes.json();
+        if (
+            directionsData.routes &&
+            directionsData.routes.length > 0 &&
+            directionsData.routes[0].distance
+        ) {
+            distanceValue = directionsData.routes[0].distance / 1000; // convert m to km
+        } else {
+            throw new Error("Không tính được khoảng cách.");
         }
+    } catch (err) {
+        shippingCostEl.textContent = "Không tính được phí!";
+        alert("Không tính được khoảng cách vận chuyển. Vui lòng thử lại.");
+        return;
+    }
+
+    // Hiển thị khoảng cách (nếu có phần shipping-distance)
+    const distanceEl = document.querySelector('.shipping-distance');
+    if (distanceEl) {
+        distanceEl.textContent = distanceValue.toFixed(1) + " km";
+    } else {
+        // Nếu chưa có phần tử, chèn vào sau phí vận chuyển
+        const shippingRow = document.querySelector('.totals-table .shipping-cost')?.parentElement;
+        if (shippingRow && !document.querySelector('.shipping-distance')) {
+            const distanceTd = document.createElement('td');
+            distanceTd.className = 'value shipping-distance';
+            distanceTd.colSpan = 2;
+            distanceTd.style.textAlign = 'right';
+            distanceTd.style.fontSize = '18px';
+            distanceTd.style.color = '#888';
+            distanceTd.textContent = `(${distanceValue.toFixed(1)} km)`;
+            shippingRow.appendChild(distanceTd);
+        }
+    }
+
+    // Tính phí vận chuyển
+    let shippingCost = 0;
+    if (distanceValue <= INITIAL_DISTANCE) {
+        shippingCost = productTotal >= FREE_SHIPPING_THRESHOLD ? 0 : BASE_SHIPPING_COST;
+    } else {
+        const additionalDistance = distanceValue - INITIAL_DISTANCE;
+        const additionalChunks = Math.ceil(additionalDistance / 10);
+        if (productTotal >= FREE_SHIPPING_THRESHOLD) {
+            shippingCost = additionalChunks * COST_PER_10KM;
+        } else {
+            shippingCost = BASE_SHIPPING_COST + (additionalChunks * COST_PER_10KM);
+        }
+    }
+
+    shippingCostEl.textContent = shippingCost.toLocaleString() + 'đ';
+
+    // Update grand total
+    const finalTotal = productTotal + shippingCost;
+    const finalTotalEl = document.querySelector('.grand-total');
+    if (finalTotalEl) {
+        finalTotalEl.textContent = finalTotal.toLocaleString() + 'đ';
+    }
+    // Cập nhật hidden input cho form submit
+    const shippingCostInput = document.getElementById('shipping-cost-input');
+    if (shippingCostInput) {
+        shippingCostInput.value = shippingCost;
     }
 });
-
-// Keep your existing updateGrandTotal function
-function updateGrandTotal(){
-    let grandTotal = 0;
-    document.querySelectorAll('tr[data-product-id]').forEach(row => {
-        const priceEl = row.querySelector('.product-price');
-        let priceText = priceEl.dataset.price || priceEl.textContent;
-        priceText = priceText.replace(/[^0-9.]/g, '');
-        const price = parseFloat(priceText);
-        const quantity = parseInt(row.querySelector('.quantity-input').value);
-        grandTotal += price * quantity;
-    });
-    
-    // Cập nhật ô Tổng cộng ở bảng giỏ hàng bên trái
-    const grandTotalCell = document.querySelector('.cart-total-row .product-subtotal');
-    if(grandTotalCell){
-        grandTotalCell.textContent = grandTotal.toLocaleString() + "đ";
-    }
-    
-    // Cập nhật ô "Tổng tiền sản phẩm" ở bảng bên cột trái trong phần cart-totals
-    const productTotalEl = document.querySelector('.cart-totals .totals-table tr:first-child .value');
-    if(productTotalEl) {
-        productTotalEl.textContent = grandTotal.toLocaleString() + "đ";
-    }
-    
-    // Lấy giá trị phí vận chuyển hiện tại
-    const shippingCostEl = document.querySelector('.shipping-cost');
-    if(shippingCostEl) {
-        const shippingText = shippingCostEl.textContent;
-        const shippingCost = parseInt(shippingText.replace(/[^0-9]/g, '')) || 0;
-        
-        // Tính tổng cộng mới (sản phẩm + vận chuyển)
-        const finalTotal = grandTotal + shippingCost;
-        
-        // Cập nhật tổng cộng
-        const finalTotalEl = document.querySelector('.grand-total');
-        if(finalTotalEl) {
-            finalTotalEl.textContent = finalTotal.toLocaleString() + "đ";
-        }
-    }
-}

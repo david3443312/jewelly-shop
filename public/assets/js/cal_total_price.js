@@ -83,4 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+    window.updateGrandTotal = updateGrandTotal;
 });

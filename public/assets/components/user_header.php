@@ -40,7 +40,6 @@ $user_id = ($user_id !== null && $user_id !== '') ? $user_id : null;
                             <li><a href="/jewelry-shop/products.php?category=necklace">Vòng cổ</a></li>
                             <li><a href="/jewelry-shop/products.php?category=chain">Dây chuyền</a></li>
                             <li><a href="/jewelry-shop/products.php?category=earring">Khuyên tai</a></li>
-                            <li><a href="/jewelry-shop/products.php?category=watch">Đồng hồ</a></li>
                         </ul>
                     </div>
                     <div>

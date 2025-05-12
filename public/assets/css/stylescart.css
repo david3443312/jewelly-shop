@@ -92,11 +92,15 @@ body {
 }
 
 .quantity-input {
-    width: 50px;
+    width: 48px;
     height: 36px;
     text-align: center;
     border: 1px solid #ddd;
-    margin: 0 5px;
+    border-radius: 8px;
+    font-size: 18px;
+    margin: 0 4px;
+    background: #faf9f6;
+    color: #3A5F41;
 }
 
 .quantity-button {
@@ -105,6 +109,41 @@ body {
     background: #f0f0f0;
     border: 1px solid #ddd;
     cursor: pointer;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-increment,
+.btn-decrement {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid #ccc;
+    background: #fff;
+    color: #3A5F41;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    user-select: none;
+    outline: none;
+    padding: 0;
+}
+
+.btn-increment:hover,
+.btn-decrement:hover {
+    background: #f5f5f5;
+    border-color: #8a7a72;
+    color: #8a7a72;
 }
 
 
@@ -267,3 +306,55 @@ body {
     color: #c9302c;
 }
 
+/* Preview ảnh lớn hơn, bo cong, bóng đổ */
+.cart-preview-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    margin-right: 18px;
+    background: #f9f9f4;
+    transition: transform 0.2s;
+}
+.cart-product-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.product-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.08rem;
+    color: #3A5F41;
+    font-family: "Cormorant Upright", serif;
+    text-align: center;
+    height: 80px;
+    /* căn giữa theo chiều dọc */
+}
+
+/* Căn giữa tên sản phẩm trong cột */
+.cart-table td .product-name {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1.3;
+    text-align: left;
+    width: 100%;
+}
+
+
+/* Responsive: ảnh nhỏ lại trên mobile */
+@media (max-width: 600px) {
+    .cart-preview-img {
+        width: 60px;
+        height: 60px;
+    }
+    .cart-table td .product-name {
+        height: 60px;
+        font-size: 1rem;
+    }
+}
